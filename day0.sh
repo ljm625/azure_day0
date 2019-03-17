@@ -953,8 +953,24 @@ install_cleanup(){
     rm -rf ${shadowsocks_libev_file} ${shadowsocks_libev_file}.tar.gz
 }
 
+enable_bbr(){
+    echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+	echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+	sysctl -p
+  	echo -e "BBR启动成功！"
+  
+}
+
+enable_ss(){
+    systemctl start shadowsocks-libev
+    systemctl enable shadowsocks-libev
+  	echo -e "SS启动成功！"
+}
+
+
 install_shadowsocks(){
     disable_selinux
+    enable_bbr
     install_select
     install_prepare
     install_dependencies
@@ -965,6 +981,7 @@ install_shadowsocks(){
     fi
     install_main
     install_cleanup
+    enable_ss
 }
 
 # Initialization step
