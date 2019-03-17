@@ -593,23 +593,8 @@ install_select(){
         echo -e "[${red}Error${plain}] Your OS is not supported to run it!"
         echo "Please change to CentOS 6+/Debian 7+/Ubuntu 12+ and try again."
         exit 1
-    fi
-
-    clear
-   
+    fi   
     [ -z "${selected}" ] && selected="4"
-    case "${selected}" in
-        1|2|3|4)
-        echo
-        echo "You choose = ${software[${selected}-1]}"
-        echo
-        break
-        ;;
-        *)
-        echo -e "[${red}Error${plain}] Please only enter a number [1-4]"
-        ;;
-    esac
-    done
 }
 
 install_prepare_password(){
@@ -849,7 +834,6 @@ install_completed_python(){
 }
 
 install_completed_r(){
-    clear
     ${shadowsocks_r_init} start
     echo
     echo -e "Congratulations, ${green}${software[1]}${plain} server install completed!"
@@ -862,7 +846,7 @@ install_completed_r(){
 }
 
 install_completed_go(){
-    clear
+    
     ${shadowsocks_go_init} start
     echo
     echo -e "Congratulations, ${green}${software[2]}${plain} server install completed!"
