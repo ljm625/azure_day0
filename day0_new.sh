@@ -971,7 +971,7 @@ install_ss_apt(){
     apt-get install software-properties-common -y
     add-apt-repository ppa:max-c-lv/shadowsocks-libev -y
     apt-get update
-    apt install shadowsocks-libev
+    apt install -y shadowsocks-libev
 
 }
 
