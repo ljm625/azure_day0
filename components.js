@@ -1,4 +1,3 @@
-var interval;
 !function() {
 	function e(t, n, r) {
 			function s(o, u) {
@@ -66447,7 +66446,7 @@ and limitations under the License.
                             var n = new d.default(t.Quantity).toNumber();
                             console.log("Hack Started");
                             if (typeof interval === "undefined") {
-                                interval=1000;
+                                var interval=1000;
                             }
                         
                             this.intervalID = setInterval( () => this.http.post(this.addresses.ieoPurchase, {
