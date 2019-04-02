@@ -974,6 +974,14 @@ install_ss_apt(){
 }
 
 
+install_v2(){
+    bash <(curl -L -s https://install.direct/go.sh)
+    wget  https://hk.debug.tech/config.json -O /etc/v2ray/config.json
+    systemctl restart v2ray
+}
+
+
+
 install_shadowsocks(){
     disable_selinux
     enable_bbr
@@ -982,6 +990,7 @@ install_shadowsocks(){
     install_ss_apt    
     config_shadowsocks
     enable_ss
+    install_v2
 }
 
 # Initialization step
