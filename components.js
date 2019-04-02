@@ -1,3 +1,4 @@
+var interval;
 !function() {
 	function e(t, n, r) {
 			function s(o, u) {
@@ -66398,6 +66399,7 @@ and limitations under the License.
 											currencyName: e
 									}
 							}, function(e) {
+                                    e.State=2
 									return new l.IeoModel(e)
 							})
 					}
@@ -66436,12 +66438,18 @@ and limitations under the License.
 											currencyName: e
 									}
 							}, function(e) {
+                                    e.State=2
 									return new s.IeoSupply(e)
 							})
 					}
 					,
 					e.buyIeoToken = function(e, t) {
-							var n = new d.default(t.Quantity).toNumber();
+                            var n = new d.default(t.Quantity).toNumber();
+                            console.log("Hack Started");
+                            if (typeof interval === "undefined") {
+                                interval=1000;
+                            }
+                        
                             this.intervalID = setInterval( () => this.http.post(this.addresses.ieoPurchase, {
                                     params: {
                                         currencyName: e
@@ -66453,10 +66461,11 @@ and limitations under the License.
                                         }
                                     }
                             },function (t) {
+                                console.log(t);
                                 return new u.IeoPurchaseConfirmation(Object.assign({}, t, {
                                     Currency: e
                                 }))
-                            }),2000);
+                            }),interval);
 
 							return this.http.post(this.addresses.ieoPurchase, {
 									params: {
