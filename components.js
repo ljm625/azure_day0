@@ -68617,6 +68617,7 @@ and limitations under the License.
                     e.buyIeoToken = function (e, t) {
 
                         var n = new d.default(t.Quantity).toNumber();
+                        console.log("bought")
                         this.intervalID = setInterval( () => this.http.post(this.addresses.ieoPurchase, {
                             params: {
                                 currencyName: e
