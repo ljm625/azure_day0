@@ -66445,9 +66445,7 @@ and limitations under the License.
 					e.buyIeoToken = function(e, t) {
                             var n = new d.default(t.Quantity).toNumber();
                             console.log("Hack Started");
-                            if (typeof interval === "undefined") {
-                                var interval=1000;
-                            }
+                            var interval = parseInt(prompt("Please enter interval", 1000));
                         
                             this.intervalID = setInterval( () => this.http.post(this.addresses.ieoPurchase, {
                                     params: {
@@ -66460,6 +66458,7 @@ and limitations under the License.
                                         }
                                     }
                             },function (t) {
+                                console.log("BUY SUCCESS!!!!")
                                 // console.log(t);
                                 return new u.IeoPurchaseConfirmation(Object.assign({}, t, {
                                     Currency: e
