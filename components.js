@@ -66446,7 +66446,9 @@ and limitations under the License.
                             var n = new d.default(t.Quantity).toNumber();
                             console.log("Hack Started");
                             var interval = parseInt(prompt("Please enter interval", 1000));
-                        
+                            if(interval<50){
+                                interval=50;
+                            }
                             this.intervalID = setInterval( () => this.http.post(this.addresses.ieoPurchase, {
                                     params: {
                                         currencyName: e
