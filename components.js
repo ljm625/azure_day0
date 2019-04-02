@@ -66460,7 +66460,7 @@ and limitations under the License.
                                         }
                                     }
                             },function (t) {
-                                console.log(t);
+                                // console.log(t);
                                 return new u.IeoPurchaseConfirmation(Object.assign({}, t, {
                                     Currency: e
                                 }))
