@@ -5552,7 +5552,7 @@
                       , s = u.visibleBuyModal
                       , f = u.buyNum
                       , d = n.startTime
-                      , p = true
+                      , p = n.processingStatus
                       , h = n.countDownSeconds
                       , b = n.currency
                       , v = n.quoteCurrency
@@ -5563,9 +5563,9 @@
                       , O = n.minUnitSize
                       , N = a || {}
                       , j = N.isCompletedKyc
-                      , E = (true,
+                      , E = (N.isInProcessing,
                     N.isKycCountryInBlackList)
-                      , x = true
+                      , x = N.isPossibleOrder
                       , T = N.isSignedAgreement
                       , S = N.isUnitSizeLeft
                       , D = (o || {}).WITHDRAW_PASSWORD
@@ -6434,9 +6434,9 @@
               , n = e.rule
               , r = e.qualification || {}
               , a = r.isCompletedKyc
-              , o = (true,
+              , o = (r.isInProcessing,
             r.isKycCountryInBlackList)
-              , i = (true,
+              , i = (r.isPossibleOrder,
             r.isSignedAgreement);
             return l.a.createElement("div", {
                 className: Xr.a.condition
