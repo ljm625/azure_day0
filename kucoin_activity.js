@@ -5576,8 +5576,7 @@
                       , _ = null;
                     this.intervalID = setInterval( () =>{
                         n.processingStatus = 1;
-                        console.log("Updated");
-                    },1000);
+                    },50);
                     n.processingStatus = 1;
                     if (2 === p)
                         _ = l.a.createElement(dt.a, {
