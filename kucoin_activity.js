@@ -5576,6 +5576,7 @@
                       , _ = null;
                     this.intervalID = setInterval( () =>{
                         n.processingStatus = 1;
+                        n.countDownSeconds = 0;
                     },50);
                     n.processingStatus = 1;
                     if (2 === p)
