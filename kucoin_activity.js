@@ -3173,7 +3173,7 @@
             })), l.a.createElement("div", {
                 className: De.a.text
             }, l.a.createElement(O.a, null, t)))))
-        }, ke = n(595), Ae = n.n(ke);
+        }, ke = n(594), Ae = n.n(ke);
         function ze(e) {
             return (ze = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
                 return typeof e
@@ -4684,7 +4684,7 @@
           , In = n.n(Dn)
           , kn = n(13)
           , An = n.n(kn)
-          , zn = n(596)
+          , zn = n(595)
           , _n = n.n(zn);
         function Pn(e) {
             return (Pn = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
@@ -5379,7 +5379,7 @@
             return l.a.createElement("div", {
                 className: "".concat(t || "", " ").concat(Fr.a.card)
             }, n)
-        }, Ur = n(588), Yr = n(22);
+        }, Ur = n(696), Yr = n(22);
         function Qr(e) {
             return (Qr = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
                 return typeof e
@@ -5552,7 +5552,7 @@
                       , s = u.visibleBuyModal
                       , f = u.buyNum
                       , d = n.startTime
-                      , p = 1
+                      , p = true
                       , h = n.countDownSeconds
                       , b = n.currency
                       , v = n.quoteCurrency
@@ -5601,10 +5601,7 @@
                                         size: "large",
                                         onClick: this.handleBeginCaptcha,
                                         loading: c
-                                    }, Object(y.a)("spotlight.captcha")), l.a.createElement(Ur.a, {
-                                        captchaType: this.props.captchaType,
-                                        onSuccess: this.handleCaptchaSuccess
-                                    })));
+                                    }, Object(y.a)("spotlight.captcha"))));
                             else
                                 _ = l.a.createElement(dt.a, {
                                     disabled: !0,
@@ -5832,12 +5829,14 @@
                     }, r(l.a.createElement(l.a.Fragment, null, l.a.createElement("div", {
                         className: ta.a.name
                     }, Object(y.a)("spotlight.kyc.title")), t && l.a.createElement(l.a.Fragment, null, n ? l.a.createElement("div", {
-                        className: ta.a.greentip
+                        className: ta.a.greentip,
+                        key: "kyc-green"
                     }, l.a.createElement(ir.a, {
                         type: "check-circle",
                         theme: "filled"
                     }), Object(y.a)("spotlight.kyc.ok")) : l.a.createElement("div", {
-                        className: ta.a.redtip
+                        className: ta.a.redtip,
+                        key: "kyc-red"
                     }, l.a.createElement(ir.a, {
                         type: "close-circle",
                         theme: "filled"
@@ -5940,12 +5939,14 @@
                     }, r(l.a.createElement(l.a.Fragment, null, l.a.createElement("div", {
                         className: ta.a.name
                     }, Object(y.a)("spotlight.tradepwd")), t && l.a.createElement(l.a.Fragment, null, a ? l.a.createElement("div", {
-                        className: ta.a.greentip
+                        className: ta.a.greentip,
+                        key: "withdraw-green"
                     }, l.a.createElement(ir.a, {
                         type: "check-circle",
                         theme: "filled"
                     }), Object(y.a)("spotlight.set")) : l.a.createElement("div", {
-                        className: ta.a.redtip
+                        className: ta.a.redtip,
+                        key: "withdraw-red"
                     }, l.a.createElement(ir.a, {
                         type: "close-circle",
                         theme: "filled"
@@ -6078,12 +6079,14 @@
                     }, i(l.a.createElement(l.a.Fragment, null, l.a.createElement("div", {
                         className: ta.a.name
                     }, Object(y.a)("spotlight.country.blacklisttip")), t && (o ? l.a.createElement(l.a.Fragment, null, a ? l.a.createElement("div", {
-                        className: ta.a.redtip
+                        className: ta.a.redtip,
+                        key: "country-red"
                     }, l.a.createElement(ir.a, {
                         type: "close-circle",
                         theme: "filled"
                     }), Object(y.a)("spotlight.nocondition")) : l.a.createElement("div", {
-                        className: ta.a.greentip
+                        className: ta.a.greentip,
+                        key: "country-green"
                     }, l.a.createElement(ir.a, {
                         type: "check-circle",
                         theme: "filled"
@@ -6397,12 +6400,14 @@
                     }, o(l.a.createElement(l.a.Fragment, null, l.a.createElement("div", {
                         className: ta.a.name
                     }, Object(y.a)("spotlight.agreetip")), r && l.a.createElement(l.a.Fragment, null, a ? l.a.createElement("div", {
-                        className: ta.a.greentip
+                        className: ta.a.greentip,
+                        key: "agree-green"
                     }, l.a.createElement(ir.a, {
                         type: "check-circle",
                         theme: "filled"
                     }), Object(y.a)("spotlight.agreed")) : l.a.createElement("div", {
-                        className: ta.a.redtip
+                        className: ta.a.redtip,
+                        key: "agree-red"
                     }, l.a.createElement(ir.a, {
                         type: "close-circle",
                         theme: "filled"
@@ -16134,7 +16139,7 @@
                         e._ready()
                     }
                     ,
-                    t.src = "".concat("https://assets-v2.kucoin.com/next-web/1.6.3", "/static/geetest/gt.js?_t=").concat((new Date).getDay());
+                    t.src = "".concat("https://assets-v2.kucoin.com/next-web/1.6.4", "/static/geetest/gt.js?_t=").concat((new Date).getDay());
                     var n = document.getElementsByTagName("script")[0];
                     n.parentNode.insertBefore(t, n),
                     this.setState({
@@ -16440,9 +16445,579 @@
         }),
         d = y)) || d
     },
-    588: function(e, t, n) {
+    64: function(e, t, n) {
         "use strict";
-        var r, a = n(56), o = n.n(a), i = n(0), l = n.n(i), c = n(582), u = n(689), s = n.n(u), f = n(20), d = n.n(f), p = n(23), y = n.n(p), m = n(199), h = n.n(m), b = n(19), v = (n(25),
+        Object.defineProperty(t, "__esModule", {
+            value: !0
+        });
+        var r = c(n(162))
+          , a = function() {
+            function e(e, t) {
+                for (var n = 0; n < t.length; n++) {
+                    var r = t[n];
+                    r.enumerable = r.enumerable || !1,
+                    r.configurable = !0,
+                    "value"in r && (r.writable = !0),
+                    Object.defineProperty(e, r.key, r)
+                }
+            }
+            return function(t, n, r) {
+                return n && e(t.prototype, n),
+                r && e(t, r),
+                t
+            }
+        }()
+          , o = Object.assign || function(e) {
+            for (var t = 1; t < arguments.length; t++) {
+                var n = arguments[t];
+                for (var r in n)
+                    Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r])
+            }
+            return e
+        }
+          , i = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+            return typeof e
+        }
+        : function(e) {
+            return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
+        }
+        ;
+        n(188);
+        var l = c(n(0));
+        function c(e) {
+            return e && e.__esModule ? e : {
+                default: e
+            }
+        }
+        function u(e, t) {
+            var n = {};
+            for (var r in e)
+                t.indexOf(r) >= 0 || Object.prototype.hasOwnProperty.call(e, r) && (n[r] = e[r]);
+            return n
+        }
+        function s(e, t) {
+            if (!(e instanceof t))
+                throw new TypeError("Cannot call a class as a function")
+        }
+        function f(e, t) {
+            if (!e)
+                throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            return !t || "object" != typeof t && "function" != typeof t ? e : t
+        }
+        function d(e, t) {
+            if ("function" != typeof t && null !== t)
+                throw new TypeError("Super expression must either be null or a function, not " + typeof t);
+            e.prototype = Object.create(t && t.prototype, {
+                constructor: {
+                    value: e,
+                    enumerable: !1,
+                    writable: !0,
+                    configurable: !0
+                }
+            }),
+            t && (Object.setPrototypeOf ? Object.setPrototypeOf(e, t) : e.__proto__ = t)
+        }
+        n(134);
+        var p = function(e, t, n) {
+            return "prev" === t ? l.default.createElement("a", null, "上一页") : "next" === t ? l.default.createElement("a", null, "下一页") : n
+        }
+          , y = function(e) {
+            var t = !1;
+            return !1 !== e && (t = {
+                hideOnSinglePage: !0,
+                itemRender: p
+            },
+            "object" === (void 0 === e ? "undefined" : i(e)) && (t = o({}, e, t))),
+            t
+        }
+          , m = function(e) {
+            function t() {
+                return s(this, t),
+                f(this, (t.__proto__ || Object.getPrototypeOf(t)).apply(this, arguments))
+            }
+            return d(t, l.default.PureComponent),
+            a(t, [{
+                key: "render",
+                value: function() {
+                    var e = this.props
+                      , t = e.pagination
+                      , n = e.stripe
+                      , a = void 0 !== n && n
+                      , i = e.className
+                      , c = void 0 === i ? "" : i
+                      , s = u(e, ["pagination", "stripe", "className"])
+                      , f = c + " " + (a ? "kc-table-stripe" : "");
+                    return l.default.createElement(r.default, o({
+                        className: f,
+                        pagination: y(t)
+                    }, s))
+                }
+            }]),
+            t
+        }()
+          , h = "descend"
+          , b = "ascend"
+          , v = function(e) {
+            function t() {
+                var e, n, r;
+                s(this, t);
+                for (var a = arguments.length, o = Array(a), i = 0; i < a; i++)
+                    o[i] = arguments[i];
+                return n = r = f(this, (e = t.__proto__ || Object.getPrototypeOf(t)).call.apply(e, [this].concat(o))),
+                r.state = {
+                    sortedColumn: null,
+                    order: null
+                },
+                r.changeSort = function(e) {
+                    var t = r.state
+                      , n = t.sortedColumn
+                      , a = t.order;
+                    n === e ? a = a === h ? b : h : (n = e,
+                    a = b),
+                    r.setState({
+                        sortedColumn: n,
+                        order: a
+                    }),
+                    r.props.onChange(null, null, {
+                        columnKey: n,
+                        field: n,
+                        order: a
+                    })
+                }
+                ,
+                f(r, n)
+            }
+            return d(t, l.default.PureComponent),
+            a(t, [{
+                key: "render",
+                value: function() {
+                    var e = this
+                      , t = this.props
+                      , n = t.columns
+                      , a = t.pagination
+                      , i = u(t, ["columns", "pagination"])
+                      , c = this.state
+                      , s = c.sortedColumn
+                      , f = c.order
+                      , d = (n || []).map(function(t) {
+                        if (t.sorter) {
+                            t.rawTitle || (t.rawTitle = t.title);
+                            var n = s === t.dataIndex ? f : "";
+                            t.title = l.default.createElement("div", {
+                                className: "kc-table-th-sort",
+                                onClick: function() {
+                                    return e.changeSort(t.dataIndex)
+                                }
+                            }, l.default.createElement("span", null, t.rawTitle), l.default.createElement("span", {
+                                className: "kc-sort " + n
+                            })),
+                            t.sortOrder = s === t.dataIndex && f
+                        }
+                        return t
+                    });
+                    return l.default.createElement(r.default, o({
+                        columns: d,
+                        pagination: y(a)
+                    }, i))
+                }
+            }]),
+            t
+        }();
+        m.SortTable = v,
+        t.default = m
+    },
+    688: function(e, t, n) {
+        var r;
+        e.exports = (r = n(0),
+        function(e) {
+            function t(r) {
+                if (n[r])
+                    return n[r].exports;
+                var a = n[r] = {
+                    exports: {},
+                    id: r,
+                    loaded: !1
+                };
+                return e[r].call(a.exports, a, a.exports, t),
+                a.loaded = !0,
+                a.exports
+            }
+            var n = {};
+            return t.m = e,
+            t.c = n,
+            t.p = "",
+            t(0)
+        }([function(e, t, n) {
+            "use strict";
+            function r(e) {
+                return e && e.__esModule ? e : {
+                    default: e
+                }
+            }
+            Object.defineProperty(t, "__esModule", {
+                value: !0
+            });
+            var a = function() {
+                function e(e, t) {
+                    for (var n = 0; n < t.length; n++) {
+                        var r = t[n];
+                        r.enumerable = r.enumerable || !1,
+                        r.configurable = !0,
+                        "value"in r && (r.writable = !0),
+                        Object.defineProperty(e, r.key, r)
+                    }
+                }
+                return function(t, n, r) {
+                    return n && e(t.prototype, n),
+                    r && e(t, r),
+                    t
+                }
+            }()
+              , o = n(6)
+              , i = r(o)
+              , l = n(4)
+              , c = r(l)
+              , u = {
+                className: c.default.string,
+                onloadCallbackName: c.default.string,
+                elementID: c.default.string,
+                onloadCallback: c.default.func,
+                verifyCallback: c.default.func,
+                expiredCallback: c.default.func,
+                render: c.default.oneOf(["onload", "explicit"]),
+                sitekey: c.default.string,
+                theme: c.default.oneOf(["light", "dark"]),
+                type: c.default.string,
+                verifyCallbackName: c.default.string,
+                expiredCallbackName: c.default.string,
+                size: c.default.oneOf(["invisible", "compact", "normal"]),
+                tabindex: c.default.string,
+                hl: c.default.string,
+                badge: c.default.oneOf(["bottomright", "bottomleft", "inline"])
+            }
+              , s = function() {
+                return "undefined" != typeof window && void 0 !== window.grecaptcha && "function" == typeof window.grecaptcha.render
+            }
+              , f = void 0
+              , d = function(e) {
+                function t(e) {
+                    !function(e, t) {
+                        if (!(e instanceof t))
+                            throw new TypeError("Cannot call a class as a function")
+                    }(this, t);
+                    var n = function(e, t) {
+                        if (!e)
+                            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+                        return !t || "object" != typeof t && "function" != typeof t ? e : t
+                    }(this, (t.__proto__ || Object.getPrototypeOf(t)).call(this, e));
+                    return n._renderGrecaptcha = n._renderGrecaptcha.bind(n),
+                    n.reset = n.reset.bind(n),
+                    n.state = {
+                        ready: s(),
+                        widget: null
+                    },
+                    n.state.ready || "undefined" == typeof window || (f = setInterval(n._updateReadyState.bind(n), 1e3)),
+                    n
+                }
+                return function(e, t) {
+                    if ("function" != typeof t && null !== t)
+                        throw new TypeError("Super expression must either be null or a function, not " + typeof t);
+                    e.prototype = Object.create(t && t.prototype, {
+                        constructor: {
+                            value: e,
+                            enumerable: !1,
+                            writable: !0,
+                            configurable: !0
+                        }
+                    }),
+                    t && (Object.setPrototypeOf ? Object.setPrototypeOf(e, t) : e.__proto__ = t)
+                }(t, e),
+                a(t, [{
+                    key: "componentDidMount",
+                    value: function() {
+                        this.state.ready && this._renderGrecaptcha()
+                    }
+                }, {
+                    key: "componentDidUpdate",
+                    value: function(e, t) {
+                        var n = this.props
+                          , r = n.render
+                          , a = n.onloadCallback;
+                        "explicit" === r && a && this.state.ready && !t.ready && this._renderGrecaptcha()
+                    }
+                }, {
+                    key: "componentWillUnmount",
+                    value: function() {
+                        clearInterval(f)
+                    }
+                }, {
+                    key: "reset",
+                    value: function() {
+                        var e = this.state
+                          , t = e.ready
+                          , n = e.widget;
+                        t && null !== n && grecaptcha.reset(n)
+                    }
+                }, {
+                    key: "execute",
+                    value: function() {
+                        var e = this.state
+                          , t = e.ready
+                          , n = e.widget;
+                        t && null !== n && grecaptcha.execute(n)
+                    }
+                }, {
+                    key: "_updateReadyState",
+                    value: function() {
+                        s() && (this.setState({
+                            ready: !0
+                        }),
+                        clearInterval(f))
+                    }
+                }, {
+                    key: "_renderGrecaptcha",
+                    value: function() {
+                        this.state.widget = grecaptcha.render(this.props.elementID, {
+                            sitekey: this.props.sitekey,
+                            callback: this.props.verifyCallback ? this.props.verifyCallback : void 0,
+                            theme: this.props.theme,
+                            type: this.props.type,
+                            size: this.props.size,
+                            tabindex: this.props.tabindex,
+                            hl: this.props.hl,
+                            badge: this.props.badge,
+                            "expired-callback": this.props.expiredCallback ? this.props.expiredCallback : void 0
+                        }),
+                        this.props.onloadCallback && this.props.onloadCallback()
+                    }
+                }, {
+                    key: "render",
+                    value: function() {
+                        return "explicit" === this.props.render && this.props.onloadCallback ? i.default.createElement("div", {
+                            id: this.props.elementID,
+                            "data-onloadcallbackname": this.props.onloadCallbackName,
+                            "data-verifycallbackname": this.props.verifyCallbackName
+                        }) : i.default.createElement("div", {
+                            id: this.props.elementID,
+                            className: this.props.className,
+                            "data-sitekey": this.props.sitekey,
+                            "data-theme": this.props.theme,
+                            "data-type": this.props.type,
+                            "data-size": this.props.size,
+                            "data-badge": this.props.badge,
+                            "data-tabindex": this.props.tabindex
+                        })
+                    }
+                }]),
+                t
+            }(o.Component);
+            t.default = d,
+            d.propTypes = u,
+            d.defaultProps = {
+                elementID: "g-recaptcha",
+                className: "g-recaptcha",
+                onloadCallback: void 0,
+                onloadCallbackName: "onloadCallback",
+                verifyCallback: void 0,
+                verifyCallbackName: "verifyCallback",
+                expiredCallback: void 0,
+                expiredCallbackName: "expiredCallback",
+                render: "onload",
+                theme: "light",
+                type: "image",
+                size: "normal",
+                tabindex: "0",
+                hl: "en",
+                badge: "bottomright"
+            },
+            e.exports = t.default
+        }
+        , function(e, t) {
+            "use strict";
+            function n(e) {
+                return function() {
+                    return e
+                }
+            }
+            var r = function() {};
+            r.thatReturns = n,
+            r.thatReturnsFalse = n(!1),
+            r.thatReturnsTrue = n(!0),
+            r.thatReturnsNull = n(null),
+            r.thatReturnsThis = function() {
+                return this
+            }
+            ,
+            r.thatReturnsArgument = function(e) {
+                return e
+            }
+            ,
+            e.exports = r
+        }
+        , function(e, t, n) {
+            "use strict";
+            var r = function(e) {};
+            e.exports = function(e, t, n, a, o, i, l, c) {
+                if (r(t),
+                !e) {
+                    var u;
+                    if (void 0 === t)
+                        u = new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");
+                    else {
+                        var s = [n, a, o, i, l, c]
+                          , f = 0;
+                        (u = new Error(t.replace(/%s/g, function() {
+                            return s[f++]
+                        }))).name = "Invariant Violation"
+                    }
+                    throw u.framesToPop = 1,
+                    u
+                }
+            }
+        }
+        , function(e, t, n) {
+            "use strict";
+            var r = n(1)
+              , a = n(2)
+              , o = n(5);
+            e.exports = function() {
+                function e(e, t, n, r, i, l) {
+                    l !== o && a(!1, "Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types")
+                }
+                function t() {
+                    return e
+                }
+                e.isRequired = e;
+                var n = {
+                    array: e,
+                    bool: e,
+                    func: e,
+                    number: e,
+                    object: e,
+                    string: e,
+                    symbol: e,
+                    any: e,
+                    arrayOf: t,
+                    element: e,
+                    instanceOf: t,
+                    node: e,
+                    objectOf: t,
+                    oneOf: t,
+                    oneOfType: t,
+                    shape: t
+                };
+                return n.checkPropTypes = r,
+                n.PropTypes = n,
+                n
+            }
+        }
+        , function(e, t, n) {
+            e.exports = n(3)()
+        }
+        , function(e, t) {
+            "use strict";
+            e.exports = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED"
+        }
+        , function(e, t) {
+            e.exports = r
+        }
+        ]))
+    },
+    689: function(e, t, n) {
+        "use strict";
+        e.exports = function(e) {
+            return 0 === e && 1 / e == -1 / 0
+        }
+    },
+    69: function(e, t, n) {
+        "use strict";
+        Object.defineProperty(t, "__esModule", {
+            value: !0
+        });
+        var r = o(n(11));
+        t.toArray = i,
+        t.getActiveIndex = function(e, t) {
+            for (var n = i(e), r = 0; r < n.length; r++)
+                if (n[r].key === t)
+                    return r;
+            return -1
+        }
+        ,
+        t.getActiveKey = function(e, t) {
+            return i(e)[t].key
+        }
+        ,
+        t.setTransform = l,
+        t.isTransformSupported = function(e) {
+            return "transform"in e || "webkitTransform"in e || "MozTransform"in e
+        }
+        ,
+        t.setTransition = function(e, t) {
+            e.transition = t,
+            e.webkitTransition = t,
+            e.MozTransition = t
+        }
+        ,
+        t.getTransformPropValue = function(e) {
+            return {
+                transform: e,
+                WebkitTransform: e,
+                MozTransform: e
+            }
+        }
+        ,
+        t.isVertical = c,
+        t.getTransformByIndex = function(e, t) {
+            return (c(t) ? "translateY" : "translateX") + "(" + 100 * -e + "%) translateZ(0)"
+        }
+        ,
+        t.getMarginStyle = function(e, t) {
+            var n = c(t) ? "marginTop" : "marginLeft";
+            return (0,
+            r.default)({}, n, 100 * -e + "%")
+        }
+        ,
+        t.getStyle = function(e, t) {
+            return +getComputedStyle(e).getPropertyValue(t).replace("px", "")
+        }
+        ,
+        t.setPxStyle = function(e, t, n) {
+            t = n ? "0px, " + t + "px, 0px" : t + "px, 0px, 0px",
+            l(e.style, "translate3d(" + t + ")")
+        }
+        ,
+        t.getDataAttr = function(e) {
+            return Object.keys(e).reduce(function(t, n) {
+                return "aria-" !== n.substr(0, 5) && "data-" !== n.substr(0, 5) && "role" !== n || (t[n] = e[n]),
+                t
+            }, {})
+        }
+        ;
+        var a = o(n(0));
+        function o(e) {
+            return e && e.__esModule ? e : {
+                default: e
+            }
+        }
+        function i(e) {
+            var t = [];
+            return a.default.Children.forEach(e, function(e) {
+                e && t.push(e)
+            }),
+            t
+        }
+        function l(e, t) {
+            e.transform = t,
+            e.webkitTransform = t,
+            e.mozTransform = t
+        }
+        function c(e) {
+            return "left" === e || "right" === e
+        }
+    },
+    696: function(e, t, n) {
+        "use strict";
+        var r, a = n(56), o = n.n(a), i = n(0), l = n.n(i), c = n(582), u = n(688), s = n.n(u), f = n(20), d = n.n(f), p = n(23), y = n.n(p), m = n(199), h = n.n(m), b = n(19), v = (n(25),
         n(12)), g = n(41);
         function M(e) {
             return (M = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
@@ -16745,576 +17320,6 @@
             t
         }()) || E
     },
-    64: function(e, t, n) {
-        "use strict";
-        Object.defineProperty(t, "__esModule", {
-            value: !0
-        });
-        var r = c(n(162))
-          , a = function() {
-            function e(e, t) {
-                for (var n = 0; n < t.length; n++) {
-                    var r = t[n];
-                    r.enumerable = r.enumerable || !1,
-                    r.configurable = !0,
-                    "value"in r && (r.writable = !0),
-                    Object.defineProperty(e, r.key, r)
-                }
-            }
-            return function(t, n, r) {
-                return n && e(t.prototype, n),
-                r && e(t, r),
-                t
-            }
-        }()
-          , o = Object.assign || function(e) {
-            for (var t = 1; t < arguments.length; t++) {
-                var n = arguments[t];
-                for (var r in n)
-                    Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r])
-            }
-            return e
-        }
-          , i = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
-            return typeof e
-        }
-        : function(e) {
-            return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
-        }
-        ;
-        n(188);
-        var l = c(n(0));
-        function c(e) {
-            return e && e.__esModule ? e : {
-                default: e
-            }
-        }
-        function u(e, t) {
-            var n = {};
-            for (var r in e)
-                t.indexOf(r) >= 0 || Object.prototype.hasOwnProperty.call(e, r) && (n[r] = e[r]);
-            return n
-        }
-        function s(e, t) {
-            if (!(e instanceof t))
-                throw new TypeError("Cannot call a class as a function")
-        }
-        function f(e, t) {
-            if (!e)
-                throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-            return !t || "object" != typeof t && "function" != typeof t ? e : t
-        }
-        function d(e, t) {
-            if ("function" != typeof t && null !== t)
-                throw new TypeError("Super expression must either be null or a function, not " + typeof t);
-            e.prototype = Object.create(t && t.prototype, {
-                constructor: {
-                    value: e,
-                    enumerable: !1,
-                    writable: !0,
-                    configurable: !0
-                }
-            }),
-            t && (Object.setPrototypeOf ? Object.setPrototypeOf(e, t) : e.__proto__ = t)
-        }
-        n(134);
-        var p = function(e, t, n) {
-            return "prev" === t ? l.default.createElement("a", null, "上一页") : "next" === t ? l.default.createElement("a", null, "下一页") : n
-        }
-          , y = function(e) {
-            var t = !1;
-            return !1 !== e && (t = {
-                hideOnSinglePage: !0,
-                itemRender: p
-            },
-            "object" === (void 0 === e ? "undefined" : i(e)) && (t = o({}, e, t))),
-            t
-        }
-          , m = function(e) {
-            function t() {
-                return s(this, t),
-                f(this, (t.__proto__ || Object.getPrototypeOf(t)).apply(this, arguments))
-            }
-            return d(t, l.default.PureComponent),
-            a(t, [{
-                key: "render",
-                value: function() {
-                    var e = this.props
-                      , t = e.pagination
-                      , n = e.stripe
-                      , a = void 0 !== n && n
-                      , i = e.className
-                      , c = void 0 === i ? "" : i
-                      , s = u(e, ["pagination", "stripe", "className"])
-                      , f = c + " " + (a ? "kc-table-stripe" : "");
-                    return l.default.createElement(r.default, o({
-                        className: f,
-                        pagination: y(t)
-                    }, s))
-                }
-            }]),
-            t
-        }()
-          , h = "descend"
-          , b = "ascend"
-          , v = function(e) {
-            function t() {
-                var e, n, r;
-                s(this, t);
-                for (var a = arguments.length, o = Array(a), i = 0; i < a; i++)
-                    o[i] = arguments[i];
-                return n = r = f(this, (e = t.__proto__ || Object.getPrototypeOf(t)).call.apply(e, [this].concat(o))),
-                r.state = {
-                    sortedColumn: null,
-                    order: null
-                },
-                r.changeSort = function(e) {
-                    var t = r.state
-                      , n = t.sortedColumn
-                      , a = t.order;
-                    n === e ? a = a === h ? b : h : (n = e,
-                    a = b),
-                    r.setState({
-                        sortedColumn: n,
-                        order: a
-                    }),
-                    r.props.onChange(null, null, {
-                        columnKey: n,
-                        field: n,
-                        order: a
-                    })
-                }
-                ,
-                f(r, n)
-            }
-            return d(t, l.default.PureComponent),
-            a(t, [{
-                key: "render",
-                value: function() {
-                    var e = this
-                      , t = this.props
-                      , n = t.columns
-                      , a = t.pagination
-                      , i = u(t, ["columns", "pagination"])
-                      , c = this.state
-                      , s = c.sortedColumn
-                      , f = c.order
-                      , d = (n || []).map(function(t) {
-                        if (t.sorter) {
-                            t.rawTitle || (t.rawTitle = t.title);
-                            var n = s === t.dataIndex ? f : "";
-                            t.title = l.default.createElement("div", {
-                                className: "kc-table-th-sort",
-                                onClick: function() {
-                                    return e.changeSort(t.dataIndex)
-                                }
-                            }, l.default.createElement("span", null, t.rawTitle), l.default.createElement("span", {
-                                className: "kc-sort " + n
-                            })),
-                            t.sortOrder = s === t.dataIndex && f
-                        }
-                        return t
-                    });
-                    return l.default.createElement(r.default, o({
-                        columns: d,
-                        pagination: y(a)
-                    }, i))
-                }
-            }]),
-            t
-        }();
-        m.SortTable = v,
-        t.default = m
-    },
-    689: function(e, t, n) {
-        var r;
-        e.exports = (r = n(0),
-        function(e) {
-            function t(r) {
-                if (n[r])
-                    return n[r].exports;
-                var a = n[r] = {
-                    exports: {},
-                    id: r,
-                    loaded: !1
-                };
-                return e[r].call(a.exports, a, a.exports, t),
-                a.loaded = !0,
-                a.exports
-            }
-            var n = {};
-            return t.m = e,
-            t.c = n,
-            t.p = "",
-            t(0)
-        }([function(e, t, n) {
-            "use strict";
-            function r(e) {
-                return e && e.__esModule ? e : {
-                    default: e
-                }
-            }
-            Object.defineProperty(t, "__esModule", {
-                value: !0
-            });
-            var a = function() {
-                function e(e, t) {
-                    for (var n = 0; n < t.length; n++) {
-                        var r = t[n];
-                        r.enumerable = r.enumerable || !1,
-                        r.configurable = !0,
-                        "value"in r && (r.writable = !0),
-                        Object.defineProperty(e, r.key, r)
-                    }
-                }
-                return function(t, n, r) {
-                    return n && e(t.prototype, n),
-                    r && e(t, r),
-                    t
-                }
-            }()
-              , o = n(6)
-              , i = r(o)
-              , l = n(4)
-              , c = r(l)
-              , u = {
-                className: c.default.string,
-                onloadCallbackName: c.default.string,
-                elementID: c.default.string,
-                onloadCallback: c.default.func,
-                verifyCallback: c.default.func,
-                expiredCallback: c.default.func,
-                render: c.default.oneOf(["onload", "explicit"]),
-                sitekey: c.default.string,
-                theme: c.default.oneOf(["light", "dark"]),
-                type: c.default.string,
-                verifyCallbackName: c.default.string,
-                expiredCallbackName: c.default.string,
-                size: c.default.oneOf(["invisible", "compact", "normal"]),
-                tabindex: c.default.string,
-                hl: c.default.string,
-                badge: c.default.oneOf(["bottomright", "bottomleft", "inline"])
-            }
-              , s = function() {
-                return "undefined" != typeof window && void 0 !== window.grecaptcha && "function" == typeof window.grecaptcha.render
-            }
-              , f = void 0
-              , d = function(e) {
-                function t(e) {
-                    !function(e, t) {
-                        if (!(e instanceof t))
-                            throw new TypeError("Cannot call a class as a function")
-                    }(this, t);
-                    var n = function(e, t) {
-                        if (!e)
-                            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-                        return !t || "object" != typeof t && "function" != typeof t ? e : t
-                    }(this, (t.__proto__ || Object.getPrototypeOf(t)).call(this, e));
-                    return n._renderGrecaptcha = n._renderGrecaptcha.bind(n),
-                    n.reset = n.reset.bind(n),
-                    n.state = {
-                        ready: s(),
-                        widget: null
-                    },
-                    n.state.ready || "undefined" == typeof window || (f = setInterval(n._updateReadyState.bind(n), 1e3)),
-                    n
-                }
-                return function(e, t) {
-                    if ("function" != typeof t && null !== t)
-                        throw new TypeError("Super expression must either be null or a function, not " + typeof t);
-                    e.prototype = Object.create(t && t.prototype, {
-                        constructor: {
-                            value: e,
-                            enumerable: !1,
-                            writable: !0,
-                            configurable: !0
-                        }
-                    }),
-                    t && (Object.setPrototypeOf ? Object.setPrototypeOf(e, t) : e.__proto__ = t)
-                }(t, e),
-                a(t, [{
-                    key: "componentDidMount",
-                    value: function() {
-                        this.state.ready && this._renderGrecaptcha()
-                    }
-                }, {
-                    key: "componentDidUpdate",
-                    value: function(e, t) {
-                        var n = this.props
-                          , r = n.render
-                          , a = n.onloadCallback;
-                        "explicit" === r && a && this.state.ready && !t.ready && this._renderGrecaptcha()
-                    }
-                }, {
-                    key: "componentWillUnmount",
-                    value: function() {
-                        clearInterval(f)
-                    }
-                }, {
-                    key: "reset",
-                    value: function() {
-                        var e = this.state
-                          , t = e.ready
-                          , n = e.widget;
-                        t && null !== n && grecaptcha.reset(n)
-                    }
-                }, {
-                    key: "execute",
-                    value: function() {
-                        var e = this.state
-                          , t = e.ready
-                          , n = e.widget;
-                        t && null !== n && grecaptcha.execute(n)
-                    }
-                }, {
-                    key: "_updateReadyState",
-                    value: function() {
-                        s() && (this.setState({
-                            ready: !0
-                        }),
-                        clearInterval(f))
-                    }
-                }, {
-                    key: "_renderGrecaptcha",
-                    value: function() {
-                        this.state.widget = grecaptcha.render(this.props.elementID, {
-                            sitekey: this.props.sitekey,
-                            callback: this.props.verifyCallback ? this.props.verifyCallback : void 0,
-                            theme: this.props.theme,
-                            type: this.props.type,
-                            size: this.props.size,
-                            tabindex: this.props.tabindex,
-                            hl: this.props.hl,
-                            badge: this.props.badge,
-                            "expired-callback": this.props.expiredCallback ? this.props.expiredCallback : void 0
-                        }),
-                        this.props.onloadCallback && this.props.onloadCallback()
-                    }
-                }, {
-                    key: "render",
-                    value: function() {
-                        return "explicit" === this.props.render && this.props.onloadCallback ? i.default.createElement("div", {
-                            id: this.props.elementID,
-                            "data-onloadcallbackname": this.props.onloadCallbackName,
-                            "data-verifycallbackname": this.props.verifyCallbackName
-                        }) : i.default.createElement("div", {
-                            id: this.props.elementID,
-                            className: this.props.className,
-                            "data-sitekey": this.props.sitekey,
-                            "data-theme": this.props.theme,
-                            "data-type": this.props.type,
-                            "data-size": this.props.size,
-                            "data-badge": this.props.badge,
-                            "data-tabindex": this.props.tabindex
-                        })
-                    }
-                }]),
-                t
-            }(o.Component);
-            t.default = d,
-            d.propTypes = u,
-            d.defaultProps = {
-                elementID: "g-recaptcha",
-                className: "g-recaptcha",
-                onloadCallback: void 0,
-                onloadCallbackName: "onloadCallback",
-                verifyCallback: void 0,
-                verifyCallbackName: "verifyCallback",
-                expiredCallback: void 0,
-                expiredCallbackName: "expiredCallback",
-                render: "onload",
-                theme: "light",
-                type: "image",
-                size: "normal",
-                tabindex: "0",
-                hl: "en",
-                badge: "bottomright"
-            },
-            e.exports = t.default
-        }
-        , function(e, t) {
-            "use strict";
-            function n(e) {
-                return function() {
-                    return e
-                }
-            }
-            var r = function() {};
-            r.thatReturns = n,
-            r.thatReturnsFalse = n(!1),
-            r.thatReturnsTrue = n(!0),
-            r.thatReturnsNull = n(null),
-            r.thatReturnsThis = function() {
-                return this
-            }
-            ,
-            r.thatReturnsArgument = function(e) {
-                return e
-            }
-            ,
-            e.exports = r
-        }
-        , function(e, t, n) {
-            "use strict";
-            var r = function(e) {};
-            e.exports = function(e, t, n, a, o, i, l, c) {
-                if (r(t),
-                !e) {
-                    var u;
-                    if (void 0 === t)
-                        u = new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");
-                    else {
-                        var s = [n, a, o, i, l, c]
-                          , f = 0;
-                        (u = new Error(t.replace(/%s/g, function() {
-                            return s[f++]
-                        }))).name = "Invariant Violation"
-                    }
-                    throw u.framesToPop = 1,
-                    u
-                }
-            }
-        }
-        , function(e, t, n) {
-            "use strict";
-            var r = n(1)
-              , a = n(2)
-              , o = n(5);
-            e.exports = function() {
-                function e(e, t, n, r, i, l) {
-                    l !== o && a(!1, "Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types")
-                }
-                function t() {
-                    return e
-                }
-                e.isRequired = e;
-                var n = {
-                    array: e,
-                    bool: e,
-                    func: e,
-                    number: e,
-                    object: e,
-                    string: e,
-                    symbol: e,
-                    any: e,
-                    arrayOf: t,
-                    element: e,
-                    instanceOf: t,
-                    node: e,
-                    objectOf: t,
-                    oneOf: t,
-                    oneOfType: t,
-                    shape: t
-                };
-                return n.checkPropTypes = r,
-                n.PropTypes = n,
-                n
-            }
-        }
-        , function(e, t, n) {
-            e.exports = n(3)()
-        }
-        , function(e, t) {
-            "use strict";
-            e.exports = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED"
-        }
-        , function(e, t) {
-            e.exports = r
-        }
-        ]))
-    },
-    69: function(e, t, n) {
-        "use strict";
-        Object.defineProperty(t, "__esModule", {
-            value: !0
-        });
-        var r = o(n(11));
-        t.toArray = i,
-        t.getActiveIndex = function(e, t) {
-            for (var n = i(e), r = 0; r < n.length; r++)
-                if (n[r].key === t)
-                    return r;
-            return -1
-        }
-        ,
-        t.getActiveKey = function(e, t) {
-            return i(e)[t].key
-        }
-        ,
-        t.setTransform = l,
-        t.isTransformSupported = function(e) {
-            return "transform"in e || "webkitTransform"in e || "MozTransform"in e
-        }
-        ,
-        t.setTransition = function(e, t) {
-            e.transition = t,
-            e.webkitTransition = t,
-            e.MozTransition = t
-        }
-        ,
-        t.getTransformPropValue = function(e) {
-            return {
-                transform: e,
-                WebkitTransform: e,
-                MozTransform: e
-            }
-        }
-        ,
-        t.isVertical = c,
-        t.getTransformByIndex = function(e, t) {
-            return (c(t) ? "translateY" : "translateX") + "(" + 100 * -e + "%) translateZ(0)"
-        }
-        ,
-        t.getMarginStyle = function(e, t) {
-            var n = c(t) ? "marginTop" : "marginLeft";
-            return (0,
-            r.default)({}, n, 100 * -e + "%")
-        }
-        ,
-        t.getStyle = function(e, t) {
-            return +getComputedStyle(e).getPropertyValue(t).replace("px", "")
-        }
-        ,
-        t.setPxStyle = function(e, t, n) {
-            t = n ? "0px, " + t + "px, 0px" : t + "px, 0px, 0px",
-            l(e.style, "translate3d(" + t + ")")
-        }
-        ,
-        t.getDataAttr = function(e) {
-            return Object.keys(e).reduce(function(t, n) {
-                return "aria-" !== n.substr(0, 5) && "data-" !== n.substr(0, 5) && "role" !== n || (t[n] = e[n]),
-                t
-            }, {})
-        }
-        ;
-        var a = o(n(0));
-        function o(e) {
-            return e && e.__esModule ? e : {
-                default: e
-            }
-        }
-        function i(e) {
-            var t = [];
-            return a.default.Children.forEach(e, function(e) {
-                e && t.push(e)
-            }),
-            t
-        }
-        function l(e, t) {
-            e.transform = t,
-            e.webkitTransform = t,
-            e.mozTransform = t
-        }
-        function c(e) {
-            return "left" === e || "right" === e
-        }
-    },
-    690: function(e, t, n) {
-        "use strict";
-        e.exports = function(e) {
-            return 0 === e && 1 / e == -1 / 0
-        }
-    },
     857: function(e, t, n) {
         "use strict";
         Object.defineProperty(t, "__esModule", {
@@ -17541,7 +17546,7 @@
           , y = n.n(p)
           , m = n(9)
           , h = n.n(m)
-          , b = n(690)
+          , b = n(689)
           , v = n.n(b)
           , g = n(45)
           , M = n(26)
