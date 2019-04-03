@@ -5552,7 +5552,7 @@
                       , s = u.visibleBuyModal
                       , f = u.buyNum
                       , d = n.startTime
-                      , p = n.processingStatus
+                      , p = true
                       , h = n.countDownSeconds
                       , b = n.currency
                       , v = n.quoteCurrency
