@@ -6431,6 +6431,7 @@
             }
         })
           , Za = function(e) {
+              r.isInProcessing=true;
             var t = e.item
               , n = e.rule
               , r = e.qualification || {}
