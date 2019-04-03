@@ -5553,7 +5553,7 @@
                       , f = u.buyNum
                       , d = n.startTime
                       , p = n.processingStatus
-                      , h = n.countDownSeconds
+                      , h = 0
                       , b = n.currency
                       , v = n.quoteCurrency
                       , g = n.totalAmount
