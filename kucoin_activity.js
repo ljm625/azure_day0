@@ -6431,14 +6431,13 @@
             }
         })
           , Za = function(e) {
-              r.isInProcessing=true;
             var t = e.item
               , n = e.rule
               , r = e.qualification || {}
               , a = r.isCompletedKyc
-              , o = (r.isInProcessing,
+              , o = (true,
             r.isKycCountryInBlackList)
-              , i = (r.isPossibleOrder,
+              , i = (true,
             r.isSignedAgreement);
             return l.a.createElement("div", {
                 className: Xr.a.condition
