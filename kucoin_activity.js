@@ -5552,7 +5552,6 @@
                       , s = u.visibleBuyModal
                       , f = u.buyNum
                       , d = n.startTime
-                      , n.processingStatus = 1
                       , p = n.processingStatus
                       , h = n.countDownSeconds
                       , b = n.currency
@@ -5575,6 +5574,7 @@
                       , A = 1 === p
                       , z = r && x && A && S
                       , _ = null;
+                    n.processingStatus = 1
                     if (2 === p)
                         _ = l.a.createElement(dt.a, {
                             disabled: !0,
