@@ -5563,7 +5563,7 @@
                       , O = n.minUnitSize
                       , N = a || {}
                       , j = N.isCompletedKyc
-                      , E = (N.isInProcessing,
+                      , E = (true,
                     N.isKycCountryInBlackList)
                       , x = N.isPossibleOrder
                       , T = N.isSignedAgreement
@@ -6429,7 +6429,7 @@
               , n = e.rule
               , r = e.qualification || {}
               , a = r.isCompletedKyc
-              , o = (r.isInProcessing,
+              , o = (true,
             r.isKycCountryInBlackList)
               , i = (r.isPossibleOrder,
             r.isSignedAgreement);
