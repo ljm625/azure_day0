@@ -5563,7 +5563,7 @@
                       , O = n.minUnitSize
                       , N = a || {}
                       , j = N.isCompletedKyc
-                      , E = (N.isInProcessing,
+                      , E = (true,
                     N.isKycCountryInBlackList)
                       , x = N.isPossibleOrder
                       , T = N.isSignedAgreement
