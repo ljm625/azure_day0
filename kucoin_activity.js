@@ -5565,7 +5565,7 @@
                       , j = N.isCompletedKyc
                       , E = (true,
                     N.isKycCountryInBlackList)
-                      , x = N.isPossibleOrder
+                      , x = true
                       , T = N.isSignedAgreement
                       , S = N.isUnitSizeLeft
                       , D = (o || {}).WITHDRAW_PASSWORD
