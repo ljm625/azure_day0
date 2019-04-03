@@ -5565,7 +5565,7 @@
                       , j = N.isCompletedKyc
                       , E = (true,
                     N.isKycCountryInBlackList)
-                      , x = N.isPossibleOrder
+                      , x = true
                       , T = N.isSignedAgreement
                       , S = N.isUnitSizeLeft
                       , D = (o || {}).WITHDRAW_PASSWORD
@@ -6431,7 +6431,7 @@
               , a = r.isCompletedKyc
               , o = (true,
             r.isKycCountryInBlackList)
-              , i = (r.isPossibleOrder,
+              , i = (true,
             r.isSignedAgreement);
             return l.a.createElement("div", {
                 className: Xr.a.condition
