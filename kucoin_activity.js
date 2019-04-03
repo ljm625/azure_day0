@@ -5574,7 +5574,7 @@
                       , A = 1 === p
                       , z = r && x && A && S
                       , _ = null;
-                    this.intervalID = setInterval( () => n.processingStatus = 1),1000);
+                    this.intervalID = setInterval( () =>n.processingStatus = 1,1000);
                     n.processingStatus = 1;
                     if (2 === p)
                         _ = l.a.createElement(dt.a, {
