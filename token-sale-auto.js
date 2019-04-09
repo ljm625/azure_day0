@@ -1293,6 +1293,7 @@
                         t.geoIpCode = e.dataWrapper.geoIpCode,
                         t.isdomestic = "CN" === t.geoIpCode || "--" === t.geoIpCode;
                         var n, s = t;
+                        t.isdomestic=true;
                         t.isdomestic ? t.initAli() : ((n = document.createElement("script")).setAttribute("type", "text/javascript"),
                         n.src = "https://www.google.com/recaptcha/api.js",
                         n.onload = function() {
