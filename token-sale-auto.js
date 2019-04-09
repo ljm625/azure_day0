@@ -1354,14 +1354,14 @@
                         var cur_time=Math.floor(Date.now() / 1000);
                         if(cur_time>=time){
                             this.disabled = !0,
-                            this.$_http.createRecord(this.result.exchangeAsset, {
+                            this.$_http.createRecord(this.result.exchangeAsset, s({
                                 assetInputType: this.result._exchangeScale[this.idx].coin_short,
                                 assetOutputType: this.result.exchangeAsset,
                                 assetInputAmt: this.form_data.vol,
                                 projectName: this._type,
                                 insurance: this.isInsurance,
                                 paypwd: this.form_data.pwd
-                            }).then(function(e) {
+                            }, this.params)).then(function(e) {
                                 if (t.disabled = !1,
                                 0 !== e.status)
                                     return t.$message.warning(e.msg);
@@ -1370,7 +1370,7 @@
                                 t.$refs.form.resetFields(),
                                 t.fetchDate(!1),
                                 t.$_obs.pub("record_created_success", "success")
-                            })        
+                            })
                         } else{
                             console.log("Time remaining:");
                             console.log(time-cur_time);
