@@ -1496,6 +1496,7 @@
                     this.$_http.getTokenSaleDetail({
                         projectName: this._type
                     }).then(function(e) {
+                        e.dataWrapper.eosInfo.status="1"
                         if (t.loading = !1,
                         0 !== e.status)
                             return t.$message.warning(e.msg);
