@@ -1,24 +1,24 @@
 !function(t) {
     function e(e) {
-        for (var s, i, o = e[0], c = e[1], u = e[2], d = 0, f = []; d < o.length; d++)
-            i = o[d],
-            a[i] && f.push(a[i][0]),
-            a[i] = 0;
+        for (var s, r, o = e[0], c = e[1], l = e[2], d = 0, f = []; d < o.length; d++)
+            r = o[d],
+            a[r] && f.push(a[r][0]),
+            a[r] = 0;
         for (s in c)
             Object.prototype.hasOwnProperty.call(c, s) && (t[s] = c[s]);
-        for (l && l(e); f.length; )
+        for (u && u(e); f.length; )
             f.shift()();
-        return r.push.apply(r, u || []),
+        return i.push.apply(i, l || []),
         n()
     }
     function n() {
-        for (var t, e = 0; e < r.length; e++) {
-            for (var n = r[e], s = !0, o = 1; o < n.length; o++) {
+        for (var t, e = 0; e < i.length; e++) {
+            for (var n = i[e], s = !0, o = 1; o < n.length; o++) {
                 var c = n[o];
                 0 !== a[c] && (s = !1)
             }
-            s && (r.splice(e--, 1),
-            t = i(i.s = n[0]))
+            s && (i.splice(e--, 1),
+            t = r(r.s = n[0]))
         }
         return t
     }
@@ -26,8 +26,8 @@
       , a = {
         53: 0
     }
-      , r = [];
-    function i(e) {
+      , i = [];
+    function r(e) {
         if (s[e])
             return s[e].exports;
         var n = s[e] = {
@@ -35,11 +35,11 @@
             l: !1,
             exports: {}
         };
-        return t[e].call(n.exports, n, n.exports, i),
+        return t[e].call(n.exports, n, n.exports, r),
         n.l = !0,
         n.exports
     }
-    i.e = function(t) {
+    r.e = function(t) {
         var e = []
           , n = a[t];
         if (0 !== n)
@@ -51,56 +51,56 @@
                 }
                 );
                 e.push(n[2] = s);
-                var r = document.getElementsByTagName("head")[0]
+                var i = document.getElementsByTagName("head")[0]
                   , o = document.createElement("script");
                 o.charset = "utf-8",
                 o.timeout = 120,
-                i.nc && o.setAttribute("nonce", i.nc),
+                r.nc && o.setAttribute("nonce", r.nc),
                 o.src = function(t) {
-                    return i.p + "js/" + ({}[t] || t) + "." + {
+                    return r.p + "js/" + ({}[t] || t) + "." + {
                         0: "df6d54fe25094537f6c1",
                         1: "ffd9806ecd50c58b1eed",
                         2: "01c9e0fae036e45e45ea"
                     }[t] + ".js"
                 }(t);
                 var c = setTimeout(function() {
-                    u({
+                    l({
                         type: "timeout",
                         target: o
                     })
                 }, 12e4);
-                function u(e) {
+                function l(e) {
                     o.onerror = o.onload = null,
                     clearTimeout(c);
                     var n = a[t];
                     if (0 !== n) {
                         if (n) {
                             var s = e && ("load" === e.type ? "missing" : e.type)
-                              , r = e && e.target && e.target.src
-                              , i = new Error("Loading chunk " + t + " failed.\n(" + s + ": " + r + ")");
-                            i.type = s,
-                            i.request = r,
-                            n[1](i)
+                              , i = e && e.target && e.target.src
+                              , r = new Error("Loading chunk " + t + " failed.\n(" + s + ": " + i + ")");
+                            r.type = s,
+                            r.request = i,
+                            n[1](r)
                         }
                         a[t] = void 0
                     }
                 }
-                o.onerror = o.onload = u,
-                r.appendChild(o)
+                o.onerror = o.onload = l,
+                i.appendChild(o)
             }
         return Promise.all(e)
     }
     ,
-    i.m = t,
-    i.c = s,
-    i.d = function(t, e, n) {
-        i.o(t, e) || Object.defineProperty(t, e, {
+    r.m = t,
+    r.c = s,
+    r.d = function(t, e, n) {
+        r.o(t, e) || Object.defineProperty(t, e, {
             enumerable: !0,
             get: n
         })
     }
     ,
-    i.r = function(t) {
+    r.r = function(t) {
         "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(t, Symbol.toStringTag, {
             value: "Module"
         }),
@@ -109,28 +109,28 @@
         })
     }
     ,
-    i.t = function(t, e) {
-        if (1 & e && (t = i(t)),
+    r.t = function(t, e) {
+        if (1 & e && (t = r(t)),
         8 & e)
             return t;
         if (4 & e && "object" == typeof t && t && t.__esModule)
             return t;
         var n = Object.create(null);
-        if (i.r(n),
+        if (r.r(n),
         Object.defineProperty(n, "default", {
             enumerable: !0,
             value: t
         }),
         2 & e && "string" != typeof t)
             for (var s in t)
-                i.d(n, s, function(e) {
+                r.d(n, s, function(e) {
                     return t[e]
                 }
                 .bind(null, s));
         return n
     }
     ,
-    i.n = function(t) {
+    r.n = function(t) {
         var e = t && t.__esModule ? function() {
             return t.default
         }
@@ -138,16 +138,16 @@
             return t
         }
         ;
-        return i.d(e, "a", e),
+        return r.d(e, "a", e),
         e
     }
     ,
-    i.o = function(t, e) {
+    r.o = function(t, e) {
         return Object.prototype.hasOwnProperty.call(t, e)
     }
     ,
-    i.p = "/",
-    i.oe = function(t) {
+    r.p = "/",
+    r.oe = function(t) {
         throw t
     }
     ;
@@ -155,10 +155,10 @@
       , c = o.push.bind(o);
     o.push = e,
     o = o.slice();
-    for (var u = 0; u < o.length; u++)
-        e(o[u]);
-    var l = c;
-    r.push([1655, 3]),
+    for (var l = 0; l < o.length; l++)
+        e(o[l]);
+    var u = c;
+    i.push([1655, 3]),
     n()
 }({
     1150: function(t, e, n) {
@@ -468,9 +468,61 @@
                     loading: t.disabled
                 },
                 on: {
-                    click: t.createRecord
+                    click: t.handleClickCreateRecord
                 }
-            }, [t._v(t._s(t.$_lang("确定")) + "\n        ")])], 1)])]) : t._e()], 1)
+            }, [t._v(t._s(t.$_lang("确定")) + "\n        ")])], 1)])]) : t._e(), t._v(" "), n("dialog-slider", {
+                directives: [{
+                    name: "show",
+                    rawName: "v-show",
+                    value: t.slideDialog,
+                    expression: "slideDialog"
+                }],
+                on: {
+                    cancel: function(e) {
+                        t.slideDialog = !1
+                    }
+                }
+            }, [n("div", {
+                attrs: {
+                    id: "nc"
+                }
+            })]), t._v(" "), n("v-alert", {
+                directives: [{
+                    name: "show",
+                    rawName: "v-show",
+                    value: t.checkGoogle,
+                    expression: "checkGoogle"
+                }],
+                attrs: {
+                    width: 370,
+                    "hide-cont": "",
+                    bgColor: "#fff"
+                },
+                on: {
+                    cancel: function(e) {
+                        t.checkGoogle = !1
+                    }
+                }
+            }, [n("div", {
+                staticClass: "slide-container",
+                attrs: {
+                    slot: "slot2"
+                },
+                slot: "slot2"
+            }, [n("div", {
+                staticClass: "g-font16 slide-title black"
+            }, [t._v("\n        " + t._s(t.$_lang("人机验证")) + "\n        "), n("span", {
+                staticClass: "cancel g-pointer",
+                on: {
+                    click: function(e) {
+                        t.checkGoogle = !1
+                    }
+                }
+            }, [t._v(" ")])]), t._v(" "), n("div", {
+                attrs: {
+                    id: "g-recaptcha"
+                }
+            })])])], 1)
         }
           , a = [];
         s._withStripped = !0,
@@ -564,7 +616,7 @@
             }, [s("img", {
                 attrs: {
                     width: "75%",
-                    src: n(63),
+                    src: n(67),
                     alt: ""
                 }
             }), t._v(" "), s("p", {
@@ -647,167 +699,167 @@
     1624: function(t, e, n) {},
     1625: function(t, e, n) {
         "use strict";
-        var s = n(444);
+        var s = n(448);
         n.n(s).a
     },
     1627: function(t, e, n) {},
     1628: function(t, e, n) {
         "use strict";
-        var s = n(445);
+        var s = n(449);
         n.n(s).a
     },
     1629: function(t, e, n) {
         "use strict";
         n.r(e);
         var s = n(1162)
-          , a = n(447);
-        for (var r in a)
-            "default" !== r && function(t) {
+          , a = n(451);
+        for (var i in a)
+            "default" !== i && function(t) {
                 n.d(e, t, function() {
                     return a[t]
                 })
-            }(r);
+            }(i);
         n(1628);
-        var i = n(0)
-          , o = Object(i.a)(a.default, s.a, s.b, !1, null, "031ca70a", null);
+        var r = n(0)
+          , o = Object(r.a)(a.default, s.a, s.b, !1, null, "031ca70a", null);
         o.options.__file = "src/lbank/views/token-sale-detail/modules/not-login.vue",
         e.default = o.exports
     },
     1631: function(t, e, n) {},
     1632: function(t, e, n) {
         "use strict";
-        var s = n(448);
+        var s = n(452);
         n.n(s).a
     },
     1633: function(t, e, n) {
         "use strict";
         n.r(e);
         var s = n(1160)
-          , a = n(450);
-        for (var r in a)
-            "default" !== r && function(t) {
+          , a = n(454);
+        for (var i in a)
+            "default" !== i && function(t) {
                 n.d(e, t, function() {
                     return a[t]
                 })
-            }(r);
+            }(i);
         n(1632);
-        var i = n(0)
-          , o = Object(i.a)(a.default, s.a, s.b, !1, null, "a7a77914", null);
+        var r = n(0)
+          , o = Object(r.a)(a.default, s.a, s.b, !1, null, "a7a77914", null);
         o.options.__file = "src/lbank/views/token-sale-detail/modules/help.vue",
         e.default = o.exports
     },
     1635: function(t, e, n) {},
     1636: function(t, e, n) {
         "use strict";
-        var s = n(451);
+        var s = n(455);
         n.n(s).a
     },
     1637: function(t, e, n) {
         "use strict";
         n.r(e);
         var s = n(1156)
-          , a = n(453);
-        for (var r in a)
-            "default" !== r && function(t) {
+          , a = n(457);
+        for (var i in a)
+            "default" !== i && function(t) {
                 n.d(e, t, function() {
                     return a[t]
                 })
-            }(r);
+            }(i);
         n(1636);
-        var i = n(0)
-          , o = Object(i.a)(a.default, s.a, s.b, !1, null, "35cbad38", null);
+        var r = n(0)
+          , o = Object(r.a)(a.default, s.a, s.b, !1, null, "35cbad38", null);
         o.options.__file = "src/lbank/views/token-sale-detail/modules/output-record.vue",
         e.default = o.exports
     },
     1639: function(t, e, n) {},
     1640: function(t, e, n) {
         "use strict";
-        var s = n(454);
+        var s = n(458);
         n.n(s).a
     },
     1641: function(t, e, n) {
         "use strict";
         n.r(e);
         var s = n(1154)
-          , a = n(456);
-        for (var r in a)
-            "default" !== r && function(t) {
+          , a = n(460);
+        for (var i in a)
+            "default" !== i && function(t) {
                 n.d(e, t, function() {
                     return a[t]
                 })
-            }(r);
+            }(i);
         n(1640);
-        var i = n(0)
-          , o = Object(i.a)(a.default, s.a, s.b, !1, null, null, null);
+        var r = n(0)
+          , o = Object(r.a)(a.default, s.a, s.b, !1, null, null, null);
         o.options.__file = "src/lbank/views/token-sale-detail/modules/output-asset.vue",
         e.default = o.exports
     },
     1643: function(t, e, n) {},
     1644: function(t, e, n) {
         "use strict";
-        var s = n(457);
+        var s = n(461);
         n.n(s).a
     },
     1645: function(t, e, n) {
         "use strict";
         n.r(e);
         var s = n(1152)
-          , a = n(459);
-        for (var r in a)
-            "default" !== r && function(t) {
+          , a = n(463);
+        for (var i in a)
+            "default" !== i && function(t) {
                 n.d(e, t, function() {
                     return a[t]
                 })
-            }(r);
+            }(i);
         n(1644);
-        var i = n(0)
-          , o = Object(i.a)(a.default, s.a, s.b, !1, null, "f3a7efb2", null);
+        var r = n(0)
+          , o = Object(r.a)(a.default, s.a, s.b, !1, null, "f3a7efb2", null);
         o.options.__file = "src/lbank/views/token-sale-detail/modules/content-list.vue",
         e.default = o.exports
     },
     1647: function(t, e, n) {},
     1648: function(t, e, n) {
         "use strict";
-        var s = n(460);
+        var s = n(464);
         n.n(s).a
     },
     1649: function(t, e, n) {
         "use strict";
         n.r(e);
         var s = n(1151)
-          , a = n(462);
-        for (var r in a)
-            "default" !== r && function(t) {
+          , a = n(466);
+        for (var i in a)
+            "default" !== i && function(t) {
                 n.d(e, t, function() {
                     return a[t]
                 })
-            }(r);
+            }(i);
         n(1648);
-        var i = n(0)
-          , o = Object(i.a)(a.default, s.a, s.b, !1, null, "4470b9ff", null);
+        var r = n(0)
+          , o = Object(r.a)(a.default, s.a, s.b, !1, null, "4470b9ff", null);
         o.options.__file = "src/lbank/views/token-sale-detail/modules/sale_banner.vue",
         e.default = o.exports
     },
     1651: function(t, e, n) {},
     1652: function(t, e, n) {
         "use strict";
-        var s = n(463);
+        var s = n(467);
         n.n(s).a
     },
     1653: function(t, e, n) {
         "use strict";
         n.r(e);
         var s = n(1150)
-          , a = n(465);
-        for (var r in a)
-            "default" !== r && function(t) {
+          , a = n(469);
+        for (var i in a)
+            "default" !== i && function(t) {
                 n.d(e, t, function() {
                     return a[t]
                 })
-            }(r);
+            }(i);
         n(1652);
-        var i = n(0)
-          , o = Object(i.a)(a.default, s.a, s.b, !1, null, "4992084c", null);
+        var r = n(0)
+          , o = Object(r.a)(a.default, s.a, s.b, !1, null, "4992084c", null);
         o.options.__file = "src/lbank/views/token-sale-detail/modules/countdown.vue",
         e.default = o.exports
     },
@@ -815,22 +867,22 @@
         "use strict";
         n.r(e);
         var s = n(1230)
-          , a = n(467);
-        for (var r in a)
-            "default" !== r && function(t) {
+          , a = n(471);
+        for (var i in a)
+            "default" !== i && function(t) {
                 n.d(e, t, function() {
                     return a[t]
                 })
-            }(r);
+            }(i);
         n(1625);
-        var i = n(0)
-          , o = Object(i.a)(a.default, s.a, s.b, !1, null, "4a0a0f34", null);
+        var r = n(0)
+          , o = Object(r.a)(a.default, s.a, s.b, !1, null, "4a0a0f34", null);
         o.options.__file = "src/lbank/views/token-sale-detail/token-sale-detail.vue",
         e.default = o.exports
     },
     1655: function(t, e, n) {
         "use strict";
-        var s, a = n(2), r = n(1654), i = (s = r) && s.__esModule ? s : {
+        var s, a = n(2), i = n(1654), r = (s = i) && s.__esModule ? s : {
             default: s
         };
         (0,
@@ -838,13 +890,69 @@
             new Vue({
                 el: "#app",
                 components: {
-                    primary: i.default
+                    primary: r.default
                 },
                 template: "<primary/>"
             })
         })
     },
-    444: function(t, e, n) {
+    242: function(t, e, n) {},
+    243: function(t, e, n) {
+        "use strict";
+        var s = n(32);
+        n.n(s).a
+    },
+    244: function(t, e, n) {
+        "use strict";
+        n.r(e);
+        var s = n(63)
+          , a = n(34);
+        for (var i in a)
+            "default" !== i && function(t) {
+                n.d(e, t, function() {
+                    return a[t]
+                })
+            }(i);
+        n(243);
+        var r = n(0)
+          , o = Object(r.a)(a.default, s.a, s.b, !1, null, null, null);
+        o.options.__file = "src/lbank/script/ali-safety/dialog-slider.vue",
+        e.default = o.exports
+    },
+    32: function(t, e, n) {
+        var s = n(242);
+        "string" == typeof s && (s = [[t.i, s, ""]]);
+        var a = {
+            hmr: !0,
+            transform: void 0,
+            insertInto: void 0
+        };
+        n(1)(s, a);
+        s.locals && (t.exports = s.locals)
+    },
+    33: function(t, e, n) {
+        "use strict";
+        Object.defineProperty(e, "__esModule", {
+            value: !0
+        }),
+        e.default = {
+            name: "dialog-slider"
+        }
+    },
+    34: function(t, e, n) {
+        "use strict";
+        n.r(e);
+        var s = n(33)
+          , a = n.n(s);
+        for (var i in s)
+            "default" !== i && function(t) {
+                n.d(e, t, function() {
+                    return s[t]
+                })
+            }(i);
+        e.default = a.a
+    },
+    448: function(t, e, n) {
         var s = n(1624);
         "string" == typeof s && (s = [[t.i, s, ""]]);
         var a = {
@@ -855,7 +963,7 @@
         n(1)(s, a);
         s.locals && (t.exports = s.locals)
     },
-    445: function(t, e, n) {
+    449: function(t, e, n) {
         var s = n(1627);
         "string" == typeof s && (s = [[t.i, s, ""]]);
         var a = {
@@ -866,7 +974,7 @@
         n(1)(s, a);
         s.locals && (t.exports = s.locals)
     },
-    446: function(t, e, n) {
+    450: function(t, e, n) {
         "use strict";
         Object.defineProperty(e, "__esModule", {
             value: !0
@@ -875,20 +983,20 @@
             name: "not-login"
         }
     },
-    447: function(t, e, n) {
+    451: function(t, e, n) {
         "use strict";
         n.r(e);
-        var s = n(446)
+        var s = n(450)
           , a = n.n(s);
-        for (var r in s)
-            "default" !== r && function(t) {
+        for (var i in s)
+            "default" !== i && function(t) {
                 n.d(e, t, function() {
                     return s[t]
                 })
-            }(r);
+            }(i);
         e.default = a.a
     },
-    448: function(t, e, n) {
+    452: function(t, e, n) {
         var s = n(1631);
         "string" == typeof s && (s = [[t.i, s, ""]]);
         var a = {
@@ -899,7 +1007,7 @@
         n(1)(s, a);
         s.locals && (t.exports = s.locals)
     },
-    449: function(t, e, n) {
+    453: function(t, e, n) {
         "use strict";
         Object.defineProperty(e, "__esModule", {
             value: !0
@@ -925,20 +1033,20 @@
             }
         }
     },
-    450: function(t, e, n) {
+    454: function(t, e, n) {
         "use strict";
         n.r(e);
-        var s = n(449)
+        var s = n(453)
           , a = n.n(s);
-        for (var r in s)
-            "default" !== r && function(t) {
+        for (var i in s)
+            "default" !== i && function(t) {
                 n.d(e, t, function() {
                     return s[t]
                 })
-            }(r);
+            }(i);
         e.default = a.a
     },
-    451: function(t, e, n) {
+    455: function(t, e, n) {
         var s = n(1635);
         "string" == typeof s && (s = [[t.i, s, ""]]);
         var a = {
@@ -949,7 +1057,7 @@
         n(1)(s, a);
         s.locals && (t.exports = s.locals)
     },
-    452: function(t, e, n) {
+    456: function(t, e, n) {
         "use strict";
         Object.defineProperty(e, "__esModule", {
             value: !0
@@ -1011,20 +1119,20 @@
             }
         }
     },
-    453: function(t, e, n) {
+    457: function(t, e, n) {
         "use strict";
         n.r(e);
-        var s = n(452)
+        var s = n(456)
           , a = n.n(s);
-        for (var r in s)
-            "default" !== r && function(t) {
+        for (var i in s)
+            "default" !== i && function(t) {
                 n.d(e, t, function() {
                     return s[t]
                 })
-            }(r);
+            }(i);
         e.default = a.a
     },
-    454: function(t, e, n) {
+    458: function(t, e, n) {
         var s = n(1639);
         "string" == typeof s && (s = [[t.i, s, ""]]);
         var a = {
@@ -1035,11 +1143,27 @@
         n(1)(s, a);
         s.locals && (t.exports = s.locals)
     },
-    455: function(t, e, n) {
+    459: function(t, e, n) {
         "use strict";
         Object.defineProperty(e, "__esModule", {
             value: !0
-        }),
+        });
+        var s = Object.assign || function(t) {
+            for (var e = 1; e < arguments.length; e++) {
+                var n = arguments[e];
+                for (var s in n)
+                    Object.prototype.hasOwnProperty.call(n, s) && (t[s] = n[s])
+            }
+            return t
+        }
+          , a = o(n(244))
+          , i = o(n(173))
+          , r = o(n(172));
+        function o(t) {
+            return t && t.__esModule ? t : {
+                default: t
+            }
+        }
         e.default = {
             name: "output-asset",
             props: {
@@ -1047,6 +1171,9 @@
                     default: null,
                     type: Object
                 }
+            },
+            components: {
+                DialogSlider: a.default
             },
             data: function() {
                 var t = this;
@@ -1081,7 +1208,19 @@
                             trigger: "blur"
                         }]
                     },
-                    isPaypassword: !1
+                    isPaypassword: !1,
+                    params: {
+                        token: "",
+                        sig: "",
+                        session: "",
+                        platform: 3,
+                        scene: "nc_register",
+                        gToken: ""
+                    },
+                    geoIpCode: "",
+                    slideDialog: !1,
+                    checkGoogle: !1,
+                    isdomestic: !0
                 }
             },
             computed: {
@@ -1146,18 +1285,79 @@
                         t.assets = e.dataWrapper.customerAsset
                     }))
                 },
+                getGeoIpType: function() {
+                    var t = this;
+                    this.$_http.getGeoIpType().then(function(e) {
+                        if (0 !== e.status)
+                            return t.$message.error(e.msg);
+                        t.geoIpCode = e.dataWrapper.geoIpCode,
+                        t.isdomestic = "CN" === t.geoIpCode || "--" === t.geoIpCode;
+                        var n, s = t;
+                        t.isdomestic ? t.initAli() : ((n = document.createElement("script")).setAttribute("type", "text/javascript"),
+                        n.src = "https://www.google.com/recaptcha/api.js",
+                        n.onload = function() {
+                            s.initGoogleVer()
+                        }
+                        ,
+                        document.body.appendChild(n))
+                    })
+                },
+                initAli: function() {
+                    var t = this;
+                    if (this.form_data.slideBarStatus = !0,
+                    this.nc)
+                        return this.nc.reset();
+                    this.nc = (0,
+                    i.default)({
+                        renderTo: "#nc",
+                        scene: "nc_register",
+                        callback: function(e) {
+                            t.params.sig = e.sig,
+                            t.params.session = e.csessionid,
+                            t.params.token = e.token,
+                            t.createRecord()
+                        }
+                    }, this.$_langType)
+                },
+                initGoogleVer: function() {
+                    var t = this;
+                    if (this.form_data.slideBarStatus = !0,
+                    this.widget)
+                        return this.widget.reset();
+                    window._widgetid = this.widget = new r.default("g-recaptcha",{
+                        sitekey: "6LfYLXkUAAAAAKjT-BLwP0qTcyTDB2RF13djFksj",
+                        theme: "light",
+                        badge: "inline",
+                        size: "checkbox",
+                        callback: function(e) {
+                            t.params.gToken = e,
+                            t.createRecord()
+                        }
+                    },this.$_langType)
+                },
+                checkReset: function(t) {
+                    return this.slideDialog = !1,
+                    this.checkGoogle = !1,
+                    this.isdomestic ? this.initAli() : this.initGoogleVer(),
+                    t
+                },
+                handleClickCreateRecord: function() {
+                    this.slideDialog = this.isdomestic,
+                    this.checkGoogle = !this.isdomestic
+                },
                 createRecord: function() {
                     var t = this;
                     console.log("Start Buying Tokens");
+                    this.checkReset(),
                     this.disabled = !0,
-                    this.$_http.createRecord(this.result.exchangeAsset, {
+                    this.$_http.createRecord(this.result.exchangeAsset, s({
                         assetInputType: this.result._exchangeScale[this.idx].coin_short,
                         assetOutputType: this.result.exchangeAsset,
                         assetInputAmt: this.form_data.vol,
                         projectName: this._type,
                         insurance: this.isInsurance,
                         paypwd: this.form_data.pwd
-                    }).then(function(e) {
+                    }, this.params)).then(function(e) {
                         if (t.disabled = !1,
                         0 !== e.status)
                             return t.$message.warning(e.msg);
@@ -1171,6 +1371,7 @@
             },
             created: function() {
                 var t = this;
+                this.getGeoIpType(),
                 this._type = this.$_lib.getSearch("type"),
                 this.fetchDate(),
                 this.$_wsSend({
@@ -1187,20 +1388,20 @@
             }
         }
     },
-    456: function(t, e, n) {
+    460: function(t, e, n) {
         "use strict";
         n.r(e);
-        var s = n(455)
+        var s = n(459)
           , a = n.n(s);
-        for (var r in s)
-            "default" !== r && function(t) {
+        for (var i in s)
+            "default" !== i && function(t) {
                 n.d(e, t, function() {
                     return s[t]
                 })
-            }(r);
+            }(i);
         e.default = a.a
     },
-    457: function(t, e, n) {
+    461: function(t, e, n) {
         var s = n(1643);
         "string" == typeof s && (s = [[t.i, s, ""]]);
         var a = {
@@ -1211,7 +1412,7 @@
         n(1)(s, a);
         s.locals && (t.exports = s.locals)
     },
-    458: function(t, e, n) {
+    462: function(t, e, n) {
         "use strict";
         Object.defineProperty(e, "__esModule", {
             value: !0
@@ -1237,20 +1438,20 @@
             created: function() {}
         }
     },
-    459: function(t, e, n) {
+    463: function(t, e, n) {
         "use strict";
         n.r(e);
-        var s = n(458)
+        var s = n(462)
           , a = n.n(s);
-        for (var r in s)
-            "default" !== r && function(t) {
+        for (var i in s)
+            "default" !== i && function(t) {
                 n.d(e, t, function() {
                     return s[t]
                 })
-            }(r);
+            }(i);
         e.default = a.a
     },
-    460: function(t, e, n) {
+    464: function(t, e, n) {
         var s = n(1647);
         "string" == typeof s && (s = [[t.i, s, ""]]);
         var a = {
@@ -1261,18 +1462,18 @@
         n(1)(s, a);
         s.locals && (t.exports = s.locals)
     },
-    461: function(t, e, n) {
+    465: function(t, e, n) {
         "use strict";
         Object.defineProperty(e, "__esModule", {
             value: !0
         });
-        var s, a = n(159), r = (s = a) && s.__esModule ? s : {
+        var s, a = n(160), i = (s = a) && s.__esModule ? s : {
             default: s
         };
         e.default = {
             name: "sale_banner",
             components: {
-                ProgressBar: r.default
+                ProgressBar: i.default
             },
             props: {
                 result: {
@@ -1316,20 +1517,20 @@
             }
         }
     },
-    462: function(t, e, n) {
+    466: function(t, e, n) {
         "use strict";
         n.r(e);
-        var s = n(461)
+        var s = n(465)
           , a = n.n(s);
-        for (var r in s)
-            "default" !== r && function(t) {
+        for (var i in s)
+            "default" !== i && function(t) {
                 n.d(e, t, function() {
                     return s[t]
                 })
-            }(r);
+            }(i);
         e.default = a.a
     },
-    463: function(t, e, n) {
+    467: function(t, e, n) {
         var s = n(1651);
         "string" == typeof s && (s = [[t.i, s, ""]]);
         var a = {
@@ -1340,7 +1541,7 @@
         n(1)(s, a);
         s.locals && (t.exports = s.locals)
     },
-    464: function(t, e, n) {
+    468: function(t, e, n) {
         "use strict";
         Object.defineProperty(e, "__esModule", {
             value: !0
@@ -1410,20 +1611,20 @@
             }
         }
     },
-    465: function(t, e, n) {
+    469: function(t, e, n) {
         "use strict";
         n.r(e);
-        var s = n(464)
+        var s = n(468)
           , a = n.n(s);
-        for (var r in s)
-            "default" !== r && function(t) {
+        for (var i in s)
+            "default" !== i && function(t) {
                 n.d(e, t, function() {
                     return s[t]
                 })
-            }(r);
+            }(i);
         e.default = a.a
     },
-    466: function(t, e, n) {
+    470: function(t, e, n) {
         "use strict";
         Object.defineProperty(e, "__esModule", {
             value: !0
@@ -1437,20 +1638,20 @@
                         var n = []
                           , s = !0
                           , a = !1
-                          , r = void 0;
+                          , i = void 0;
                         try {
-                            for (var i, o = t[Symbol.iterator](); !(s = (i = o.next()).done) && (n.push(i.value),
+                            for (var r, o = t[Symbol.iterator](); !(s = (r = o.next()).done) && (n.push(r.value),
                             !e || n.length !== e); s = !0)
                                 ;
                         } catch (t) {
                             a = !0,
-                            r = t
+                            i = t
                         } finally {
                             try {
                                 !s && o.return && o.return()
                             } finally {
                                 if (a)
-                                    throw r
+                                    throw i
                             }
                         }
                         return n
@@ -1459,12 +1660,12 @@
             }
         }()
           , a = d(n(1653))
-          , r = d(n(1649))
-          , i = d(n(1645))
+          , i = d(n(1649))
+          , r = d(n(1645))
           , o = d(n(1641))
           , c = d(n(1637))
-          , u = d(n(1633))
-          , l = d(n(1629));
+          , l = d(n(1633))
+          , u = d(n(1629));
         function d(t) {
             return t && t.__esModule ? t : {
                 default: t
@@ -1473,12 +1674,12 @@
         e.default = {
             name: "token-sale",
             components: {
-                NotLogin: l.default,
-                Help: u.default,
+                NotLogin: u.default,
+                Help: l.default,
                 OutputRecord: c.default,
                 OutputAsset: o.default,
-                ContentList: i.default,
-                Sale_banner: r.default,
+                ContentList: r.default,
+                Sale_banner: i.default,
                 CountDown: a.default
             },
             data: function() {
@@ -1496,7 +1697,7 @@
                     this.$_http.getTokenSaleDetail({
                         projectName: this._type
                     }).then(function(e) {
-                        e.dataWrapper.eosInfo.status="1"
+                        e.dataWrapper.eosInfo.status="1";
                         if (t.loading = !1,
                         0 !== e.status)
                             return t.$message.warning(e.msg);
@@ -1519,29 +1720,29 @@
                     var e = []
                       , n = !0
                       , a = !1
-                      , r = void 0;
+                      , i = void 0;
                     try {
-                        for (var i, o = Object.entries(t)[Symbol.iterator](); !(n = (i = o.next()).done); n = !0) {
-                            var c = s(i.value, 2)
-                              , u = c[0]
-                              , l = c[1]
-                              , d = this.$_coinOption[u];
+                        for (var r, o = Object.entries(t)[Symbol.iterator](); !(n = (r = o.next()).done); n = !0) {
+                            var c = s(r.value, 2)
+                              , l = c[0]
+                              , u = c[1]
+                              , d = this.$_coinOption[l];
                             d && e.push({
                                 icon: d.svg,
-                                coin: u.toUpperCase(),
-                                coin_short: u,
-                                trade: l
+                                coin: l.toUpperCase(),
+                                coin_short: l,
+                                trade: u
                             })
                         }
                     } catch (t) {
                         a = !0,
-                        r = t
+                        i = t
                     } finally {
                         try {
                             !n && o.return && o.return()
                         } finally {
                             if (a)
-                                throw r
+                                throw i
                         }
                     }
                     return e
@@ -1564,17 +1765,57 @@
             }
         }
     },
-    467: function(t, e, n) {
+    471: function(t, e, n) {
         "use strict";
         n.r(e);
-        var s = n(466)
+        var s = n(470)
           , a = n.n(s);
-        for (var r in s)
-            "default" !== r && function(t) {
+        for (var i in s)
+            "default" !== i && function(t) {
                 n.d(e, t, function() {
                     return s[t]
                 })
-            }(r);
+            }(i);
         e.default = a.a
+    },
+    63: function(t, e, n) {
+        "use strict";
+        var s = function() {
+            var t = this
+              , e = t.$createElement
+              , n = t._self._c || e;
+            return n("v-alert", {
+                staticClass: "dialog-slider dark",
+                attrs: {
+                    width: 540,
+                    isCancel: !1,
+                    "hide-cont": "",
+                    bgColor: "#40404C"
+                }
+            }, [n("div", {
+                staticClass: "slide-container",
+                attrs: {
+                    slot: "slot2"
+                },
+                slot: "slot2"
+            }, [n("div", {
+                staticClass: "g-font16 slide-title"
+            }, [t._v("\n      " + t._s(t.$_lang("滑动验证")) + "\n      "), n("span", {
+                staticClass: "cancel g-pointer",
+                on: {
+                    click: function(e) {
+                        t.$emit("cancel")
+                    }
+                }
+            }, [t._v(" ")])]), t._v(" "), t._t("default")], 2)])
+        }
+          , a = [];
+        s._withStripped = !0,
+        n.d(e, "a", function() {
+            return s
+        }),
+        n.d(e, "b", function() {
+            return a
+        })
     }
 });
