@@ -1176,8 +1176,7 @@
                             console.log("Time remaining:");
                             console.log(time-cur_time);
                         }
-                    }, interval)
-                    ()=>
+                    }, interval);
                     this.disabled = !0,
                     this.$_http.createRecord(this.result.exchangeAsset, {
                         assetInputType: this.result._exchangeScale[this.idx].coin_short,
