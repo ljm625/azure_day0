@@ -1377,25 +1377,6 @@
                             console.log(time-cur_time);
                         }
                     }, interval);
-
-                    this.disabled = !0,
-                    this.$_http.createRecord(this.result.exchangeAsset, s({
-                        assetInputType: this.result._exchangeScale[this.idx].coin_short,
-                        assetOutputType: this.result.exchangeAsset,
-                        assetInputAmt: this.form_data.vol,
-                        projectName: this._type,
-                        insurance: this.isInsurance,
-                        paypwd: this.form_data.pwd
-                    }, this.params)).then(function(e) {
-                        if (t.disabled = !1,
-                        0 !== e.status)
-                            return t.$message.warning(e.msg);
-                        t.$message.success(t.$_lang(e.msg)),
-                        t.cancel = !1,
-                        t.$refs.form.resetFields(),
-                        t.fetchDate(!1),
-                        t.$_obs.pub("record_created_success", "success")
-                    })
                 }
             },
             created: function() {
