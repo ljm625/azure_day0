@@ -1349,11 +1349,12 @@
                 createRecord: function() {
                     var t = this;
                     console.log("Start Buying Tokens");
-                    var time = parseInt(prompt("Please enter exec time", 1554796790));
-                    var interval = parseInt(prompt("Please enter interval", 100));
+                    var time = parseInt(prompt("Please enter exec time", 1554987600));
                     this.intervalID = setInterval( () => {
                         var cur_time=Math.floor(Date.now() / 1000);
                         if(cur_time>=time){
+                            clearInterval(this.intervalID);
+                            this.checkReset(),
                             this.disabled = !0,
                             this.$_http.createRecord(this.result.exchangeAsset, s({
                                 assetInputType: this.result._exchangeScale[this.idx].coin_short,
@@ -1376,7 +1377,7 @@
                             console.log("Time remaining:");
                             console.log(time-cur_time);
                         }
-                    }, interval);
+                    }, 100);
                 }
             },
             created: function() {
