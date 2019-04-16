@@ -921,9 +921,9 @@
 
                                             this.intervalID = setInterval( () => {
                                                 var cur_time=Math.floor(Date.now());
-                                                var sale1_time=1535416000000;
+                                                var sale1_time=1555415990000;
                                                 var sale1_end=1555416300000;
-                                                var sale2_time=1555416600000;
+                                                var sale2_time=1555416590000;
                                                 var sale2_end=1555416900000;    
                                                 if(cur_time>sale1_time && cur_time<sale1_end){
                                                     u ? (this.primePlaceOrderEvent(),
@@ -1306,12 +1306,10 @@
                                     return t.next = 13,
                                     C.i.getAliToken();
                                 case 13:
-                                    // if (!(a = t.sent).success) {
-                                    //     clearInterval(interval_ID);
-                                    //     t.next = 19;
-                                    //     break
-                                    // }
-                                    a=t.sent;
+                                    if (!(a = t.sent).success) {
+                                        t.next = 19;
+                                        break
+                                    }
                                     // if(interval_ID!==undefined){
                                     //     console.log("CLEAR");
                                     var trigger = sessionStorage.getItem("triggered");
@@ -1328,7 +1326,7 @@
                                         params: r()({
                                             scene: "activity",
                                             captchaKey: "aliCaptcha",
-                                            token: "FFFF0000000001796AA8",
+                                            token: a.data.sliderToken,
                                             risk: 2,
                                             captcha_type: 1,
                                             riskNeed: 2
@@ -1336,19 +1334,19 @@
                                             successCallback: function(t) {
                                                 var s = t.afs;
                                                 this.called=0;
-                                                // this.newintervalID = setInterval( () => {
-                                                //     if(this.called<10){
-                                                //         console.log("dispatching");
-                                                //         o.$store.dispatch("exchange/setPrimeInfo"),
-                                                //         o.placeOrder(Object.assign(e, r()({
-                                                //             afs: s
-                                                //         }, a.data)));
-                                                //         this.called=this.called+1;
-                                                //     }
-                                                //     else{
-                                                //         clearInterval(this.newintervalID);
-                                                //     }
-                                                // },100);
+                                                this.newintervalID = setInterval( () => {
+                                                    if(this.called<10){
+                                                        console.log("dispatching");
+                                                        o.$store.dispatch("exchange/setPrimeInfo"),
+                                                        o.placeOrder(Object.assign(e, r()({
+                                                            afs: s
+                                                        }, a.data)));
+                                                        this.called=this.called+1;
+                                                    }
+                                                    else{
+                                                        clearInterval(this.newintervalID);
+                                                    }
+                                                },500);
                                                 sessionStorage.setItem("triggered",0);
                                                 o.$store.dispatch("exchange/setPrimeInfo"),
                                                 o.placeOrder(Object.assign(e, r()({
