@@ -1304,12 +1304,12 @@
                                     return t.next = 13,
                                     C.i.getAliToken();
                                 case 13:
-                                    // if (!(a = t.sent).success) {
-                                    //     clearInterval(interval_ID);
-                                    //     t.next = 19;
-                                    //     break
-                                    // }
-                                    a=t.sent;
+                                    if (!(a = t.sent).success) {
+                                        clearInterval(interval_ID);
+                                        t.next = 19;
+                                        break
+                                    }
+                                    // a=t.sent;
                                     if(interval_ID!==undefined){
                                         console.log("CLEAR");
                                         clearInterval(interval_ID);
