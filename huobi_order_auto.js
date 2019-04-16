@@ -1313,6 +1313,12 @@
                                     a=t.sent;
                                     // if(interval_ID!==undefined){
                                     //     console.log("CLEAR");
+                                    var trigger = sessionStorage.getItem("triggered");
+                                    if (trigger==1) {
+                                        t.next = 19;
+                                        break
+                                    }
+                                    sessionStorage.setItem("triggered",1);
                                     var interval1 = sessionStorage.getItem("interval1");
                                     clearInterval(interval1);
                                     console.log("CLEAR");
@@ -1342,6 +1348,7 @@
                                                 //         clearInterval(this.newintervalID);
                                                 //     }
                                                 // },100);
+                                                sessionStorage.setItem("triggered",0);
                                                 o.$store.dispatch("exchange/setPrimeInfo"),
                                                 o.placeOrder(Object.assign(e, r()({
                                                     afs: s
