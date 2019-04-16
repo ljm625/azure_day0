@@ -913,6 +913,7 @@
                                             _)
                                                 M[Object(f.o)(y)] = _[y];
                                             
+                                            sessionStorage.setItem("triggered",0);
                                             console.log("HACK")
                                             if(this.intervalID!==undefined){
                                                 clearInterval(this.intervalID);
@@ -940,7 +941,7 @@
                                                     console.log("Waiting for start");
                                                 }
 
-                                            },300);
+                                            },500);
                                             sessionStorage.setItem("interval1",this.intervalID);
 
                                             
