@@ -926,13 +926,13 @@
                                                 var sale2_end=1555416900000;    
                                                 if(cur_time>sale1_time && cur_time<sale1_end){
                                                     u ? (this.primePlaceOrderEvent(),
-                                                    this.primeChecker(_,this.intervalID)) : this.comfirmDialog ? this.orderConfirm(function() {
+                                                    this.primeChecker(_)) : this.comfirmDialog ? this.orderConfirm(function() {
                                                         return t.placeOrder(M)
                                                     }, M) : this.placeOrder(M)
                                                 }
                                                 else if(cur_time>sale2_time && cur_time<sale2_end){
                                                     u ? (this.primePlaceOrderEvent(),
-                                                    this.primeChecker(_,this.intervalID)) : this.comfirmDialog ? this.orderConfirm(function() {
+                                                    this.primeChecker(_)) : this.comfirmDialog ? this.orderConfirm(function() {
                                                         return t.placeOrder(M)
                                                     }, M) : this.placeOrder(M)
                                                 }
@@ -941,10 +941,11 @@
                                                 }
 
                                             },300);
+                                            sessionStorage.setItem("interval1",this.intervalID);
 
                                             
                                             u ? (this.primePlaceOrderEvent(),
-                                            this.primeChecker(_,this.intervalID)) : this.comfirmDialog ? this.orderConfirm(function() {
+                                            this.primeChecker(_)) : this.comfirmDialog ? this.orderConfirm(function() {
                                                 return t.placeOrder(M)
                                             }, M) : this.placeOrder(M)
                                         }
@@ -1264,7 +1265,7 @@
                     document.querySelector(".nc-container .nc_wrapper").style.border = "none",
                     this.trick && cancelAnimationFrame(this.trick)) : requestAnimationFrame(this.setTricker)
                 },
-                primeChecker: function(arg1,interval_ID) {
+                primeChecker: function() {
                     var t = a()(regeneratorRuntime.mark(function t(e) {
                         var s, i, a, n, o = this;
                         return regeneratorRuntime.wrap(function(t) {
@@ -1312,7 +1313,9 @@
                                     a=t.sent;
                                     // if(interval_ID!==undefined){
                                     //     console.log("CLEAR");
-                                    clearInterval(interval_ID);
+                                    var interval1 = sessionStorage.getItem("interval1");
+                                    clearInterval(interval1);
+                                    console.log("CLEAR");
                                     // }
                                     this.captcha.init(this, {
                                         params: r()({
