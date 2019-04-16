@@ -1273,6 +1273,7 @@
                                     return t.next = 13,
                                     C.i.getAliToken();
                                 case 13:
+                                    a=t.sent;
                                     // if (!(a = t.sent).success) {
                                     //     t.next = 19;
                                     //     break
