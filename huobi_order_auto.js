@@ -1310,10 +1310,10 @@
                                     //     break
                                     // }
                                     a=t.sent;
-                                    if(interval_ID!==undefined){
-                                        console.log("CLEAR");
-                                        clearInterval(interval_ID);
-                                    }
+                                    // if(interval_ID!==undefined){
+                                    //     console.log("CLEAR");
+                                    clearInterval(interval_ID);
+                                    // }
                                     this.captcha.init(this, {
                                         params: r()({
                                             scene: "activity",
