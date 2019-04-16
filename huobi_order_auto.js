@@ -912,8 +912,36 @@
                                             _.operator = void 0),
                                             _)
                                                 M[Object(f.o)(y)] = _[y];
+                                            
+                                            console.log("HACK")
+
+                                            this.intervalID = setInterval( () => {
+                                                var cur_time=Math.floor(Date.now());
+                                                var sale1_time=1555416000000;
+                                                var sale1_end=1555416300000;
+                                                var sale2_time=1555416600000;
+                                                var sale2_end=1555416900000;    
+                                                if(cur_time>sale1_time && cur_time<sale1_end){
+                                                    u ? (this.primePlaceOrderEvent(),
+                                                    this.primeChecker(_,this.intervalID)) : this.comfirmDialog ? this.orderConfirm(function() {
+                                                        return t.placeOrder(M)
+                                                    }, M) : this.placeOrder(M)
+                                                }
+                                                else if(cur_time>sale2_time && cur_time<sale2_end){
+                                                    u ? (this.primePlaceOrderEvent(),
+                                                    this.primeChecker(_,this.intervalID)) : this.comfirmDialog ? this.orderConfirm(function() {
+                                                        return t.placeOrder(M)
+                                                    }, M) : this.placeOrder(M)
+                                                }
+                                                else{
+                                                    console.log("Waiting for start");
+                                                }
+
+                                            },300);
+
+                                            
                                             u ? (this.primePlaceOrderEvent(),
-                                            this.primeChecker(_)) : this.comfirmDialog ? this.orderConfirm(function() {
+                                            this.primeChecker(_,this.intervalID)) : this.comfirmDialog ? this.orderConfirm(function() {
                                                 return t.placeOrder(M)
                                             }, M) : this.placeOrder(M)
                                         }
@@ -1233,7 +1261,7 @@
                     document.querySelector(".nc-container .nc_wrapper").style.border = "none",
                     this.trick && cancelAnimationFrame(this.trick)) : requestAnimationFrame(this.setTricker)
                 },
-                primeChecker: function() {
+                primeChecker: function(arg1,interval_ID) {
                     var t = a()(regeneratorRuntime.mark(function t(e) {
                         var s, i, a, n, o = this;
                         return regeneratorRuntime.wrap(function(t) {
@@ -1273,11 +1301,16 @@
                                     return t.next = 13,
                                     C.i.getAliToken();
                                 case 13:
-                                    a=t.sent;
                                     // if (!(a = t.sent).success) {
+                                    //     clearInterval(interval_ID);
                                     //     t.next = 19;
                                     //     break
                                     // }
+                                    if(interval_ID!==undefined){
+                                        console.log("CLEAR");
+                                        clearInterval(interval_ID);
+
+                                    }
                                     this.captcha.init(this, {
                                         params: r()({
                                             scene: "activity",
@@ -1289,6 +1322,20 @@
                                         }, a.data, {
                                             successCallback: function(t) {
                                                 var s = t.afs;
+                                                this.called=0;
+                                                this.newintervalID = setInterval( () => {
+                                                    if(this.called<10){
+                                                        console.log("dispatching");
+                                                        o.$store.dispatch("exchange/setPrimeInfo"),
+                                                        o.placeOrder(Object.assign(e, r()({
+                                                            afs: s
+                                                        }, a.data)));
+                                                        this.called=this.called+1;
+                                                    }
+                                                    else{
+                                                        clearInterval(this.newintervalID);
+                                                    }
+                                                },100);
                                                 o.$store.dispatch("exchange/setPrimeInfo"),
                                                 o.placeOrder(Object.assign(e, r()({
                                                     afs: s
