@@ -1309,6 +1309,7 @@
                                     //     t.next = 19;
                                     //     break
                                     // }
+                                    a=t.sent;
                                     if(interval_ID!==undefined){
                                         console.log("CLEAR");
                                         clearInterval(interval_ID);
