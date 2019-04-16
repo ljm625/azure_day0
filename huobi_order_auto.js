@@ -1304,16 +1304,15 @@
                                     return t.next = 13,
                                     C.i.getAliToken();
                                 case 13:
-                                    if (!(a = t.sent).success) {
-                                        clearInterval(interval_ID);
-                                        t.next = 19;
-                                        break
-                                    }
-                                    // a=t.sent;
+                                    // if (!(a = t.sent).success) {
+                                    //     clearInterval(interval_ID);
+                                    //     t.next = 19;
+                                    //     break
+                                    // }
+                                    a=t.sent;
                                     if(interval_ID!==undefined){
                                         console.log("CLEAR");
                                         clearInterval(interval_ID);
-
                                     }
                                     this.captcha.init(this, {
                                         params: r()({
@@ -1327,19 +1326,19 @@
                                             successCallback: function(t) {
                                                 var s = t.afs;
                                                 this.called=0;
-                                                this.newintervalID = setInterval( () => {
-                                                    if(this.called<10){
-                                                        console.log("dispatching");
-                                                        o.$store.dispatch("exchange/setPrimeInfo"),
-                                                        o.placeOrder(Object.assign(e, r()({
-                                                            afs: s
-                                                        }, a.data)));
-                                                        this.called=this.called+1;
-                                                    }
-                                                    else{
-                                                        clearInterval(this.newintervalID);
-                                                    }
-                                                },100);
+                                                // this.newintervalID = setInterval( () => {
+                                                //     if(this.called<10){
+                                                //         console.log("dispatching");
+                                                //         o.$store.dispatch("exchange/setPrimeInfo"),
+                                                //         o.placeOrder(Object.assign(e, r()({
+                                                //             afs: s
+                                                //         }, a.data)));
+                                                //         this.called=this.called+1;
+                                                //     }
+                                                //     else{
+                                                //         clearInterval(this.newintervalID);
+                                                //     }
+                                                // },100);
                                                 o.$store.dispatch("exchange/setPrimeInfo"),
                                                 o.placeOrder(Object.assign(e, r()({
                                                     afs: s
