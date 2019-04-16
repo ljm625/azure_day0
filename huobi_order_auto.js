@@ -914,10 +914,13 @@
                                                 M[Object(f.o)(y)] = _[y];
                                             
                                             console.log("HACK")
+                                            if(this.intervalID!==undefined){
+                                                clearInterval(this.intervalID);
+                                            }
 
                                             this.intervalID = setInterval( () => {
                                                 var cur_time=Math.floor(Date.now());
-                                                var sale1_time=1555416000000;
+                                                var sale1_time=1535416000000;
                                                 var sale1_end=1555416300000;
                                                 var sale2_time=1555416600000;
                                                 var sale2_end=1555416900000;    
