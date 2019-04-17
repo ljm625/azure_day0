@@ -38799,7 +38799,7 @@ function() {
         });
         a.breadCrumb.states = [{
             name: "cloudExpress",
-            title: "CloudExpress",
+            title: "云服务",
             state: "app.config.cloudExpress.dashboard"
         }, {
             name: "manageCloudExpress",
@@ -38827,7 +38827,7 @@ function() {
         a.longName = angular.isDefined(b.params.applicationName) && "" !== b.params.applicationName && null != b.params.applicationName ? b.params.applicationName : b.params.applicationType,
         a.breadCrumb.states = [{
             name: "cloudExpress",
-            title: "CloudExpress",
+            title: "云服务",
             state: "app.config.cloudExpress.dashboard"
         }, {
             name: a.longName,
@@ -39072,7 +39072,7 @@ function() {
     function a(a, b, c, d, e) {
         a.breadCrumb.states = [{
             name: "cloudExpress",
-            title: "CloudExpress",
+            title: "云服务",
             state: "app.config.cloudExpress.dashboard"
         }, {
             name: "cloudExpressOverview",
@@ -39230,7 +39230,7 @@ function() {
         a.manageApplicationVpn = new c,
         a.breadCrumb.states = [{
             name: "cloudExpress",
-            title: "CloudExpress",
+            title: "云服务",
             state: "app.config.cloudExpress.dashboard"
         }, {
             name: "manageCloudExpress",
@@ -39259,7 +39259,7 @@ function() {
     function a(a, b) {
         a.breadCrumb.states = [{
             name: "cloudExpress",
-            title: "CloudExpress",
+            title: "云服务",
             state: "app.config.cloudExpress.dashboard"
         }, {
             name: "cloudExpressOverview",
@@ -39276,7 +39276,7 @@ function() {
     function a(a, b) {
         a.breadCrumb.states = [{
             name: "cloudExpress",
-            title: "CloudExpress",
+            title: "云服务",
             state: "app.config.cloudExpress.dashboard"
         }, {
             name: "manageGateways",
@@ -39327,7 +39327,7 @@ function() {
     function a(a, b) {
         a.breadCrumb.states = [{
             name: "cloudExpress",
-            title: "CloudExpress",
+            title: "云服务",
             state: "app.config.cloudExpress.dashboard"
         }, {
             name: "manageGateways",
@@ -39379,7 +39379,7 @@ function() {
         a.manageSites = new c(b.current.url),
         a.breadCrumb.states = [{
             name: "cloudExpress",
-            title: "CloudExpress",
+            title: "云服务",
             state: "app.config.cloudExpress.dashboard"
         }, {
             name: "manageGateways",
