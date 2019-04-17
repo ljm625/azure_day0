@@ -61332,7 +61332,7 @@ function() {
             state: "app.monitor.devices.grid"
         }, {
             name: "acl_log",
-            title: "ACL Logs"
+            title: "测试"
         }],
         n = 205) : a.breadCrumb = {
             states: []
@@ -79758,7 +79758,7 @@ angular.module("vManage").config(["$stateProvider", "$urlRouterProvider", functi
         controller: "CloudExpressController"
     }).state("app.config.cloudExpress.dashboard", {
         url: "/dashboard",
-        templateUrl: "app/configuration/cloudExpress/templates/cloudExpressDashboard.html",
+        templateUrl: "  ",
         controller: "CloudExpressDashboardController"
     }).state("app.config.cloudExpress.overview", {
         url: "/overview/{applicationType}",
