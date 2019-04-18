@@ -1190,7 +1190,7 @@
                                 if (t.$refs.form.resetFields(),
                                 t.disabled = !1,
                                 t.confirmOrder = !1,
-                                this.checkReset(),
+                                t.checkReset(),
                                 0 !== e.status)
                                     return t.$message.warning(e.msg);
                                 clearInterval(intervalId);
