@@ -1242,6 +1242,8 @@
             },
             computed: {
                 statusComputed: function() {
+                    console.log(this.resultInfo);
+                    this.resultInfo.status=1;
                     var t = {
                         "-1": {
                             content: "已结束",
@@ -1262,7 +1264,7 @@
                             color: "#5FB717"
                         }
                     };
-                    return t[1] || t[-1]
+                    return t[this.resultInfo.status] || t[-1]
                 },
                 currentPeriod: function() {
                     return {
