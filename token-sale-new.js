@@ -1146,6 +1146,7 @@
                     //     t.$_obs.pub("record_created_success", "success")
                     // })
                     var t = this;
+                    this.params_list=[];
                     this.checkReset();
                     this.disabled = !1;
                     if (this.intervalStarted) {
