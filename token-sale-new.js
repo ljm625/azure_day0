@@ -1190,11 +1190,12 @@
                                 if (t.$refs.form.resetFields(),
                                 t.disabled = !1,
                                 t.confirmOrder = !1,
-                                t.checkReset(),
+                                // t.checkReset(),
                                 0 !== e.status)
                                     return t.$message.warning(e.msg);
                                 clearInterval(intervalId);
                                 this.intervalStarted=false;
+
                                 t.$message.success(t.$_lang(e.msg)),
                                 t.fetchAssets(),
                                 t.$_obs.pub("record_created_success", "success")
@@ -1204,7 +1205,7 @@
                                     last_delta=delta;
                             }
                         }
-                },200)
+                },200);
                 }
             },
             created: function() {
