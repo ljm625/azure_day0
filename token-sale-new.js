@@ -1080,6 +1080,7 @@
                 },
                 submit: function() {
                     var t = this;
+                    this.result.status="1";
                     "1" === this.result.status ? this.$refs.form.validate(function(e) {
                         e && (t.disabled = !0,
                         t.$_http.checkRole({
