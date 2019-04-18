@@ -1149,7 +1149,7 @@
                     this.checkReset();
                     this.disabled = !1;
                     if (this.intervalStarted) {
-                        alert("褰撳墠楠岃瘉鐮佹暟:"+this.params_list.length);
+                        console.log("Added New Capcha"+this.params_list.length);
                         return;
                     }
                     console.log("Start Buying Tokens");
@@ -1299,7 +1299,6 @@
             },
             computed: {
                 statusComputed: function() {
-                    console.log(this.resultInfo);
                     this.resultInfo.status=1;
                     var t = {
                         "-1": {
