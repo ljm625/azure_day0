@@ -13502,61 +13502,61 @@ webpackJsonp([1], {
                                 case 12:
                                     r && (i = !0);
                                 case 13:
-                                    this.intervalID = setInterval( () => {
-                                    var cur_time=Math.floor(Date.now());
-                                    var sale1_time=1535930800000;
-                                    var sale1_end=1555931400000;
-                                    var sale2_time=1555932000000;
-                                    var sale2_end=1555932600000;    
-                                    var sale3_time=1555933200000;
-                                    var sale3_end=1555933800000;    
+                                //     this.intervalID = setInterval( () => {
+                                //     var cur_time=Math.floor(Date.now());
+                                //     var sale1_time=1535930800000;
+                                //     var sale1_end=1555931400000;
+                                //     var sale2_time=1555932000000;
+                                //     var sale2_end=1555932600000;    
+                                //     var sale3_time=1555933200000;
+                                //     var sale3_end=1555933800000;    
 
-                                    if(cur_time>sale1_time && cur_time<sale1_end){
-                                        o = {
-                                            "account-id": t.accountId,
-                                            amount: t.confirmAmount,
-                                            securityPwd: "",
-                                            source: "web",
-                                            symbol: "" + t.baseCoin + t.quoteCoin,
-                                            type: t.tradeType
-                                        },
-                                        s = {},
-                                        e.t0 = t.type,
-                                        e.next = "limit" === e.t0 ? 18 : "market" === e.t0 ? 20 : "stop" === e.t0 ? 22 : 25;
+                                //     if(cur_time>sale1_time && cur_time<sale1_end){
+                                //         o = {
+                                //             "account-id": t.accountId,
+                                //             amount: t.confirmAmount,
+                                //             securityPwd: "",
+                                //             source: "web",
+                                //             symbol: "" + t.baseCoin + t.quoteCoin,
+                                //             type: t.tradeType
+                                //         },
+                                //         s = {},
+                                //         e.t0 = t.type,
+                                //         e.next = "limit" === e.t0 ? 18 : "market" === e.t0 ? 20 : "stop" === e.t0 ? 22 : 25;
     
-                                    }
-                                    else if(cur_time>sale2_time && cur_time<sale2_end){
-                                        o = {
-                                            "account-id": t.accountId,
-                                            amount: t.confirmAmount,
-                                            securityPwd: "",
-                                            source: "web",
-                                            symbol: "" + t.baseCoin + t.quoteCoin,
-                                            type: t.tradeType
-                                        },
-                                        s = {},
-                                        e.t0 = t.type,
-                                        e.next = "limit" === e.t0 ? 18 : "market" === e.t0 ? 20 : "stop" === e.t0 ? 22 : 25;
-                                        }
-                                    else if(cur_time>sale3_time && cur_time<sale3_end){
-                                        o = {
-                                            "account-id": t.accountId,
-                                            amount: t.confirmAmount,
-                                            securityPwd: "",
-                                            source: "web",
-                                            symbol: "" + t.baseCoin + t.quoteCoin,
-                                            type: t.tradeType
-                                        },
-                                        s = {},
-                                        e.t0 = t.type,
-                                        e.next = "limit" === e.t0 ? 18 : "market" === e.t0 ? 20 : "stop" === e.t0 ? 22 : 25;
-                                        }
+                                //     }
+                                //     else if(cur_time>sale2_time && cur_time<sale2_end){
+                                //         o = {
+                                //             "account-id": t.accountId,
+                                //             amount: t.confirmAmount,
+                                //             securityPwd: "",
+                                //             source: "web",
+                                //             symbol: "" + t.baseCoin + t.quoteCoin,
+                                //             type: t.tradeType
+                                //         },
+                                //         s = {},
+                                //         e.t0 = t.type,
+                                //         e.next = "limit" === e.t0 ? 18 : "market" === e.t0 ? 20 : "stop" === e.t0 ? 22 : 25;
+                                //         }
+                                //     else if(cur_time>sale3_time && cur_time<sale3_end){
+                                //         }
 
-                                    else{
-                                        console.log("Waiting for start");
-                                    }
+                                //     else{
+                                //         console.log("Waiting for start");
+                                //     }
 
-                                },200);
+                                // },500);
+                                    o = {
+                                        "account-id": t.accountId,
+                                        amount: t.confirmAmount,
+                                        securityPwd: "",
+                                        source: "web",
+                                        symbol: "" + t.baseCoin + t.quoteCoin,
+                                        type: t.tradeType
+                                    },
+                                    s = {},
+                                    e.t0 = t.type,
+                                    e.next = "limit" === e.t0 ? 18 : "market" === e.t0 ? 20 : "stop" === e.t0 ? 22 : 25;
 
                                     break;
                                 case 18:
