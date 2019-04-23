@@ -1439,6 +1439,9 @@ function trade_operator(s, l, n, o, p, _, u, g, y) {
               , B = "/json_svr/" + M + "/?u=1" + page_rand();
               
               var intervalId = setInterval(() => {
+                var M = tradeTabInterface[tradeTabs.indexOf(g_trade_type)]
+                , B = "/json_svr/" + M + "/?u=1" + page_rand();
+  
                 $.ajax({
                     type: "post",
                     url: B,
