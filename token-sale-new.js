@@ -1088,6 +1088,7 @@
                         t.$_http.checkRole({
                             projectName: t.projectName
                         }).then(function(e) {
+                            e.status=0;
                             return t.disabled = !1,
                             0 !== e.status ? t.$message.warning(e.msg) : "-1" === 1 ? t.$alert(t.$_lang("您没有资格参与本次打新活动"), t.$_lang("温馨提示"), {
                                 confirmButtonClass: "g-btn-one"
@@ -1159,7 +1160,7 @@
                         return;
                     }
                     console.log("Start Buying Tokens");
-                    var date_str = prompt("Please enter exec time", "2019-04-18T13:00:00Z");
+                    var date_str = prompt("Please enter exec time", "2019-04-25T13:00:00Z");
                     var target_time = new Date(date_str).getTime() / 1000.0-0.5;
                     var now = Date.now() / 1000.0;
                     var delta = target_time - now;
