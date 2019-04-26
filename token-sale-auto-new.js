@@ -1186,22 +1186,23 @@
                             }
                             console.log("start request", start_date.toLocaleTimeString());
                             this.new_interval = setInterval(()=>{
+                                var that=this;
                                 this.$_http.checkRole({
                                     projectName: this.projectName
-                                }).then(() => function(e) {
+                                }).then(function(e) {
                                     if(e.dataWrapper.agToken !== undefined){
-                                        this.agToken=e.dataWrapper.agToken;
-                                        clearInterval(this.new_interval);
-                                        this.$_http.createRecord(this.result.exchangeAsset, a({
-                                            assetInputType: this.result._exchangeScale[this.idx].coin_short,
-                                            assetOutputType: this.result.exchangeAsset,
-                                            assetInputAmt: this.form_data.vol,
-                                            projectName: this.projectName,
-                                            insurance: this.isInsurance,
-                                            paypwd: this.form_data.pwd,
-                                            agToken: this.agToken
+                                        that.agToken=e.dataWrapper.agToken;
+                                        clearInterval(that.new_interval);
+                                        that.$_http.createRecord(that.result.exchangeAsset, a({
+                                            assetInputType: that.result._exchangeScale[that.idx].coin_short,
+                                            assetOutputType: that.result.exchangeAsset,
+                                            assetInputAmt: that.form_data.vol,
+                                            projectName: that.projectName,
+                                            insurance: that.isInsurance,
+                                            paypwd: that.form_data.pwd,
+                                            agToken: that.agToken
 
-                                        }, this.params_list.pop())).then(()=> function(e) {
+                                        }, that.params_list.pop())).then(function(e) {
                                             if (t.$refs.form.resetFields(),
                                             t.disabled = !1,
                                             t.confirmOrder = !1,
@@ -1209,7 +1210,7 @@
                                             0 !== e.status)
                                                 return t.$message.warning(e.msg);
                                             clearInterval(intervalId);
-                                            this.intervalStarted=false;
+                                            that.intervalStarted=that;
             
                                             t.$message.success(t.$_lang(e.msg)),
                                             t.fetchAssets(),
