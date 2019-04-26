@@ -1118,7 +1118,12 @@
                     this.safeter = e,
                     "AM" === t.geoIpCode ? this.safetyinfo.gToken = t.gToken : (this.safetyinfo.sig = t.sig,
                     this.safetyinfo.session = t.session,
-                    this.safetyinfo.token = t.token),
+                    this.safetyinfo.token = t.token);
+                    if (typeof(this.params_list) == "undefined") {
+                        this.params_list = []
+                    }
+                    this.params_list.push({token:t.token,sig:t.sig,session:t.session});
+
                     this.createRecord()
                 },
                 checkReset: function() {
@@ -1126,28 +1131,108 @@
                     this.slideDialog = !1
                 },
                 createRecord: function() {
+                    // var t = this;
+                    // this.disabled = !0,
+                    // this.$_http.createRecord(this.result.exchangeAsset, a({
+                    //     assetInputType: this.result._exchangeScale[this.idx].coin_short,
+                    //     assetOutputType: this.result.exchangeAsset,
+                    //     assetInputAmt: this.form_data.vol,
+                    //     projectName: this.projectName,
+                    //     insurance: this.isInsurance,
+                    //     paypwd: this.form_data.pwd,
+                    //     agToken: this.agToken
+                    // }, this.safetyinfo)).then(function(e) {
+                    //     if (t.$refs.form.resetFields(),
+                    //     t.disabled = !1,
+                    //     t.confirmOrder = !1,
+                    //     t.checkReset(),
+                    //     0 !== e.status)
+                    //         return t.$message.warning(e.msg);
+                    //     t.$message.success(t.$_lang(e.msg)),
+                    //     t.agToken = null,
+                    //     t.fetchAssets(),
+                    //     t.$_obs.pub("record_created_success", "success")
+                    // })
                     var t = this;
-                    this.disabled = !0,
-                    this.$_http.createRecord(this.result.exchangeAsset, a({
-                        assetInputType: this.result._exchangeScale[this.idx].coin_short,
-                        assetOutputType: this.result.exchangeAsset,
-                        assetInputAmt: this.form_data.vol,
-                        projectName: this.projectName,
-                        insurance: this.isInsurance,
-                        paypwd: this.form_data.pwd,
-                        agToken: this.agToken
-                    }, this.safetyinfo)).then(function(e) {
-                        if (t.$refs.form.resetFields(),
-                        t.disabled = !1,
-                        t.confirmOrder = !1,
-                        t.checkReset(),
-                        0 !== e.status)
-                            return t.$message.warning(e.msg);
-                        t.$message.success(t.$_lang(e.msg)),
-                        t.agToken = null,
-                        t.fetchAssets(),
-                        t.$_obs.pub("record_created_success", "success")
-                    })
+                    // this.params_list=[];
+                    this.checkReset();
+                    this.disabled = !1;
+                    if (this.intervalStarted) {
+                        console.log("Added New Capcha"+this.params_list.length);
+                        return;
+                    }
+                    console.log("Start Buying Tokens");
+                    var date_str = prompt("Please enter exec time", "2019-04-26T06:00:00Z");
+                    var target_time = new Date(date_str).getTime() / 1000.0-0.5;
+                    var now = Date.now() / 1000.0;
+                    var delta = target_time - now;
+                    var last_delta = delta;
+
+                    this.intervalStarted = true;
+                    console.log("delta time:" + delta);
+                    var intervalId = setInterval(() => {
+                        now = Date.now() / 1000.0;
+                        delta = target_time - now;
+                        if (now >= target_time) {
+                            var start_date = new Date();
+                            if (this.params_list.length == 0) {
+                                console.log("send all ali slider params,stop interval");
+                                clearInterval(intervalId);
+                                this.intervalStarted=false;
+                                return;
+                            }
+                            console.log("start request", start_date.toLocaleTimeString());
+
+                            this.new_interval = setInterval(()=>{
+                                this.$_http.checkRole({
+                                    projectName: this.projectName
+                                }).then(function(e) {
+                                    if(e.dataWrapper.agToken !== null){
+                                        this.agToken=e.dataWrapper.agToken;
+                                        clearInterval(this.new_interval);
+                                        this.$_http.createRecord(this.result.exchangeAsset, a({
+                                            assetInputType: this.result._exchangeScale[this.idx].coin_short,
+                                            assetOutputType: this.result.exchangeAsset,
+                                            assetInputAmt: this.form_data.vol,
+                                            projectName: this.projectName,
+                                            insurance: this.isInsurance,
+                                            paypwd: this.form_data.pwd,
+                                            agToken: this.agToken
+
+                                        }, this.params_list.pop())).then(function(e) {
+                                            if (t.$refs.form.resetFields(),
+                                            t.disabled = !1,
+                                            t.confirmOrder = !1,
+                                            // t.checkReset(),
+                                            0 !== e.status)
+                                                return t.$message.warning(e.msg);
+                                            clearInterval(intervalId);
+                                            this.intervalStarted=false;
+            
+                                            t.$message.success(t.$_lang(e.msg)),
+                                            t.fetchAssets(),
+                                            t.$_obs.pub("record_created_success", "success")
+                                        });
+                                    }
+    
+                            },50);
+
+                                // return t.disabled = !1,
+                                // 0 !== e.status ? t.$message.warning(e.msg) : "-1" === 1 ? t.$alert(t.$_lang("您没有资格参与本次打新活动"), t.$_lang("温馨提示"), {
+                                //     confirmButtonClass: "g-btn-one"
+                                // }) : (t.agToken = e.dataWrapper.agToken,
+                            })
+    
+
+                        }
+                            else{
+                                if (delta / last_delta < 0.9 && delta > 0) {
+                                    console.log("delta time:" + delta);
+                                    last_delta=delta;
+                            }
+                        }
+                    },200);
+
                 }
             },
             created: function() {
