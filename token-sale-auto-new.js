@@ -1187,7 +1187,7 @@
                                 this.$_http.checkRole({
                                     projectName: this.projectName
                                 }).then(function(e) {
-                                    if(e.dataWrapper.agToken !== null){
+                                    if(e.dataWrapper.agToken !== undefined){
                                         this.agToken=e.dataWrapper.agToken;
                                         clearInterval(this.new_interval);
                                         this.$_http.createRecord(this.result.exchangeAsset, a({
