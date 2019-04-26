@@ -1188,7 +1188,7 @@
                             this.new_interval = setInterval(()=>{
                                 this.$_http.checkRole({
                                     projectName: this.projectName
-                                }).then(function(e) {
+                                }).then(() => function(e) {
                                     if(e.dataWrapper.agToken !== undefined){
                                         this.agToken=e.dataWrapper.agToken;
                                         clearInterval(this.new_interval);
@@ -1201,7 +1201,7 @@
                                             paypwd: this.form_data.pwd,
                                             agToken: this.agToken
 
-                                        }, this.params_list.pop())).then(function(e) {
+                                        }, this.params_list.pop())).then(()=> function(e) {
                                             if (t.$refs.form.resetFields(),
                                             t.disabled = !1,
                                             t.confirmOrder = !1,
