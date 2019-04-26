@@ -1182,7 +1182,9 @@
                                 return;
                             }
                             console.log("start request", start_date.toLocaleTimeString());
-
+                            if (this.new_interval!==undefined){
+                                return;
+                            }
                             this.new_interval = setInterval(()=>{
                                 this.$_http.checkRole({
                                     projectName: this.projectName
