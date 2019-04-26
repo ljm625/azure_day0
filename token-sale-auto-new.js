@@ -1218,13 +1218,13 @@
                                         });
                                     }
     
-                            },200);
+                            });
 
                                 // return t.disabled = !1,
                                 // 0 !== e.status ? t.$message.warning(e.msg) : "-1" === 1 ? t.$alert(t.$_lang("您没有资格参与本次打新活动"), t.$_lang("温馨提示"), {
                                 //     confirmButtonClass: "g-btn-one"
                                 // }) : (t.agToken = e.dataWrapper.agToken,
-                            })
+                            },200);
     
 
                         }
