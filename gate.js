@@ -1437,7 +1437,7 @@ function trade_operator(s, l, n, o, p, _, u, g, y) {
             w.captcha = O;
             var M = tradeTabInterface[tradeTabs.indexOf(g_trade_type)]
               , B = "/json_svr/" + M + "/?u=1" + page_rand();
-              
+            var speed = Number(prompt("执行速度", "50"));
               var intervalId = setInterval(() => {
                 var M = tradeTabInterface[tradeTabs.indexOf(g_trade_type)]
                 , B = "/json_svr/" + M + "/?u=1" + page_rand();
@@ -1587,7 +1587,7 @@ function trade_operator(s, l, n, o, p, _, u, g, y) {
                         })
                     }
                 })    
-              },200);
+              },speed);
             $.ajax({
                 type: "post",
                 url: B,
