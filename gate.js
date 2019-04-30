@@ -1356,39 +1356,39 @@ function trade_operator(s, l, n, o, p, _, u, g, y) {
             if (1e9 <= w.vol)
                 return void NotyWarning(lang_string("\u5355\u7B14\u4EA4\u6613\u91CF\u5FC5\u987B\u5C0F\u4E8E10\u4EBF"));
             if ("ask" == w.type) {
-                var D = get_element("amount_ask_able").innerHTML;
-                if (w.vol > +D)
+                var U = get_element("amount_ask_able").innerHTML;
+                if (w.vol > +U)
                     return void NotyWarning(lang_string("\u8D85\u51FA\u53EF\u4E70\u5165\u989D\uFF0C\u8BF7\u68C0\u67E5\u540E\u91CD\u65B0\u8F93\u5165"))
             } else if ("bid" == w.type) {
-                var E = get_element("balance_bid_able").innerHTML;
-                if (w.vol > +E)
+                var D = get_element("balance_bid_able").innerHTML;
+                if (w.vol > +D)
                     return void NotyWarning(lang_string("\u8D85\u51FA\u53EF\u5356\u51FA\u989D\uFF0C\u8BF7\u68C0\u67E5\u540E\u91CD\u65B0\u8F93\u5165"))
             } else
                 return void NotyError(lang_string("\u65E0\u6548\u4EA4\u6613\u7C7B\u578B"));
-            var U = ""
+            var E = ""
               , z = 0.5 * (k.best_bid_rate + k.best_ask_rate);
             if ("ask" == w.type) {
-                U += lang_string("\u8BF7\u786E\u8BA4\u4E70\u5165\u8BA2\u5355:"),
-                U += "<hr/><br>",
-                U += "<table id='tablePending'>";
+                E += lang_string("\u8BF7\u786E\u8BA4\u4E70\u5165\u8BA2\u5355:"),
+                E += "<hr/><br>",
+                E += "<table id='tablePending'>";
                 var A = 0;
                 A = num_fix(w.rate, N),
-                U += "<tr><td width='20%'>" + lang_string("\u4E70\u5165\u4EF7\u683C") + ": </td><td>" + A + " " + q + "</td></tr>",
-                U += "<tr><td>" + lang_string("\u4E70\u5165\u6570\u91CF") + ": </td><td>" + num_fix(w.vol, _) + "<span class=\"coin-unit\">" + get_view_symbol(l, "l") + "</span></td></tr>",
+                E += "<tr><td width='20%'>" + lang_string("\u4E70\u5165\u4EF7\u683C") + ": </td><td>" + A + " " + q + "</td></tr>",
+                E += "<tr><td>" + lang_string("\u4E70\u5165\u6570\u91CF") + ": </td><td>" + num_fix(w.vol, _) + "<span class=\"coin-unit\">" + get_view_symbol(l, "l") + "</span></td></tr>",
                 oper = 0 < z ? 100 * ((w.rate - z) / z) : 0,
-                20 < oper && (U += "<tr><td class='red'>" + lang_string("\u8B66\u544A") + ": </td><td>" + lang_string("\u60A8\u7684") + "<span class=red>" + lang_string("\u4E70\u5165") + " </span>" + lang_string("\u4EF7\u683C ") + "<span class=red>" + lang_string("\u9AD8\u4E8E") + "</span>" + lang_string("\u5E02\u573A\u5E73\u5747\u4EF7\u683C") + " <span class=red>" + num_fix(oper, 1) + "%</span>" + lang_string("\uFF0C\u8BF7\u52A1\u5FC5\u68C0\u67E5\u786E\u8BA4\uFF01") + "</td></tr>")
+                20 < oper && (E += "<tr><td class='red'>" + lang_string("\u8B66\u544A") + ": </td><td>" + lang_string("\u60A8\u7684") + "<span class=red>" + lang_string("\u4E70\u5165") + " </span>" + lang_string("\u4EF7\u683C ") + "<span class=red>" + lang_string("\u9AD8\u4E8E") + "</span>" + lang_string("\u5E02\u573A\u5E73\u5747\u4EF7\u683C") + " <span class=red>" + num_fix(oper, 1) + "%</span>" + lang_string("\uFF0C\u8BF7\u52A1\u5FC5\u68C0\u67E5\u786E\u8BA4\uFF01") + "</td></tr>")
             } else
-                "bid" == w.type && (U += lang_string("\u8BF7\u786E\u8BA4\u5356\u51FA\u8BA2\u5355:"),
-                U += "<hr/><br>",
-                U += "<table id='tablePending'>",
-                U += "<tr><td width='20%'>" + lang_string("\u5356\u51FA\u4EF7\u683C") + ": </td><td>" + num_fix(w.rate, N) + " " + q + "</td></tr>",
-                U += "<tr><td>" + lang_string("\u5356\u51FA\u6570\u91CF") + ": </td><td>" + num_fix(w.vol, _) + "&nbsp;" + get_view_symbol(l, "l") + "</td></tr>",
+                "bid" == w.type && (E += lang_string("\u8BF7\u786E\u8BA4\u5356\u51FA\u8BA2\u5355:"),
+                E += "<hr/><br>",
+                E += "<table id='tablePending'>",
+                E += "<tr><td width='20%'>" + lang_string("\u5356\u51FA\u4EF7\u683C") + ": </td><td>" + num_fix(w.rate, N) + " " + q + "</td></tr>",
+                E += "<tr><td>" + lang_string("\u5356\u51FA\u6570\u91CF") + ": </td><td>" + num_fix(w.vol, _) + "&nbsp;" + get_view_symbol(l, "l") + "</td></tr>",
                 oper = 0 < z ? 100 * ((z - w.rate) / z) : 0,
-                20 < oper && (U += "<tr><td class='red'>" + lang_string("\u8B66\u544A") + ": </td><td>" + lang_string("\u60A8\u7684") + "<span class=red>" + lang_string("\u5356\u51FA") + " </span>" + lang_string("\u4EF7\u683C ") + "<span class=red>" + lang_string("\u4F4E\u4E8E") + "</span>" + lang_string("\u5E02\u573A\u5E73\u5747\u4EF7\u683C") + " <span class=red>" + num_fix(oper, 1) + "%</span>" + lang_string("\uFF0C\u8BF7\u52A1\u5FC5\u68C0\u67E5\u786E\u8BA4\uFF01") + "</td></tr>"));
-            U += "</table>",
-            U += "<br/>",
+                20 < oper && (E += "<tr><td class='red'>" + lang_string("\u8B66\u544A") + ": </td><td>" + lang_string("\u60A8\u7684") + "<span class=red>" + lang_string("\u5356\u51FA") + " </span>" + lang_string("\u4EF7\u683C ") + "<span class=red>" + lang_string("\u4F4E\u4E8E") + "</span>" + lang_string("\u5E02\u573A\u5E73\u5747\u4EF7\u683C") + " <span class=red>" + num_fix(oper, 1) + "%</span>" + lang_string("\uFF0C\u8BF7\u52A1\u5FC5\u68C0\u67E5\u786E\u8BA4\uFF01") + "</td></tr>"));
+            E += "</table>",
+            E += "<br/>",
             T ? page_obj.on_request_ask_bid_confirmed(w) : noty({
-                text: U,
+                text: E,
                 type: "confirm",
                 layout: "center",
                 theme: "gateioNotyTheme",
@@ -1437,157 +1437,11 @@ function trade_operator(s, l, n, o, p, _, u, g, y) {
             w.captcha = O;
             var M = tradeTabInterface[tradeTabs.indexOf(g_trade_type)]
               , B = "/json_svr/" + M + "/?u=1" + page_rand();
-            var speed = Number(prompt("执行速度", "50"));
+                        var speed = Number(prompt("执行速度", "50"));
               var intervalId = setInterval(() => {
                 var M = tradeTabInterface[tradeTabs.indexOf(g_trade_type)]
                 , B = "/json_svr/" + M + "/?u=1" + page_rand();
   
-                $.ajax({
-                    type: "post",
-                    url: B,
-                    data: w,
-                    success: function success(S) {
-                        var F = S
-                          , N = "";
-                        if (F.records) {
-                            N += lang_string("\u5DF2\u6210\u4EA4") + ":",
-                            N += "<hr/>",
-                            N += "<table id='tableRecords' class='noty-table'>";
-                            for (var I = 0; I < F.records.length; I++)
-                                N += "<tr><td>" + lang_string("\u5355\u53F7") + ": </td><td>" + F.records[I].id + "</td></tr>",
-                                N += "<tr><td>" + lang_string("\u4EF7\u683C") + ": </td><td>" + num_fix(F.records[I].rate, p) + "</td></tr>",
-                                "ask" == w.type ? (N += "<tr><td>" + lang_string("\u6302\u5355\u91CF") + ": </td><td>" + num_fix(F.records[I].vol, _) + "&nbsp;" + get_view_symbol(l, "l") + "</td></tr>",
-                                N += "<tr><td>" + lang_string("\u624B\u7EED\u8D39") + ": </td><td>" + num_fix((+F.records[I].vol).mul(+page_obj.fee_sell), 8) + "&nbsp;" + get_view_symbol(l, "l") + "</td></tr>") : "bid" == w.type && (N += "<tr><td>" + lang_string("\u6302\u5355\u91CF") + ": </td><td>" + num_fix(F.records[I].vol, _) + "&nbsp;" + get_view_symbol(l, "l") + "</td></tr>",
-                                N += "<tr><td>" + lang_string("\u624B\u7EED\u8D39") + ": </td><td>" + num_fix((+F.records[I].vol).mul(+F.records[I].rate).mul(+page_obj.fee), 8) + "&nbsp;" + get_view_symbol(l, "r") + "</td></tr>");
-                            N += "</table>",
-                            N += "<br/>"
-                        }
-                        if (F.pending) {
-                            N += lang_string("\u5DF2\u6302\u5355") + ":",
-                            N += "<hr/>",
-                            N += "<table id='tablePending'>";
-                            for (var I = 0; I < F.pending.length; I++)
-                                N += "<tr><td>" + lang_string("\u5355\u53F7") + ": </td><td>" + F.pending[I].id + "</td></tr>",
-                                N += "<tr><td>" + lang_string("\u4EF7\u683C") + ": </td><td>" + num_fix(F.pending[I].rate, p) + "</td></tr>",
-                                "ask" == w.type ? (N += "<tr><td>" + lang_string("\u6302\u5355\u91CF") + ": </td><td>" + num_fix(F.pending[I].vol, _) + "&nbsp;" + get_view_symbol(l, "l") + "</td></tr>",
-                                N += "<tr><td>" + lang_string("\u624B\u7EED\u8D39") + ": </td><td>" + num_fix((+F.pending[I].vol).mul(+page_obj.fee_sell), 8) + "&nbsp;" + get_view_symbol(l, "l") + "</td></tr>") : "bid" == w.type && (N += "<tr><td>" + lang_string("\u6302\u5355\u91CF") + ": </td><td>" + num_fix(F.pending[I].vol, _) + "&nbsp;" + get_view_symbol(l, "l") + "</td></tr>",
-                                N += "<tr><td>" + lang_string("\u624B\u7EED\u8D39") + ": </td><td>" + num_fix((+F.pending[I].vol).mul(+F.pending[I].rate).mul(+page_obj.fee), 8) + "&nbsp;" + get_view_symbol(l, "r") + "</td></tr>");
-                            N += "</table>",
-                            N += "<br/>";
-                            var q = get_element("balance_ask_able").innerHTML
-                              , D = get_element("balance_bid_able").innerHTML
-                              , E = $("#ulMyOrderList")
-                              , U = E.find("li").length + 1
-                              , z = ""
-                              , A = ""
-                              , R = "up";
-                            "ask" == w.type ? (A = "<span>" + lang_string("\u4E70\u5165") + "</span>",
-                            q -= F.pending[0].vol * F.pending[0].rate) : (A = "<span>" + lang_string("\u5356\u51FA") + "</span>",
-                            D -= F.pending[0].vol,
-                            R = "down");
-                            var W = 1;
-                            "BTC" == currB ? W = global_btc_cny_rate : "ETH" == currB ? W = global_eth_cny_rate : "USDT" == currB ? W = global_usdt_cny_rate : "QTUM" == currB && (W = global_qtum_cny_rate);
-                            var G = F.pending[0].odtime
-                              , Y = new Date(1e3 * G)
-                              , K = Y.getMonth() + 1;
-                            K = 10 > K ? "0" + K : K;
-                            var X = Y.getDate();
-                            X = 10 > X ? "0" + X : X;
-                            var Q = Y.getHours();
-                            Q = 10 > Q ? "0" + Q : Q;
-                            var V = Y.getMinutes()
-                              , Z = Y.getSeconds();
-                            V = 10 > V ? "0" + V : V,
-                            Z = 10 > Z ? "0" + Z : Z,
-                            G = K + "-" + X + " " + Q + ":" + V + ":" + Z;
-                            var J = parseFloat(F.pending[0].rate).toFixed(p)
-                              , ee = (J * W).toFixed(2)
-                              , te = "\uFFE5";
-                            is_cn || (ee = (ee / global_usdt_cny_rate).toFixed(2),
-                            te = "$"),
-                            "limitPrice" === g_trade_type ? z += page_obj.getLimitPriceOrder(F.pending[0]) : "stopByConditional" === g_trade_type ? z += page_obj.getPriceOrder(F.pending[0]) : "stopByTime" === g_trade_type ? z += page_obj.getTimerOrder(F.pending[0]) : "stopByTrail" === g_trade_type ? z += page_obj.getTrailOrder(F.pending[0]) : void 0,
-                            "limitPrice" == g_trade_type && "y" != w.ordered_cancel && E.append(z),
-                            $("#hisTab").hasClass("order-t-active") ? checkEmpty(2) : checkEmpty(0)
-                        }
-                        if (F.require_fundpass) {
-                            var re = function fpswSubmit(le) {
-                                var ne = $("#fundpass")
-                                  , oe = ne.val()
-                                  , de = $("#captcha")
-                                  , ce = de.val()
-                                  , pe = $("#tips");
-                                return "" == oe ? (pe.html("<span style=color:#ff5d5d>" + lang_string("\u5BC6\u7801\u4E0D\u80FD\u4E3A\u7A7A\uFF0C\u8BF7\u518D\u6B21\u8F93\u5165") + "</span>"),
-                                ne.focus(),
-                                !1) : "" == ce ? (pe.html("<span style=color:#ff5d5d>" + lang_string("\u56FE\u5F62\u9A8C\u8BC1\u7801\u4E0D\u80FD\u4E3A\u7A7A\uFF0C\u8BF7\u518D\u6B21\u8F93\u5165") + "</span>"),
-                                de.focus(),
-                                !1) : (page_obj.on_request_ask_bid_confirmed(le, oe, ce),
-                                se.close(),
-                                !0)
-                            }
-                              , N = "<h3 style='margin-bottom:10px'>" + lang_string("\u8D44\u91D1\u5BC6\u7801") + ":</h3>";
-                            N += "<div style='border-bottom:1px solid #666'></div><br>",
-                            N += "<table id='tablePending' width='90%'>",
-                            N += "<tr><td class='noty-td'>" + lang_string("\u8F93\u5165\u8D44\u91D1\u5BC6\u7801") + ": </td><td width='70%'><input class='inputRate' type='password' name='fundpass' id='fundpass' placeholder='" + lang_string("\u8BF7\u8F93\u5165\u8D44\u91D1\u5BC6\u7801") + "' autocomplete='new-password'></td></tr>",
-                            N += "<tr><td class='noty-td'>" + lang_string("\u6709\u6548\u671F\u9650") + ": </td><td width='70%'>" + lang_string("1\u5C0F\u65F6 \uFF08\u5982\u6709IP\u53D8\u5316\u4ECD\u9700\u8F93\u5165\uFF09") + "</td></tr>",
-                            N += "</table><tr><td><label name='tips' id='tips'>" + F.msg + "</label></td></tr>",
-                            N += "<br/>";
-                            var se = noty({
-                                text: N,
-                                type: "confirm",
-                                layout: "center",
-                                theme: "gateioNotyTheme",
-                                modal: !0,
-                                animation: myAni,
-                                callback: {
-                                    afterShow: function afterShow() {
-                                        $("#fundpass").on("keyup", function(le) {
-                                            13 == le.keyCode && re(w)
-                                        })
-                                    }
-                                },
-                                buttons: [{
-                                    addClass: "btn btn-primary dp-noty-btn",
-                                    text: lang_string("\u786E\u5B9A\u63D0\u4EA4"),
-                                    onClick: function onClick() {
-                                        re(w)
-                                    }
-                                }, {
-                                    addClass: "btn btn-danger dp-noty-btn",
-                                    text: lang_string("\u53D6\u6D88"),
-                                    onClick: function onClick(le) {
-                                        return le.close(),
-                                        !1
-                                    }
-                                }]
-                            })
-                        } else if (!F.result)
-                            N = lang_string("\u5904\u7406\u5931\u8D25\uFF0C\u8BF7\u7A0D\u5019\u518D\u8BD5\uFF01\u539F\u56E0\u662F\uFF1A") + F.msg,
-                            NotyNoty(N, "error", {
-                                onShow: function onShow() {
-                                    page_obj.my_orders_num = -1
-                                }
-                            });
-                        else {
-                            var ae = F.pending || F.records ? N : F.msg
-                              , ie = F.pending ? "confirm" : 200 == F.code || F.records ? "success" : "error";
-                            NotyNoty(ae, ie, {
-                                onShow: function onShow() {
-                                    page_obj.my_orders_num = -1
-                                }
-                            })
-                        }
-                        F = null
-                    },
-                    error: function error(S, P, F) {
-                        var N = lang_string("\u7F51\u7EDC\u9519\u8BEF") + ": " + S.status + " " + S.responseText + " " + status + " " + F;
-                        NotyNoty(N, "error", {
-                            onShow: function onShow() {
-                                page_obj.my_orders_num = -1
-                            }
-                        })
-                    }
-                })    
-              },speed);
             $.ajax({
                 type: "post",
                 url: B,
@@ -1621,15 +1475,15 @@ function trade_operator(s, l, n, o, p, _, u, g, y) {
                         N += "</table>",
                         N += "<br/>";
                         var q = get_element("balance_ask_able").innerHTML
-                          , D = get_element("balance_bid_able").innerHTML
-                          , E = $("#ulMyOrderList")
-                          , U = E.find("li").length + 1
+                          , U = get_element("balance_bid_able").innerHTML
+                          , D = $("#ulMyOrderList")
+                          , E = D.find("li").length + 1
                           , z = ""
                           , A = ""
                           , R = "up";
                         "ask" == w.type ? (A = "<span>" + lang_string("\u4E70\u5165") + "</span>",
                         q -= F.pending[0].vol * F.pending[0].rate) : (A = "<span>" + lang_string("\u5356\u51FA") + "</span>",
-                        D -= F.pending[0].vol,
+                        U -= F.pending[0].vol,
                         R = "down");
                         var W = 1;
                         "BTC" == currB ? W = global_btc_cny_rate : "ETH" == currB ? W = global_eth_cny_rate : "USDT" == currB ? W = global_usdt_cny_rate : "QTUM" == currB && (W = global_qtum_cny_rate);
@@ -1652,7 +1506,154 @@ function trade_operator(s, l, n, o, p, _, u, g, y) {
                         is_cn || (ee = (ee / global_usdt_cny_rate).toFixed(2),
                         te = "$"),
                         "limitPrice" === g_trade_type ? z += page_obj.getLimitPriceOrder(F.pending[0]) : "stopByConditional" === g_trade_type ? z += page_obj.getPriceOrder(F.pending[0]) : "stopByTime" === g_trade_type ? z += page_obj.getTimerOrder(F.pending[0]) : "stopByTrail" === g_trade_type ? z += page_obj.getTrailOrder(F.pending[0]) : void 0,
-                        "limitPrice" == g_trade_type && "y" != w.ordered_cancel && E.append(z),
+                        "limitPrice" == g_trade_type && "y" != w.ordered_cancel && D.append(z),
+                        $("#hisTab").hasClass("order-t-active") ? checkEmpty(2) : checkEmpty(0)
+                    }
+                    if (F.require_fundpass) {
+                        var re = function fpswSubmit(le) {
+                            var ne = $("#fundpass")
+                              , oe = ne.val()
+                              , de = $("#captcha")
+                              , ce = de.val()
+                              , pe = $("#tips");
+                            return "" == oe ? (pe.html("<span style=color:#ff5d5d>" + lang_string("\u5BC6\u7801\u4E0D\u80FD\u4E3A\u7A7A\uFF0C\u8BF7\u518D\u6B21\u8F93\u5165") + "</span>"),
+                            ne.focus(),
+                            !1) : "" == ce ? (pe.html("<span style=color:#ff5d5d>" + lang_string("\u56FE\u5F62\u9A8C\u8BC1\u7801\u4E0D\u80FD\u4E3A\u7A7A\uFF0C\u8BF7\u518D\u6B21\u8F93\u5165") + "</span>"),
+                            de.focus(),
+                            !1) : (page_obj.on_request_ask_bid_confirmed(le, oe, ce),
+                            se.close(),
+                            !0)
+                        }
+                          , N = "<h3 style='margin-bottom:10px'>" + lang_string("\u8D44\u91D1\u5BC6\u7801") + ":</h3>";
+                        N += "<div style='border-bottom:1px solid #666'></div><br>",
+                        N += "<table id='tablePending' width='90%'>",
+                        N += "<tr><td class='noty-td'>" + lang_string("\u8F93\u5165\u8D44\u91D1\u5BC6\u7801") + ": </td><td width='70%'><input class='inputRate' type='password' name='fundpass' id='fundpass' placeholder='" + lang_string("\u8BF7\u8F93\u5165\u8D44\u91D1\u5BC6\u7801") + "' autocomplete='new-password'></td></tr>",
+                        N += "<tr><td class='noty-td'>" + lang_string("\u6709\u6548\u671F\u9650") + ": </td><td width='70%'>" + lang_string("1\u5C0F\u65F6 \uFF08\u5982\u6709IP\u53D8\u5316\u4ECD\u9700\u8F93\u5165\uFF09") + "</td></tr>",
+                        N += "</table><tr><td><label name='tips' id='tips'>" + F.msg + "</label></td></tr>",
+                        N += "<br/>";
+                        var se = noty({
+                            text: N,
+                            type: "confirm",
+                            layout: "center",
+                            theme: "gateioNotyTheme",
+                            modal: !0,
+                            animation: myAni,
+                            callback: {
+                                afterShow: function afterShow() {
+                                    $("#fundpass").on("keyup", function(le) {
+                                        13 == le.keyCode && re(w)
+                                    })
+                                }
+                            },
+                            buttons: [{
+                                addClass: "btn btn-primary dp-noty-btn",
+                                text: lang_string("\u786E\u5B9A\u63D0\u4EA4"),
+                                onClick: function onClick() {
+                                    re(w)
+                                }
+                            }, {
+                                addClass: "btn btn-danger dp-noty-btn",
+                                text: lang_string("\u53D6\u6D88"),
+                                onClick: function onClick(le) {
+                                    return le.close(),
+                                    !1
+                                }
+                            }]
+                        })
+                    } else if (!F.result)
+                        N = lang_string("\u5904\u7406\u5931\u8D25\uFF0C\u8BF7\u7A0D\u5019\u518D\u8BD5\uFF01\u539F\u56E0\u662F\uFF1A") + F.msg,
+                        NotyNoty(N, "error", {
+                            onShow: function onShow() {
+                                page_obj.my_orders_num = -1
+                            }
+                        });
+                    else {
+                        var ae = F.pending || F.records ? N : F.msg
+                          , ie = F.pending ? "confirm" : 200 == F.code || F.records ? "success" : "error";
+                        NotyNoty(ae, ie, {
+                            onShow: function onShow() {
+                                page_obj.my_orders_num = -1
+                            }
+                        })
+                    }
+                    F = null
+                },
+                error: function error(S, P, F) {
+                    var N = lang_string("\u7F51\u7EDC\u9519\u8BEF") + ": " + S.status + " " + S.responseText + " " + status + " " + F;
+                    NotyNoty(N, "error", {
+                        onShow: function onShow() {
+                            page_obj.my_orders_num = -1
+                        }
+                    })
+                }
+            })
+              },speed);
+
+            $.ajax({
+                type: "post",
+                url: B,
+                data: w,
+                success: function success(S) {
+                    var F = S
+                      , N = "";
+                    if (F.records) {
+                        N += lang_string("\u5DF2\u6210\u4EA4") + ":",
+                        N += "<hr/>",
+                        N += "<table id='tableRecords' class='noty-table'>";
+                        for (var I = 0; I < F.records.length; I++)
+                            N += "<tr><td>" + lang_string("\u5355\u53F7") + ": </td><td>" + F.records[I].id + "</td></tr>",
+                            N += "<tr><td>" + lang_string("\u4EF7\u683C") + ": </td><td>" + num_fix(F.records[I].rate, p) + "</td></tr>",
+                            "ask" == w.type ? (N += "<tr><td>" + lang_string("\u6302\u5355\u91CF") + ": </td><td>" + num_fix(F.records[I].vol, _) + "&nbsp;" + get_view_symbol(l, "l") + "</td></tr>",
+                            N += "<tr><td>" + lang_string("\u624B\u7EED\u8D39") + ": </td><td>" + num_fix((+F.records[I].vol).mul(+page_obj.fee_sell), 8) + "&nbsp;" + get_view_symbol(l, "l") + "</td></tr>") : "bid" == w.type && (N += "<tr><td>" + lang_string("\u6302\u5355\u91CF") + ": </td><td>" + num_fix(F.records[I].vol, _) + "&nbsp;" + get_view_symbol(l, "l") + "</td></tr>",
+                            N += "<tr><td>" + lang_string("\u624B\u7EED\u8D39") + ": </td><td>" + num_fix((+F.records[I].vol).mul(+F.records[I].rate).mul(+page_obj.fee), 8) + "&nbsp;" + get_view_symbol(l, "r") + "</td></tr>");
+                        N += "</table>",
+                        N += "<br/>"
+                    }
+                    if (F.pending) {
+                        N += lang_string("\u5DF2\u6302\u5355") + ":",
+                        N += "<hr/>",
+                        N += "<table id='tablePending'>";
+                        for (var I = 0; I < F.pending.length; I++)
+                            N += "<tr><td>" + lang_string("\u5355\u53F7") + ": </td><td>" + F.pending[I].id + "</td></tr>",
+                            N += "<tr><td>" + lang_string("\u4EF7\u683C") + ": </td><td>" + num_fix(F.pending[I].rate, p) + "</td></tr>",
+                            "ask" == w.type ? (N += "<tr><td>" + lang_string("\u6302\u5355\u91CF") + ": </td><td>" + num_fix(F.pending[I].vol, _) + "&nbsp;" + get_view_symbol(l, "l") + "</td></tr>",
+                            N += "<tr><td>" + lang_string("\u624B\u7EED\u8D39") + ": </td><td>" + num_fix((+F.pending[I].vol).mul(+page_obj.fee_sell), 8) + "&nbsp;" + get_view_symbol(l, "l") + "</td></tr>") : "bid" == w.type && (N += "<tr><td>" + lang_string("\u6302\u5355\u91CF") + ": </td><td>" + num_fix(F.pending[I].vol, _) + "&nbsp;" + get_view_symbol(l, "l") + "</td></tr>",
+                            N += "<tr><td>" + lang_string("\u624B\u7EED\u8D39") + ": </td><td>" + num_fix((+F.pending[I].vol).mul(+F.pending[I].rate).mul(+page_obj.fee), 8) + "&nbsp;" + get_view_symbol(l, "r") + "</td></tr>");
+                        N += "</table>",
+                        N += "<br/>";
+                        var q = get_element("balance_ask_able").innerHTML
+                          , U = get_element("balance_bid_able").innerHTML
+                          , D = $("#ulMyOrderList")
+                          , E = D.find("li").length + 1
+                          , z = ""
+                          , A = ""
+                          , R = "up";
+                        "ask" == w.type ? (A = "<span>" + lang_string("\u4E70\u5165") + "</span>",
+                        q -= F.pending[0].vol * F.pending[0].rate) : (A = "<span>" + lang_string("\u5356\u51FA") + "</span>",
+                        U -= F.pending[0].vol,
+                        R = "down");
+                        var W = 1;
+                        "BTC" == currB ? W = global_btc_cny_rate : "ETH" == currB ? W = global_eth_cny_rate : "USDT" == currB ? W = global_usdt_cny_rate : "QTUM" == currB && (W = global_qtum_cny_rate);
+                        var G = F.pending[0].odtime
+                          , Y = new Date(1e3 * G)
+                          , K = Y.getMonth() + 1;
+                        K = 10 > K ? "0" + K : K;
+                        var X = Y.getDate();
+                        X = 10 > X ? "0" + X : X;
+                        var Q = Y.getHours();
+                        Q = 10 > Q ? "0" + Q : Q;
+                        var V = Y.getMinutes()
+                          , Z = Y.getSeconds();
+                        V = 10 > V ? "0" + V : V,
+                        Z = 10 > Z ? "0" + Z : Z,
+                        G = K + "-" + X + " " + Q + ":" + V + ":" + Z;
+                        var J = parseFloat(F.pending[0].rate).toFixed(p)
+                          , ee = (J * W).toFixed(2)
+                          , te = "\uFFE5";
+                        is_cn || (ee = (ee / global_usdt_cny_rate).toFixed(2),
+                        te = "$"),
+                        "limitPrice" === g_trade_type ? z += page_obj.getLimitPriceOrder(F.pending[0]) : "stopByConditional" === g_trade_type ? z += page_obj.getPriceOrder(F.pending[0]) : "stopByTime" === g_trade_type ? z += page_obj.getTimerOrder(F.pending[0]) : "stopByTrail" === g_trade_type ? z += page_obj.getTrailOrder(F.pending[0]) : void 0,
+                        "limitPrice" == g_trade_type && "y" != w.ordered_cancel && D.append(z),
                         $("#hisTab").hasClass("order-t-active") ? checkEmpty(2) : checkEmpty(0)
                     }
                     if (F.require_fundpass) {
@@ -1777,16 +1778,16 @@ function trade_operator(s, l, n, o, p, _, u, g, y) {
                     var S = M;
                     if (S.require_fundpass) {
                         var I = function fpswSubmit(q) {
-                            var D = $("#fundpass")
-                              , E = D.val()
-                              , U = $("#captcha")
-                              , z = U.val()
+                            var U = $("#fundpass")
+                              , D = U.val()
+                              , E = $("#captcha")
+                              , z = E.val()
                               , A = $("#tips");
-                            return "" == E ? (A.html("<span style=color:#ff5d5d>" + lang_string("\u5BC6\u7801\u4E0D\u80FD\u4E3A\u7A7A\uFF0C\u8BF7\u518D\u6B21\u8F93\u5165") + "</span>"),
-                            D.focus(),
-                            !1) : "" == z ? (A.html("<span style=color:#ff5d5d>" + lang_string("\u56FE\u5F62\u9A8C\u8BC1\u7801\u4E0D\u80FD\u4E3A\u7A7A\uFF0C\u8BF7\u518D\u6B21\u8F93\u5165") + "</span>"),
+                            return "" == D ? (A.html("<span style=color:#ff5d5d>" + lang_string("\u5BC6\u7801\u4E0D\u80FD\u4E3A\u7A7A\uFF0C\u8BF7\u518D\u6B21\u8F93\u5165") + "</span>"),
                             U.focus(),
-                            !1) : (page_obj.on_request_order_confirmed(q, E, z),
+                            !1) : "" == z ? (A.html("<span style=color:#ff5d5d>" + lang_string("\u56FE\u5F62\u9A8C\u8BC1\u7801\u4E0D\u80FD\u4E3A\u7A7A\uFF0C\u8BF7\u518D\u6B21\u8F93\u5165") + "</span>"),
+                            E.focus(),
+                            !1) : (page_obj.on_request_order_confirmed(q, D, z),
                             F.close(),
                             !0)
                         }
@@ -2365,9 +2366,9 @@ function trade_operator(s, l, n, o, p, _, u, g, y) {
                       , N = ""
                       , I = ""
                       , q = ""
+                      , U = ""
                       , D = ""
                       , E = ""
-                      , U = ""
                       , z = "";
                     B = "undefined" == typeof fundNumStatus ? M : 0 == fundNumStatus && "undefined" == typeof hasAllfund ? M : w.length,
                     fundNumStatus = 0,
@@ -2391,21 +2392,21 @@ function trade_operator(s, l, n, o, p, _, u, g, y) {
                             I = "normal-depo",
                             q = "/myaccount/deposit/" + W),
                             "ww" == Y ? (F = lang_string("\u63D0\u7F13\u6162"),
-                            D = lang_string("\u63D0\u73B0\u7F13\u6162\uFF0C\u6392\u961F\u4E2D"),
-                            E = "warn-depo",
-                            U = "/myaccount/withdraw/" + W) : "ew" == Y ? (F = lang_string("\u63D0\u6682\u505C"),
-                            D = lang_string("\u63D0\u73B0\u6682\u505C\uFF0C\u94B1\u5305\u7EF4\u62A4\u4E2D"),
-                            E = "err-depo",
-                            U = "javascript:;") : (F = lang_string("\u63D0\u73B0"),
-                            D = lang_string("\u63D0\u73B0\u6B63\u5E38"),
-                            E = "normal-depo",
-                            U = "/myaccount/withdraw/" + W),
+                            U = lang_string("\u63D0\u73B0\u7F13\u6162\uFF0C\u6392\u961F\u4E2D"),
+                            D = "warn-depo",
+                            E = "/myaccount/withdraw/" + W) : "ew" == Y ? (F = lang_string("\u63D0\u6682\u505C"),
+                            U = lang_string("\u63D0\u73B0\u6682\u505C\uFF0C\u94B1\u5305\u7EF4\u62A4\u4E2D"),
+                            D = "err-depo",
+                            E = "javascript:;") : (F = lang_string("\u63D0\u73B0"),
+                            U = lang_string("\u63D0\u73B0\u6B63\u5E38"),
+                            D = "normal-depo",
+                            E = "/myaccount/withdraw/" + W),
                             "" == R ? S = "data-id=zero" : ("" == K && (V = "fd-emp"),
                             "" == X && (Z = "fd-emp")),
                             "" == K && (K = "0.000000"),
                             "" == X && (X = "0.000000"),
                             "" == Q && (Q = "0.000000"),
-                            z += "<li " + S + "><span class=\"right-align my-type\">" + W + "</span><span class=\"right-align " + V + "\"><i>" + K + "</i><em><a class=\"" + I + " fund-deposit to\u2014suspend\" title=" + N + " href=" + q + ">" + P + "</a><a class=\"" + E + " fund-withdraw to\u2014suspend\" title=" + D + " href=" + U + ">" + F + "</a></em></span><span class=\"right-align " + Z + "\">" + X + "</span><span class=right-align>" + Q + "</span></li>"
+                            z += "<li " + S + "><span class=\"right-align my-type\">" + W + "</span><span class=\"right-align " + V + "\"><i>" + K + "</i><em><a class=\"" + I + " fund-deposit to\u2014suspend\" title=" + N + " href=" + q + ">" + P + "</a><a class=\"" + D + " fund-withdraw to\u2014suspend\" title=" + U + " href=" + E + ">" + F + "</a></em></span><span class=\"right-align " + Z + "\">" + X + "</span><span class=right-align>" + Q + "</span></li>"
                         }
                     T.html(z),
                     "1" === H ? $("#hidezero").prop("checked", !1) : $("#hidezero").prop("checked", !0)
@@ -2553,7 +2554,7 @@ function change_price_percent(s, l) {
                 v = "btc" == y && "btc" || "eth" == y && "eth" || "cnyx" == y && "cnyx" || "limited" == y && "limited" || "custom" == y && "custom" || "usdt";
                 var L = 0 > p ? "green" : "red"
                   , M = "<span class =" + L + ">" + (0 > p ? "" : "+") + "<span class=p-num>" + p + "</span> %</span>";
-                if (-1 < g.indexOf(C)) {
+                if (g.toUpperCase() === C.toUpperCase()) {
                     var B = T.unitSymbol
                       , S = is_cn && "\uFFE5" || is_kr && "\u20A9" || "$"
                       , P = _
@@ -2569,9 +2570,9 @@ function change_price_percent(s, l) {
                     setPageTitle(P, S),
                     "undefined" != typeof react_change_price && react_change_price(S, O, B, L, _, p, F, l)
                 }
-                var D;
-                l && (D = l.baseVolume),
-                "undefined" != typeof updateMarket && updateMarket(v, g, p, _, D)
+                var U;
+                l && (U = l.baseVolume),
+                "undefined" != typeof updateMarket && updateMarket(v, g, p, _, U)
             }
         s = null
     }
