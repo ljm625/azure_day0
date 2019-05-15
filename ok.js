@@ -33,8 +33,8 @@
             n <= 9 && (n = "0" + n),
             o <= 9 && (o = "0" + o);
             var i = "";
-            return 0 < Number(t) && (i += t + ":"),
-            0 < Number(a) && (i += a + ":"),
+            return 0 < Number(t) ? (i += t + ":",
+            i += a + ":") : 0 < Number(a) && (i += a + ":"),
             i += n + ":" + o
         },
         dealError: function(e) {
