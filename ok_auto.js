@@ -486,10 +486,14 @@
                 }
             }).onSuccess(function(e) {
                 t = e.challenge;
-                var capcha = JSON.parse(sessionStorage.getItem("capcha"));
-                if(capcha ===null){
-                    capcha= []
+                var capcha_json=null;
+                if(sessionStorage.getItem("capcha")==null){
+                    capcha_json= JSON.stringify([]);
                 }
+                else{
+                    capcha_json = sessionStorage.getItem("capcha");
+                }
+                var capcha = JSON.parse(capcha_json);
                 capcha.push(e)
                 sessionStorage.setItem("capcha",JSON.stringify(capcha));
                 f.submit()
