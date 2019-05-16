@@ -174,7 +174,8 @@
                         return;
                     }
                     console.log("start request", start_date.toLocaleTimeString());
-                        while (this.capcha.length!= 0){
+                    this.new_interval = setInterval(() => {
+                        if(this.capcha.length!=0){
                             var c = this.capcha.pop();
                             ajax.post({
                                 url: "/v2/support/active/ieo/project/purchase",
@@ -198,8 +199,12 @@
                                 fail: function(e) {
                                 }
                             })
-                    }
-                    sessionStorage.setItem("capcha",JSON.stringify([]));
+                        }
+                        else{
+                            clearInterval(this.new_interval);
+                            sessionStorage.setItem("capcha",JSON.stringify([]));
+                        }
+                    },500);
 
                 }
                     else{
