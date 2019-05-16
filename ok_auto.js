@@ -161,7 +161,6 @@
             var intervalId = setInterval(() => {
                 now = Date.now() / 1000.0;
                 delta = target_time - now;
-                this.capcha=JSON.parse(sessionStorage.getItem("capcha"));
                 if (now >= target_time) {
                     var start_date = new Date();
                     if (this.capcha.length == 0) {
@@ -171,6 +170,7 @@
                         return;
                     }
                     if (this.new_interval!==undefined){
+                        console.log("Executing");
                         return;
                     }
                     console.log("start request", start_date.toLocaleTimeString());
@@ -214,6 +214,8 @@
                             console.log("delta time:" + delta);
                             last_delta=delta;
                     }
+                    this.capcha=JSON.parse(sessionStorage.getItem("capcha"));
+
                 }
             },200);
 
