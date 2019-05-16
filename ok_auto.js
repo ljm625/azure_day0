@@ -173,16 +173,9 @@
                         console.log("Executing");
                         return;
                     }
-                    function pausecomp(millis)
-                    {
-                        var date = new Date();
-                        var curDate = null;
-                        do { curDate = new Date(); }
-                        while(curDate-date < millis);
-                    }                    
-
                     console.log("start request", start_date.toLocaleTimeString());
-                        while(this.capcha.length!=0){
+                    this.new_interval = setInterval(() => {
+                        if(this.capcha.length!=0){
                             var c = this.capcha.pop();
                             ajax.post({
                                 url: "/v2/support/active/ieo/project/purchase",
@@ -208,10 +201,12 @@
                                     console.log(e.msg);
                                 }
                             })
-                            pausecomp(500);
                         }
+                        else{
+                            clearInterval(this.new_interval);
                             sessionStorage.setItem("capcha",JSON.stringify([]));
-                        
+                        }
+                    },500);
 
                 }
                     else{
@@ -219,7 +214,7 @@
                             console.log("delta time:" + delta);
                             last_delta=delta;
                     }
-                    this.capcha=JSON.parse(sessionStorage.getItem("capcha"));
+                                    this.capcha=JSON.parse(sessionStorage.getItem("capcha"));
 
                 }
             },200);
