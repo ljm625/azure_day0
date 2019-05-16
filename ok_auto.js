@@ -192,11 +192,13 @@
                                     challenge: c.challenge
                                 },
                                 success: function(e) {
+                                    console.log(e.msg);
                                     f.hideDialog(),
                                     f.showPromptDialog(Lang.buySuccessText, !0, Lang.buySuccess),
                                     f.init()
                                 },
                                 fail: function(e) {
+                                    console.log(e.msg);
                                 }
                             })
                         }
