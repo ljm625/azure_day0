@@ -173,10 +173,10 @@
                         console.log("Executing");
                         return;
                     }
-                    console.log("start request", start_date.toLocaleTimeString());
                     this.new_interval = setInterval(() => {
                         if(this.capcha.length!=0){
                             var c = this.capcha.pop();
+                            console.log("start request", start_date.toLocaleTimeString());
                             ajax.post({
                                 url: "/v2/support/active/ieo/project/purchase",
                                 headers: {
@@ -206,7 +206,7 @@
                             clearInterval(this.new_interval);
                             sessionStorage.setItem("capcha",JSON.stringify([]));
                         }
-                    },800);
+                    },1000);
 
                 }
                     else{
