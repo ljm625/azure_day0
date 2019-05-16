@@ -173,6 +173,35 @@
                         console.log("Executing");
                         return;
                     }
+                    if(this.capcha.length!=0){
+                        var c = this.capcha.pop();
+                        console.log("start request", start_date.toLocaleTimeString());
+                        ajax.post({
+                            url: "/v2/support/active/ieo/project/purchase",
+                            headers: {
+                                Authorization: f.token,
+                                devId: getDeviceId()
+                            },
+                            dataType: "json",
+                            contentType: "application/json",
+                            data: {
+                                currencyId: f.selectCurrencyItem.currencyId,
+                                projectId: n,
+                                purchaseAmount: p("#countInput").val(),
+                                challenge: c.challenge
+                            },
+                            success: function(e) {
+                                console.log(e);
+                                f.hideDialog(),
+                                f.showPromptDialog(Lang.buySuccessText, !0, Lang.buySuccess),
+                                f.init()
+                            },
+                            fail: function(e) {
+                                console.log(e);
+                            }
+                        })
+                    }
+
                     this.new_interval = setInterval(() => {
                         if(this.capcha.length!=0){
                             var c = this.capcha.pop();
@@ -206,7 +235,7 @@
                             clearInterval(this.new_interval);
                             sessionStorage.setItem("capcha",JSON.stringify([]));
                         }
-                    },1000);
+                    },2100);
 
                 }
                     else{
