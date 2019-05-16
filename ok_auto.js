@@ -161,6 +161,7 @@
             var intervalId = setInterval(() => {
                 now = Date.now() / 1000.0;
                 delta = target_time - now;
+                this.capcha=JSON.parse(sessionStorage.getItem("capcha"));
                 if (now >= target_time) {
                     var start_date = new Date();
                     if (this.capcha.length == 0) {
