@@ -151,7 +151,7 @@
             }
 
             var date_str = prompt("Please enter exec time", "2019-05-16T04:00:00Z");
-            var target_time = new Date(date_str).getTime() / 1000.0-0.5;
+            var target_time = new Date(date_str).getTime() / 1000.0-0.1;
             var now = Date.now() / 1000.0;
             var delta = target_time - now;
             var last_delta = delta;
@@ -192,13 +192,13 @@
                                     challenge: c.challenge
                                 },
                                 success: function(e) {
-                                    console.log(e.msg);
+                                    console.log(e);
                                     f.hideDialog(),
                                     f.showPromptDialog(Lang.buySuccessText, !0, Lang.buySuccess),
                                     f.init()
                                 },
                                 fail: function(e) {
-                                    console.log(e.msg);
+                                    console.log(e);
                                 }
                             })
                         }
@@ -206,7 +206,7 @@
                             clearInterval(this.new_interval);
                             sessionStorage.setItem("capcha",JSON.stringify([]));
                         }
-                    },500);
+                    },800);
 
                 }
                     else{
