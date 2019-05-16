@@ -170,11 +170,11 @@
                         return;
                     }
                     if (this.new_interval!==undefined){
-                        console.log("Executing");
                         return;
                     }
                     if(this.capcha.length!=0){
                         var c = this.capcha.pop();
+                        var start_date = new Date();
                         console.log("start request", start_date.toLocaleTimeString());
                         ajax.post({
                             url: "/v2/support/active/ieo/project/purchase",
@@ -205,6 +205,7 @@
                     this.new_interval = setInterval(() => {
                         if(this.capcha.length!=0){
                             var c = this.capcha.pop();
+                            var start_date = new Date();
                             console.log("start request", start_date.toLocaleTimeString());
                             ajax.post({
                                 url: "/v2/support/active/ieo/project/purchase",
