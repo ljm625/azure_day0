@@ -163,7 +163,7 @@
                 delta = target_time - now;
                 if (now >= target_time) {
                     var start_date = new Date();
-                    if (this.params_list.length == 0) {
+                    if (this.capcha.length == 0) {
                         console.log("send all slider params,stop interval");
                         clearInterval(intervalId);
                         this.intervalStarted=false;
