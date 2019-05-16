@@ -145,8 +145,8 @@
         },
         submit: function(e) {
             if (this.intervalStarted) {
-                this.capcha=sessionStorage.getItem("capcha");
-                console.log("Added New Capcha"+this.capcha.length);
+                this.capcha=JSON.parse(sessionStorage.getItem("capcha"));
+                console.log("Added New Capcha:"+this.capcha.length);
                 return;
             }
 
@@ -198,7 +198,7 @@
                                 }
                             })
                     }
-                    sessionStorage.setItem("capcha",[]);
+                    sessionStorage.setItem("capcha",JSON.stringify([]));
 
                 }
                     else{
@@ -486,12 +486,12 @@
                 }
             }).onSuccess(function(e) {
                 t = e.challenge;
-                var capcha = sessionStorage.getItem("capcha");
+                var capcha = JSON.parse(sessionStorage.getItem("capcha"));
                 if(capcha ===null){
                     capcha= []
                 }
-                capcha.push(t)
-                sessionStorage.setItem("capcha",capcha);
+                capcha.push(e)
+                sessionStorage.setItem("capcha",JSON.stringify(capcha));
                 f.submit()
             }).onClose(function() {}).onError(function(e) {
                 f.hideDialog(),
