@@ -198,7 +198,7 @@
                                 }
                             })
                     }
-                    sessionStorage.setItem("capcha")=[];
+                    sessionStorage.setItem("capcha",[]);
 
                 }
                     else{
@@ -491,7 +491,7 @@
                     capcha= []
                 }
                 capcha.push(t)
-                sessionStorage.setItem("capcha");
+                sessionStorage.setItem("capcha",capcha);
                 f.submit()
             }).onClose(function() {}).onError(function(e) {
                 f.hideDialog(),
