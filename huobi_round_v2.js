@@ -118,62 +118,68 @@
 }
 , , , function(e, t, n) {
     "use strict";
-    n.d(t, "r", function() {
+    n.d(t, "t", function() {
         return u
     }),
     n.d(t, "a", function() {
         return d
     }),
-    n.d(t, "e", function() {
+    n.d(t, "g", function() {
         return h
     }),
-    n.d(t, "n", function() {
+    n.d(t, "p", function() {
         return f
     }),
-    n.d(t, "q", function() {
+    n.d(t, "s", function() {
         return p
     }),
-    n.d(t, "d", function() {
+    n.d(t, "f", function() {
         return m
     }),
-    n.d(t, "g", function() {
+    n.d(t, "i", function() {
         return g
     }),
-    n.d(t, "o", function() {
+    n.d(t, "q", function() {
         return v
     }),
-    n.d(t, "h", function() {
+    n.d(t, "j", function() {
         return _
     }),
-    n.d(t, "m", function() {
+    n.d(t, "o", function() {
         return b
     }),
     n.d(t, "c", function() {
         return y
     }),
-    n.d(t, "p", function() {
+    n.d(t, "r", function() {
         return w
     }),
-    n.d(t, "i", function() {
+    n.d(t, "k", function() {
         return x
     }),
-    n.d(t, "k", function() {
+    n.d(t, "d", function() {
         return k
     }),
-    n.d(t, "l", function() {
+    n.d(t, "e", function() {
+        return T
+    }),
+    n.d(t, "m", function() {
         return O
     }),
-    n.d(t, "f", function() {
-        return C
-    }),
-    n.d(t, "j", function() {
+    n.d(t, "n", function() {
         return E
     }),
-    n.d(t, "s", function() {
+    n.d(t, "h", function() {
         return S
     }),
-    n.d(t, "b", function() {
+    n.d(t, "l", function() {
         return A
+    }),
+    n.d(t, "u", function() {
+        return L
+    }),
+    n.d(t, "b", function() {
+        return N
     });
     n(273),
     n(15),
@@ -306,7 +312,114 @@
         var t = location.hostname;
         return e ? location.hostname.split(".").slice(-2).join(".") : t
     }
-    function k(e, t) {
+    function k() {
+        setTimeout(function() {
+            !function(e, t, n) {
+                function r(e) {
+                    var r = t.createElement(n);
+                    r.async = !0,
+                    r.src = e,
+                    t.body.appendChild(r)
+                }
+                r("https://www.googletagmanager.com/gtag/js?id=UA-108346576-1"),
+                e.dataLayer = e.dataLayer || [],
+                e.gtag = e.gtag || function() {
+                    dataLayer.push(arguments)
+                }
+                ,
+                gtag("js", new Date),
+                gtag("config", "UA-108346576-1"),
+                gtag("config", "UA-108346576-1", {
+                    custom_map: {
+                        dimension1: "UUID"
+                    }
+                }),
+                r("https://assets.growingio.com/2.1/gio.js");
+                var i = e.gio = e.gio || function() {
+                    (i.q = i.q || []).push(arguments)
+                }
+                ;
+                gio("init", "8838a5745a973a12", {}),
+                gio("config", {
+                    hashtag: !0
+                }),
+                gio("send")
+            }(window, document, "script")
+        }, 0)
+    }
+    function T() {
+        setTimeout(function() {
+            var e;
+            (e = window).zESettings = {
+                webWidget: {
+                    contactOptions: {
+                        enabled: !0
+                    }
+                }
+            },
+            e.zEmbed || (function(t, n) {
+                var r, i, a, o, s = [], c = document.createElement("iframe");
+                e.zEmbed = function() {
+                    s.push(arguments)
+                }
+                ,
+                e.zE = e.zE || e.zEmbed,
+                c.src = "javascript:false",
+                c.title = "",
+                c.role = "presentation",
+                (c.frameElement || c).style.cssText = "display: none",
+                (a = (a = document.getElementsByTagName("script"))[a.length - 1]).parentNode.insertBefore(c, a),
+                o = c.contentWindow.document;
+                try {
+                    i = o
+                } catch (t) {
+                    r = document.domain,
+                    c.src = 'javascript:var d=document.open();d.domain="' + r + '";void(0);',
+                    i = o
+                }
+                i.open()._l = function() {
+                    var e = this.createElement("script");
+                    r && (this.domain = r),
+                    e.id = "js-iframe-async",
+                    e.src = "https://assets.zendesk.com/embeddable_framework/main.js",
+                    this.t = +new Date,
+                    this.zendeskHost = "huobiglobal.zendesk.com",
+                    this.zEQueue = s,
+                    this.body.appendChild(e)
+                }
+                ,
+                i.write('<body onload="document._l();">'),
+                i.close()
+            }(),
+            zE(function() {
+                var e = localStorage.getItem("lang") || "en-us";
+                zE.setLocale(e),
+                $zopim(function() {
+                    "zh-cn" !== e ? ($zopim.livechat.setLanguage("en"),
+                    $zopim.livechat.window.setTitle("Support"),
+                    $zopim.livechat.departments.setLabel("Choose a question type"),
+                    $zopim.livechat.prechatForm.setGreetings("Hello, please choose a question type, add your UID or phone number. Thank you for your understanding and cooperation."),
+                    $zopim.livechat.setOnConnected(function() {
+                        var e = $zopim.livechat.departments.getAllDepartments().filter(function(e) {
+                            return e.name.indexOf("--") > -1
+                        }).map(function(e) {
+                            return e.name
+                        });
+                        $zopim.livechat.departments.filter.apply({}, e)
+                    })) : "zh-cn" === e && ($zopim.livechat.setLanguage("zh"),
+                    $zopim.livechat.setOnConnected(function() {
+                        var e = $zopim.livechat.departments.getAllDepartments().filter(function(e) {
+                            return !(e.name.indexOf("--") > -1)
+                        }).map(function(e) {
+                            return e.name
+                        });
+                        $zopim.livechat.departments.filter.apply({}, e)
+                    }))
+                })
+            }))
+        }, 0)
+    }
+    function O(e, t) {
         var n = t[e] || {}
           , r = n.trade_price_precision
           , i = void 0 === r ? 8 : r
@@ -325,7 +438,7 @@
             display_name: void 0 === d ? e.toUpperCase() : d
         }
     }
-    var T = function(e, t) {
+    var C = function(e, t) {
         return t = null == t ? e.length - 1 : +t,
         function() {
             for (var n = Math.max(arguments.length - t, 0), r = Array(n), i = 0; i < n; i++)
@@ -345,17 +458,17 @@
             e.apply(this, a)
         }
     }
-      , O = (T(function(e, t, n) {
+      , E = (C(function(e, t, n) {
         return setTimeout(function() {
             return e.apply(null, n)
         }, t)
     }),
     window.huobiNative || window.webkit && window.webkit.messageHandlers.huobiNative)
-      , C = {
+      , S = {
         innerHTML: '!function(b,c){function e(){function m(){for(var e=navigator.userAgent,f=["Android","iPhone","SymbianOS","Windows Phone","iPad","iPod","rv:1.2.3.4","windows mobile","midp"],g=0,h=0;h<f.length;h++)if(0<=e.indexOf(f[h])){g++;break}return g}m()&&c.querySelector("html").classList.add("mobile");var g=750,i=screen.width,j=screen.height,k=i/g,l=i.viewMeta||c.querySelector("[name=viewport]")||c.createElement("meta");i.viewMeta||c.getElementsByTagName("head")[0].appendChild(l),l.setAttribute("name","viewport"),l.setAttribute("content","width="+g+", initial-scale="+k+",maximum-scale="+k+",minimum-scale="+k+", user-scalable=no,target-densitydpi=device-dpi,minimal-ui,uc-fitscreen=no"),i.viewMeta=l,window.viewPortNum=k}e();var f="onorientationchange"in b?"orientationchange":"resize";b.addEventListener(f,function(){e()},!1),b.showPlaceholder=1}(window,document);',
         type: "text/javascript"
     }
-      , E = function(e, t, n) {
+      , A = function(e, t, n) {
         var r = t - e
           , i = Math.floor(r / 864e5) + ""
           , a = Math.floor(r % 864e5 / 36e5) + ""
@@ -372,7 +485,7 @@
             s: s
         }
     }
-      , S = function(e) {
+      , L = function(e) {
         for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++)
             n[r - 1] = arguments[r];
         return n.forEach(function(t) {
@@ -380,7 +493,7 @@
         }),
         e
     }
-      , A = function() {
+      , N = function() {
         var e = [].slice.apply(arguments);
         return e.length ? e.shift().replace(/\{([^\}]+)\}/gi, function(t) {
             return t = t.replace(/[\{\}]/g, "").split("||"),
@@ -1032,8 +1145,7 @@
     }
       , l = {
         placeOrder: function(e) {
-            return console.log("prime placeOrder:", e),
-            a.a.post("@hbg/prime/v1/order/place", e)
+            return a.a.post("@hbg/prime/v1/order/place", e)
         }
     }
       , d = {
@@ -1723,7 +1835,6 @@
             value: function() {
                 this._isOpen = 1,
                 this._msgOut(),
-                console.log("socket open"),
                 m.a.pub("socket.connect", this.ws)
             }
         }, {
@@ -1732,15 +1843,11 @@
                 var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : this.host;
                 this.ws = new WebSocket(e),
                 this.t = this.t + 1,
-                console.log("socket reconnect"),
                 this._regEvent(this.ws)
             }
         }, {
             key: "_error",
-            value: function(e) {
-                return console.log("socket error", e),
-                console.error("error: ", e)
-            }
+            value: function(e) {}
         }, {
             key: "_delMsg",
             value: function(e, t, n) {
@@ -1766,7 +1873,6 @@
                 }
                 ,
                 this.ws.onclose = function() {
-                    console.log("regEvent ", e.t),
                     window.navigator.onLine && window.gio && window.gio("track", "DEV_FED_EXCHANGE_EN_WS_CLOSE", {
                         DEV_FED_TIMESTAMP: +new Date,
                         URL: location.href
@@ -1783,7 +1889,6 @@
                 var t = this;
                 clearTimeout(y),
                 y = setTimeout(function() {
-                    console.log("websocket timeout"),
                     t.ws.close()
                 }, 1e4),
                 this._isOpen && this.ws.send(JSON.stringify({
@@ -1904,7 +2009,7 @@
                             break
                         }
                         if (!t.alias && c[u].bodywords === t.toString().replace(/[^\d\w]/g, "")) {
-                            t.name || console.warn("Anonymous function remove error", t),
+                            t.name,
                             c.splice(u, 1),
                             n && n(0);
                             break
@@ -1924,7 +2029,6 @@
             return l()(this, e),
             this._router = {},
             this.debug = n,
-            console.log("wsc version 2.0.0"),
             T(new Blob([new ArrayBuffer(1)],{
                 type: ""
             })),
@@ -2280,7 +2384,7 @@
         try {
             o = "".concat(location.origin.replace("http", "ws"), "/-/s")
         } catch (e) {
-            o = "".concat("http://pro-web.test-17.huobiapps.com".replace("http", "ws"), "/-/s")
+            o = "".concat("https://www.huobi.co".replace("http", "ws"), "/-/s")
         }
         var s = {
             ws: r && !a || i ? "wss://api.huobi.br.com/ws" : "".concat(o, "/pro/ws"),
@@ -2422,7 +2526,7 @@
     }
       , h = {
         ticketApi: d.getTicket,
-        cookieHost: Object(l.i)(),
+        cookieHost: Object(l.k)(),
         afterGetTicket: function() {
             var e = i()(regeneratorRuntime.mark(function e(t) {
                 var r;
@@ -2438,8 +2542,8 @@
                                 e.next = 8;
                                 break
                             }
-                            Object(l.p)("HB-UC-TOKEN"),
-                            Object(l.p)("HB-PRO-TOKEN"),
+                            Object(l.r)("HB-UC-TOKEN"),
+                            Object(l.r)("HB-PRO-TOKEN"),
                             localStorage.removeItem("UC_IS_LOGIN"),
                             setTimeout(function() {
                                 location.reload()
@@ -3163,8 +3267,7 @@
                     if (this.ready.includes("spot") && !n)
                         return this.balance[e] ? this.balance[e][t] : 0;
                     if (this.ready.includes(n) && n && this.marginBalance[n])
-                        return this.marginBalance[n][e][t] || 0;
-                    n || console.error("need subaccount")
+                        return this.marginBalance[n][e][t] || 0
                 }
                 return 0
             }
@@ -3494,14 +3597,11 @@
             primeInfo: {
                 handler: function(e) {
                     var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
-                    if (console.log(553, t.symbolCode, e.symbolCode),
-                    t.symbolCode && t.symbolCode !== e.symbolCode)
+                    if (t.symbolCode && t.symbolCode !== e.symbolCode)
                         return window.location.reload();
                     if (e.currency) {
                         var n = e.tradeBeginTime - e.currentTime;
-                        console.log(554, e.tradeBeginTime, e.currentTime),
-                        !this.reloadPage && this.updateAll && n > 0 && (console.log(555, e.tradeBeginTime, e.currentTime, n),
-                        clearTimeout(this.reloadPage),
+                        !this.reloadPage && this.updateAll && n > 0 && (clearTimeout(this.reloadPage),
                         this.reloadPage = setTimeout(function() {
                             window.location.reload()
                         }, n > Math.pow(2, 31) - 1 ? Math.pow(2, 31) - 1 : n)),
@@ -3537,6 +3637,7 @@
                 clearTimeout(this.timer);
                 var r = !1;
                 this.now = n;
+                // HACK
                 var i = e.rounds.find(function(e) {
                     if (n < e.roundEndTime) {
                         if (!r)
@@ -3566,7 +3667,7 @@
             setPrimeStaus: function(e) {
                 if (e) {
                     var t = 0 === this.roundState ? e.roundBeginTime : e.roundEndTime
-                      , n = Object(o.j)(e.now, t, !0);
+                      , n = Object(o.l)(e.now, t, !0);
                     this.leftTime = i()({}, n)
                 }
             }
@@ -4234,7 +4335,7 @@
             var n = t.symbol
               , r = {};
             for (var i in t)
-                r[Object(d.q)(i)] = t[i];
+                r[Object(d.s)(i)] = t[i];
             e.ecd[n] = r
         },
         SET_TS_DIFF: function(e, t) {
@@ -4624,8 +4725,7 @@
                 n = h[1]
             } else
                 l = t;
-            if ("retry" === l ? a || (u = !0) : l && (c.push([l, n]),
-            console.log("gioTrack", JSON.stringify([l, n]))),
+            if ("retry" === l ? a || (u = !0) : l && c.push([l, n]),
             !u) {
                 if (!a)
                     return setTimeout(function() {
@@ -4640,7 +4740,6 @@
         },
         setUserId: function(e, t) {
             var n = s();
-            console.log(t),
             n && n("setUserId", t)
         }
     }
@@ -5053,7 +5152,7 @@
         }(),
         setExchangeRate: function() {
             var e = c()(regeneratorRuntime.mark(function e(t) {
-                var n, r, i, a, s, c, l, h, f, p, m, g, v, _, b, y, w, x, k, T, O, C, E, S, A, L, N, I, R, P, j, $, D, B, G, U, H, M, z, q, F;
+                var n, r, i, a, s, c, l, h, f, p, m, g, v, _, b, y, w, x, k, T, O, C, E, S, A, L, N, I, R, P, j, $, D, B, U, G, H, M, z, q, F;
                 return regeneratorRuntime.wrap(function(e) {
                     for (; ; )
                         switch (e.prev = e.next) {
@@ -5123,11 +5222,11 @@
                                 return "usd_cny" === e.name
                             }) || [{}],
                             B = o()(D, 1),
-                            G = B[0].rate,
-                            R = G)) : "usd" === y ? R = 1 : "none" !== y && (U = s && s.data.length > 0 && s.data.filter(function(e) {
+                            U = B[0].rate,
+                            R = U)) : "usd" === y ? R = 1 : "none" !== y && (G = s && s.data.length > 0 && s.data.filter(function(e) {
                                 return e.name === "usd_".concat(y)
                             }) || [{}],
-                            H = o()(U, 1),
+                            H = o()(G, 1),
                             M = H[0].rate,
                             R = void 0 === M ? R : M),
                             z = s && s.data.length > 0 && s.data.filter(function(e) {
@@ -5409,13 +5508,13 @@
               , i = (e.state,
             [])
               , a = t.map(function(e) {
-                var t = Object(o.k)(e.symbol, r.symbolsObj)
+                var t = Object(o.m)(e.symbol, r.symbolsObj)
                   , n = t.tpp
                   , a = t.tap
                   , c = t.ttp
                   , u = t.display_name;
                 return e["canceled-at"] && i.push(e["canceled-at"]),
-                e["created-at"] = Object(o.r)(e["created-at"]),
+                e["created-at"] = Object(o.t)(e["created-at"]),
                 e["unfield-amount"] = e.amount - e["field-amount"],
                 e.totalAmount = "buy-market" === e.type ? e.amount : Object(s.e)(e.price, e.amount),
                 e.totalAmount = "sell-market" === e.type ? "---" : e.totalAmount,
@@ -5469,12 +5568,12 @@
               , r = e.rootState
               , i = e.state;
             n("SET_HISTORY_DATA", t.map(function(e) {
-                var t = Object(o.k)(e.symbol, r.symbolsObj)
+                var t = Object(o.m)(e.symbol, r.symbolsObj)
                   , n = t.tpp
                   , a = t.tap
                   , c = t.ttp
                   , u = t.display_name;
-                return e["created-at"] = Object(o.r)(e["created-at"]),
+                return e["created-at"] = Object(o.t)(e["created-at"]),
                 e["unfield-amount"] = e.amount - e["field-amount"],
                 e.tradeType = ~e.type.indexOf("stop-limit") ? "止盈止损" : ~e.type.indexOf("market") ? "市价" : "限价",
                 e.operator = "gte" === e.operator ? "≥" : "≤",
@@ -5525,14 +5624,14 @@
               , r = e.rootState;
             e.state;
             n("SET_DETAIL_DATA", t.map(function(e) {
-                var t = Object(o.k)(e.symbol, r.symbolsObj)
+                var t = Object(o.m)(e.symbol, r.symbolsObj)
                   , n = t.tpp
                   , i = t.tap
                   , a = t.ttp
                   , c = t.fp
                   , u = t.display_name
                   , l = u ? -1 !== e.type.indexOf("buy") ? u.split("/")[0] || "" : u.split("/")[1] || "" : "";
-                return e["created-at"] = Object(o.r)(e["created-at"]),
+                return e["created-at"] = Object(o.t)(e["created-at"]),
                 e["unfield-amount"] = e.amount - e["field-amount"],
                 e.tradeType = ~e.type.indexOf("stop-limit") ? "止盈止损" : ~e.type.indexOf("market") ? "市价" : "限价",
                 e.price = 1 * e.price ? Object(s.c)(e.price, n) : "市价",
@@ -5556,14 +5655,14 @@
               , r = e.rootState
               , i = (e.state,
             t.map(function(e) {
-                var t = Object(o.k)(e.symbol, r.symbolsObj)
+                var t = Object(o.m)(e.symbol, r.symbolsObj)
                   , n = t.tpp
                   , i = t.tap
                   , a = (t.ttp,
                 t.fp)
                   , c = t.display_name
                   , u = c ? -1 !== e.type.indexOf("buy") ? c.split("/")[0] || "" : c.split("/")[1] || "" : "";
-                return e["created-at"] = Object(o.r)(e["created-at"]),
+                return e["created-at"] = Object(o.t)(e["created-at"]),
                 e.price = 1 * e.price ? Object(s.c)(e.price, n) : "市价",
                 e["filled-total-amount"] = e.price * e["filled-amount"],
                 e["filled-amount"] = Object(s.c)(e["filled-amount"], i),
@@ -5831,8 +5930,8 @@
                             error: n.error,
                             base: "/",
                             env: {
-                                locationHost: "http://pro-web.test-17.huobiapps.com",
-                                isProd: !1
+                                locationHost: "https://www.huobi.co",
+                                isProd: !0
                             }
                         },
                         n.req && (t.context.req = n.req),
@@ -5982,7 +6081,7 @@
                         repeat: b,
                         partial: _,
                         asterisk: !!v,
-                        pattern: x ? U(x) : v ? ".*" : "[^" + G(w) + "]+?"
+                        pattern: x ? G(x) : v ? ".*" : "[^" + U(w) + "]+?"
                     })
                 }
             }
@@ -6024,10 +6123,10 @@
             return "%" + e.charCodeAt(0).toString(16).toUpperCase()
         })
     }
-    function G(e) {
+    function U(e) {
         return e.replace(/([.+*?=^!:${}()[\]|\/\\])/g, "\\$1")
     }
-    function U(e) {
+    function G(e) {
         return e.replace(/([=!:$\/()])/g, "\\$1")
     }
     function H(e, t) {
@@ -6442,10 +6541,10 @@
     }
       , Be = (n(248),
     Object(Pe.a)(De, void 0, void 0, !1, null, null, null).exports)
-      , Ge = (n(249),
+      , Ue = (n(249),
     n(250),
     n(45))
-      , Ue = n.n(Ge)
+      , Ge = n.n(Ue)
       , He = n(11)
       , Me = n(20)
       , ze = {
@@ -6739,7 +6838,7 @@
             },
             hideCurrencyList: function(e) {
                 var t = e.target;
-                (Object(Xe.d)(t, "stop") || {}).node === this.$refs.depthNameDOM ? this.showCurrency = !this.showCurrency : this.showCurrency = !1
+                (Object(Xe.f)(t, "stop") || {}).node === this.$refs.depthNameDOM ? this.showCurrency = !this.showCurrency : this.showCurrency = !1
             },
             close: function() {
                 this.$emit("close"),
@@ -7620,7 +7719,10 @@
         components: {
             A: Me.a
         },
-        mounted: function() {},
+        mounted: function() {
+            var e = this.$route.name;
+            !e || e.includes("LANG-exchange") || e.includes("LANG-margin") || e.includes("en-us-exchange") || ("LANG-ht" === e || "LANG-topic-vip" === e ? Object(Xe.o)() && this.$nextTick(Xe.e) : this.$nextTick(Xe.e))
+        },
         methods: {
             openMarginGuide: function() {
                 var e = o()(regeneratorRuntime.mark(function e() {
@@ -7792,7 +7894,7 @@
         methods: {
             pagehostreplace: function(e, t) {
                 var n = gt[t];
-                n && Ue()(document.querySelectorAll(".".concat(e))).forEach(function(e) {
+                n && Ge()(document.querySelectorAll(".".concat(e))).forEach(function(e) {
                     var t = e.getAttribute("href").trim()
                       , r = "";
                     0 === t.indexOf("http://") || 0 === t.indexOf("https://") ? ("/" !== t[t.length - 1] && (t += "/"),
@@ -7972,7 +8074,7 @@
         watch: {
             primeInfo: function(e) {
                 e.currency && (this.timerShow = "en-us" === this.$route.name || "LANG" === this.$route.name,
-                this.endDate = Object(Xe.r)((e.rounds[e.rounds.length - 1] || {}).roundEndTime || +new Date))
+                this.endDate = Object(Xe.t)((e.rounds[e.rounds.length - 1] || {}).roundEndTime || +new Date))
             }
         },
         mounted: function() {
@@ -8083,6 +8185,7 @@
                             t = this.$store.state.user.isLogin,
                             n = this.$store.state.user.userInfo.account_name,
                             t && !n && this.$store.dispatch("user/getUserInfo"),
+                            this.$nextTick(Xe.d),
                             xt.a.change(function(e) {
                                 r.$store.commit("SET_PAGE_VISIBLE", e)
                             });
@@ -8134,7 +8237,9 @@
     }, [], !1, null, null, null).exports)
       , Ot = {
         name: "Demo",
-        beforeMount: function() {}
+        beforeMount: function() {
+            window.location.href = "".concat(this.$store.state.locale, "/")
+        }
     }
       , Ct = Object(Pe.a)(Ot, function() {
         var e = this.$createElement
@@ -8159,6 +8264,8 @@
             }
         },
         mounted: function() {
+            Object(Xe.d)(),
+            Object(Xe.e)(),
             this.backURL = this.$route.params.backURL
         },
         computed: y()({}, Object(He.c)({
@@ -8227,7 +8334,7 @@
     {
         name: "MobileDefaultLayout",
         head: {
-            script: [Xe.f, {
+            script: [Xe.h, {
                 innerHTML: "window.appTokenCallback = function() {};",
                 type: "text/javascript"
             }],
@@ -8318,6 +8425,7 @@
                             t = this.$store.state.user.isLogin,
                             n = this.$store.state.user.userInfo.account_name,
                             t && !n && this.$store.dispatch("user/getUserInfo"),
+                            this.$nextTick(Xe.d),
                             xt.a.change(function(e) {
                                 r.$store.commit("SET_PAGE_VISIBLE", e)
                             });
@@ -8524,8 +8632,8 @@
           , Dt = !1
           , Bt = void 0;
         try {
-            for (var Gt, Ut = Rt[Symbol.iterator](); !($t = (Gt = Ut.next()).done); $t = !0) {
-                var Ht = Gt.value
+            for (var Ut, Gt = Rt[Symbol.iterator](); !($t = (Ut = Gt.next()).done); $t = !0) {
+                var Ht = Ut.value
                   , Mt = Ht.replace(/^\.\//, "").replace(/\.(js|mjs)$/, "");
                 if ("index" !== Mt) {
                     var zt = Mt.split(/\//);
@@ -8575,7 +8683,7 @@
             Bt = e
         } finally {
             try {
-                $t || null == Ut.return || Ut.return()
+                $t || null == Gt.return || Gt.return()
             } finally {
                 if (Dt)
                     throw Bt
@@ -8744,10 +8852,10 @@
         t("axios", r)
     }
       , mn = n(3);
-    s.default.filter("t2d", Xe.r),
+    s.default.filter("t2d", Xe.t),
     s.default.filter("fix", mn.c),
     s.default.filter("s2l", Je.b),
-    s.default.filter("ts", Xe.s);
+    s.default.filter("ts", Xe.u);
     var gn = function(e, t) {
         var n = e.store;
         t("upDateTs", o()(regeneratorRuntime.mark(function e() {
@@ -8852,8 +8960,8 @@
       , $n = n.n(jn)
       , Dn = n(204)
       , Bn = n.n(Dn)
-      , Gn = n(205)
-      , Un = n.n(Gn)
+      , Un = n(205)
+      , Gn = n.n(Un)
       , Hn = n(206)
       , Mn = n.n(Hn)
       , zn = n(207)
@@ -8883,7 +8991,7 @@
                 "zh-cn": Pn.a,
                 "zh-hk": $n.a,
                 "ko-kr": Bn.a,
-                "ru-ru": Un.a,
+                "ru-ru": Gn.a,
                 "de-de": Mn.a,
                 "fr-fr": qn.a,
                 "es-es": Kn.a,
@@ -8964,7 +9072,6 @@
                                 o.append("file", a[0], a[0].name),
                                 this.fetch(o).then(function(e) {
                                     e.success ? (s.setTooltip(""),
-                                    console.log(107),
                                     s.$emit("input", e.data || ""),
                                     i.success("上传成功")) : (s.$emit("input", ""),
                                     s.setTooltip("上传失败，请重新上传")),
@@ -10014,7 +10121,7 @@
         "function" == typeof t && (t = t(Or.context)),
         this.setLayout(t)
     }
-    function Gr(e, t) {
+    function Ur(e, t) {
         var n = this;
         !1 === this._pathChanged && !1 === this._queryChanged || s.default.nextTick(function() {
             var t = []
@@ -10038,7 +10145,7 @@
             Br.call(n, e)
         })
     }
-    function Ur(e) {
+    function Gr(e) {
         window.onNuxtReadyCbs.forEach(function(t) {
             "function" == typeof t && t(e)
         }),
@@ -10072,7 +10179,7 @@
                         a = function() {
                             r.$mount("#__nuxt"),
                             s.default.nextTick(function() {
-                                Ur(r)
+                                Gr(r)
                             })
                         }
                         ,
@@ -10086,7 +10193,7 @@
                         Cr.beforeEach(Lr.bind(r)),
                         Cr.beforeEach(jr.bind(r)),
                         Cr.afterEach(Dr),
-                        Cr.afterEach(Gr.bind(r)),
+                        Cr.afterEach(Ur.bind(r)),
                         !Sr.serverRendered) {
                             e.next = 23;
                             break
@@ -10103,8 +10210,7 @@
                                 return a()
                             }, function(e) {
                                 if (!e)
-                                    return a();
-                                console.error(e)
+                                    return a()
                             })
                         });
                     case 24:
@@ -10122,9 +10228,7 @@
         return Tr.apply(this, arguments)
     }().then(function(e) {
         return Hr.apply(this, arguments)
-    }).catch(function(e) {
-        console.error("[nuxt] Error while initializing app", e)
-    })
+    }).catch(function(e) {})
 }
 , function(e, t, n) {
     "use strict";
@@ -10172,7 +10276,7 @@
         return r.apply(this, arguments)
     }
     ), m = function() {
-        Object(h.p)(f),
+        Object(h.r)(f),
         d.a.pub("isLogin", 0),
         localStorage.removeItem("huobi_pro_eyes"),
         sessionStorage.clear(),
@@ -10215,7 +10319,7 @@
                         e.next = 21;
                         break
                     }
-                    return Object(h.p)("HB-PRO-TOKEN"),
+                    return Object(h.r)("HB-PRO-TOKEN"),
                     e.next = 20,
                     p();
                 case 20:
@@ -10378,7 +10482,7 @@
         }(),
         ucLogout: function() {
             var e = o()(regeneratorRuntime.mark(function e(t) {
-                var n, r;
+                var n;
                 return regeneratorRuntime.wrap(function(e) {
                     for (; ; )
                         switch (e.prev = e.next) {
@@ -10388,9 +10492,7 @@
                             e.next = 3,
                             s.f.ucLogout();
                         case 3:
-                            r = e.sent,
-                            console.log("ucLogout", r),
-                            r.success && n("proLogout");
+                            e.sent.success && n("proLogout");
                         case 6:
                         case "end":
                             return e.stop()

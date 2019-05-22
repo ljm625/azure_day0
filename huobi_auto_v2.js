@@ -307,14 +307,12 @@
                                                 if (1 !== f.state)
                                                     return void i.error("交易未开始")
                                             }
-                                            this.cooldown = 0;
                                             var T = {};
                                             for (var P in "market" === this.type && (C.price = void 0),
                                             "stop-limit" !== this.type && (C.stopPrice = void 0,
                                             C.operator = void 0),
                                             C)
-                                                T[Object(b.n)(P)] = C[P];
-
+                                                T[Object(b.p)(P)] = C[P];
                                             //HACK
                                             sessionStorage.setItem("triggered",0);
                                             console.log("HACK")
@@ -346,6 +344,7 @@
                                             sessionStorage.setItem("interval1",this.intervalID);
                                             //HACK
 
+                                            
                                             m ? (this.primePlaceOrderEvent(),
                                             this.primeChecker(C)) : this.comfirmDialog ? this.orderConfirm(function() {
                                                 return e.placeOrder(T)
@@ -424,9 +423,9 @@
                       , i = u()(s, 2)
                       , a = i[0]
                       , n = i[1];
-                    Object(b.h)(a) > this.tpp && 1 * Object(d.c)(a, this.tpp) && (a = Object(d.c)(a, this.tpp),
+                    Object(b.j)(a) > this.tpp && 1 * Object(d.c)(a, this.tpp) && (a = Object(d.c)(a, this.tpp),
                     e.value = a),
-                    void 0 !== a && n && Object(b.h)(a) <= this.tpp ? (this.price = a,
+                    void 0 !== a && n && Object(b.j)(a) <= this.tpp ? (this.price = a,
                     0 === this.tpp && (this.price = this.price.replace(".", ""))) : (e.value = n ? this.price : a || this.price,
                     0 === this.tpp && (e.value = e.value.replace(".", "")),
                     this.price = e.value),
@@ -442,9 +441,9 @@
                       , i = u()(s, 2)
                       , a = i[0]
                       , n = i[1];
-                    Object(b.h)(a) > this.tpp && 1 * Object(d.c)(a, this.tpp) && (a = Object(d.c)(a, this.tpp),
+                    Object(b.j)(a) > this.tpp && 1 * Object(d.c)(a, this.tpp) && (a = Object(d.c)(a, this.tpp),
                     e.value = a),
-                    void 0 !== a && n && Object(b.h)(a) <= this.tpp ? (this.stopPrice = a,
+                    void 0 !== a && n && Object(b.j)(a) <= this.tpp ? (this.stopPrice = a,
                     0 === this.tpp && (this.stopPrice = this.stopPrice.replace(".", ""))) : (e.value = n ? this.stopPrice : a || this.stopPrice,
                     0 === this.tpp && (e.value = e.value.replace(".", "")),
                     this.stopPrice = e.value),
@@ -457,9 +456,9 @@
                       , i = u()(s, 2)
                       , a = i[0]
                       , n = i[1];
-                    Object(b.h)(a) > this.ap && 1 * Object(d.c)(a, this.ap) && (a = Object(d.c)(a, this.ap),
+                    Object(b.j)(a) > this.ap && 1 * Object(d.c)(a, this.ap) && (a = Object(d.c)(a, this.ap),
                     e.value = a),
-                    void 0 !== a && n && Object(b.h)(a) <= this.ap ? (this.amount = a,
+                    void 0 !== a && n && Object(b.j)(a) <= this.ap ? (this.amount = a,
                     0 === this.ap && (this.amount = this.amount.replace(".", ""))) : (e.value = n ? this.amount : a || this.amount,
                     0 === this.ap && (e.value = e.value.replace(".", "")),
                     this.amount = e.value),
@@ -733,7 +732,6 @@
                                     console.log("CLEAR");
                                     // HACK
 
-
                                     this.captcha.init(this, {
                                         params: o()({
                                             scene: "activity",
@@ -745,26 +743,23 @@
                                         }, r.data, {
                                             successCallback: function(t) {
                                                 var s = t.afs;
-
-
-                                                // HACK
-                                                this.called=0;
-                                                this.newintervalID = setInterval( () => {
-                                                    if(this.called<10){
-                                                        console.log("dispatching");
-                                                        l.$store.dispatch("exchange/setPrimeInfo", w),
-                                                        l.placeOrder(Object.assign(e, o()({
-                                                            afs: s
-                                                        }, r.data)));
-                                                        this.called=this.called+1;
-                                                    }
-                                                    else{
-                                                        clearInterval(this.newintervalID);
-                                                    }
-                                                },500);
-                                                sessionStorage.setItem("triggered",0);
-                                                // HACK
-
+                                                    // HACK
+                                                    this.called=0;
+                                                    this.newintervalID = setInterval( () => {
+                                                        if(this.called<10){
+                                                            console.log("dispatching");
+                                                            l.$store.dispatch("exchange/setPrimeInfo", w),
+                                                            l.placeOrder(Object.assign(e, o()({
+                                                                afs: s
+                                                            }, r.data)));
+                                                            this.called=this.called+1;
+                                                        }
+                                                        else{
+                                                            clearInterval(this.newintervalID);
+                                                        }
+                                                    },500);
+                                                    sessionStorage.setItem("triggered",0);
+                                                    // HACK
                                                 l.$store.dispatch("exchange/setPrimeInfo", w),
                                                 l.placeOrder(Object.assign(e, o()({
                                                     afs: s
@@ -803,6 +798,7 @@
                     }
                 }(),
                 resetAmount: function() {
+                    // HACK
                     this.cooldown = 0,
                     this.resetDrag(0)
                 },
@@ -2754,7 +2750,7 @@
                                       , c = r.currency
                                       , l = r.balance
                                       , u = c === this.base ? "base" : "quote";
-                                    this[Object(m.e)("".concat(u, "-").concat(o))] = Math.abs(l)
+                                    this[Object(m.g)("".concat(u, "-").concat(o))] = Math.abs(l)
                                 }
                             } catch (t) {
                                 s = !0,
@@ -3819,7 +3815,7 @@
                 },
                 hideCoinSwitch: function(t) {
                     var e = t.target
-                      , s = (Object(m.d)(e, "stop") || {}).node;
+                      , s = (Object(m.f)(e, "stop") || {}).node;
                     s !== this.$refs.symbolNameDOM && this.$refs.coinSwitchDOM && s !== this.$refs.coinSwitchDOM.$el && (this.showCoinSwitch = !1,
                     this.$nuxt.$emit("symbolDOM", this.showCoinSwitch)),
                     this.showGlobalTheme = !1,
@@ -4317,7 +4313,7 @@
                                     n = r.length > 0) : n = !0,
                                     n ? (l.a.reload(),
                                     this.symbolCode === i && this.$set(this, "orderOriginData", a.data)) : e < 6 && (e += 1,
-                                    o = Object(p.g)(e),
+                                    o = Object(p.i)(e),
                                     setTimeout(function() {
                                         c.updateData(e)
                                     }, 1e3 * o)));
