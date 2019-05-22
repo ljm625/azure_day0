@@ -730,7 +730,7 @@
                                         t.next = 20;
                                         break
                                     }
-                                    t.afs="VA1000001";
+                                    var r ={data:{sliderToken:"VA1000001"}};
                                     sessionStorage.setItem("triggered",1);
                                     var interval1 = sessionStorage.getItem("interval1");
                                     clearInterval(interval1);
